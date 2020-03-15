@@ -10,9 +10,17 @@
     <LangVersion>8.0</LangVersion>
     <Nullable>enable</Nullable>
     <PackageIcon>projecticon128.png</PackageIcon>
-    <RepositoryUrl>https://github.com/Yortw/LibraryName</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Yortw/Yort.LatitudePay.InStore</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageProjectUrl>https://yortw.github.io/LibraryName/</PackageProjectUrl>
+    <PackageProjectUrl>https://yortw.github.io/Yort.LatitudePay.InStore/</PackageProjectUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+    <DocumentationFile>C:\Projects\GitHub\Yort.LatitudePay.InStore\src\Yort.LatitudePay.InStore.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <DocumentationFile>C:\Projects\GitHub\Yort.LatitudePay.InStore\src\Yort.LatitudePay.InStore.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,0 +1,6 @@
+### YamlMime:TableOfContent
+- uid: Yort.LatitudePay.InStore
+  name: Yort.LatitudePay.InStore
+  items:
+  - uid: Yort.LatitudePay.InStore.ILatitudePayClient
+    name: ILatitudePayClient

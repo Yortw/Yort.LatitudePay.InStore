@@ -1,0 +1,15 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: Yort.LatitudePay.InStore
+  name: Yort.LatitudePay.InStore
+  href: api/Yort.LatitudePay.InStore.html
+  commentId: N:Yort.LatitudePay.InStore
+  fullName: Yort.LatitudePay.InStore
+  nameWithType: Yort.LatitudePay.InStore
+- uid: Yort.LatitudePay.InStore.ILatitudePayClient
+  name: ILatitudePayClient
+  href: api/Yort.LatitudePay.InStore.ILatitudePayClient.html
+  commentId: T:Yort.LatitudePay.InStore.ILatitudePayClient
+  fullName: Yort.LatitudePay.InStore.ILatitudePayClient
+  nameWithType: ILatitudePayClient

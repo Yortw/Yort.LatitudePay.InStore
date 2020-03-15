@@ -1,0 +1,17 @@
+{
+  "articles/intro.html": {
+    "href": "articles/intro.html",
+    "title": "Add your introductions here! | Yort.LatitudePay.InStore",
+    "keywords": "Add your introductions here!"
+  },
+  "api/Yort.LatitudePay.InStore.html": {
+    "href": "api/Yort.LatitudePay.InStore.html",
+    "title": "Namespace Yort.LatitudePay.InStore | Yort.LatitudePay.InStore",
+    "keywords": "Namespace Yort.LatitudePay.InStore Interfaces ILatitudePayClient"
+  },
+  "api/Yort.LatitudePay.InStore.ILatitudePayClient.html": {
+    "href": "api/Yort.LatitudePay.InStore.ILatitudePayClient.html",
+    "title": "Interface ILatitudePayClient | Yort.LatitudePay.InStore",
+    "keywords": "Interface ILatitudePayClient Namespace : Yort.LatitudePay.InStore Assembly : Yort.LatitudePay.InStore.dll Syntax public interface ILatitudePayClient"
+  }
+}

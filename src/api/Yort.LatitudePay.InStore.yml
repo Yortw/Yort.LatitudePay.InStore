@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.LatitudePay.InStore
+  commentId: N:Yort.LatitudePay.InStore
+  id: Yort.LatitudePay.InStore
+  children:
+  - Yort.LatitudePay.InStore.ILatitudePayClient
+  langs:
+  - csharp
+  - vb
+  name: Yort.LatitudePay.InStore
+  nameWithType: Yort.LatitudePay.InStore
+  fullName: Yort.LatitudePay.InStore
+  type: Namespace
+  assemblies:
+  - Yort.LatitudePay.InStore
+references:
+- uid: Yort.LatitudePay.InStore.ILatitudePayClient
+  commentId: T:Yort.LatitudePay.InStore.ILatitudePayClient
+  name: ILatitudePayClient
+  nameWithType: ILatitudePayClient
+  fullName: Yort.LatitudePay.InStore.ILatitudePayClient

@@ -2,12 +2,12 @@
   "metadata": [
     {
       "src": [
-        {
-          "files": [
-            "**.csproj"
-          ],
-          "src": "C:\\Projects\\GitHub\\LibraryName\\src"
-        }
+				{
+					"files": [
+						"**.csproj"
+					],
+					"src": "C:\\Projects\\GitHub\\Yort.LatitudePay.InStore\\src"
+				}
       ],
       "dest": "api",
       "disableGitFeatures": false,
@@ -55,13 +55,13 @@
     "template": [
       "default"
     ],
-    "globalMetadata": {
-      "_appTitle": "LibraryName",
-      "_enableSearch": true,
-      "_appFaviconPath": "images/projecticon.ico",
-      "_appLogoPath": "images/projecticon.png",
-      "_appFooter": "Copyright (c) 2020 Troy Willmot"
-  },
+		"globalMetadata": {
+			"_appTitle": "Yort.LatitudePay.InStore",
+			"_enableSearch": true,
+			"_appFaviconPath": "images/projecticon.ico",
+			"_appLogoPath": "images/projecticon.png",
+			"_appFooter": "Copyright (c) 2020 Troy Willmot"
+		},
   "template": [ "statictoc", "memberpage/2.24.0/content" ],
   "postProcessors": [],
     "markdownEngineName": "markdig",

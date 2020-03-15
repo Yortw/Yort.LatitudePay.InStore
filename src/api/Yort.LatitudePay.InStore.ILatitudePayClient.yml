@@ -1,0 +1,40 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.LatitudePay.InStore.ILatitudePayClient
+  commentId: T:Yort.LatitudePay.InStore.ILatitudePayClient
+  id: ILatitudePayClient
+  parent: Yort.LatitudePay.InStore
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: ILatitudePayClient
+  nameWithType: ILatitudePayClient
+  fullName: Yort.LatitudePay.InStore.ILatitudePayClient
+  type: Interface
+  source:
+    remote:
+      path: src/ILatitudePayClient.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: ILatitudePayClient
+    path: ILatitudePayClient.cs
+    startLine: 4
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  syntax:
+    content: public interface ILatitudePayClient
+    content.vb: Public Interface ILatitudePayClient
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+references:
+- uid: Yort.LatitudePay.InStore
+  commentId: N:Yort.LatitudePay.InStore
+  name: Yort.LatitudePay.InStore
+  nameWithType: Yort.LatitudePay.InStore
+  fullName: Yort.LatitudePay.InStore
