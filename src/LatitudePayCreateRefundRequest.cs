@@ -34,7 +34,8 @@ namespace Yort.LatitudePay.InStore
 		/// </summary>
 		/// <value>
 		/// The reason.
-		/// </value>		[JsonProperty("reason")]
+		/// </value>		
+		[JsonProperty("reason")]
 		public string? Reason { get; set; }
 
 		/// <summary>
