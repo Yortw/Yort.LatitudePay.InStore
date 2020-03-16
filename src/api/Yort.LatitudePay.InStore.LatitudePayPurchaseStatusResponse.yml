@@ -1,0 +1,548 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse
+  id: LatitudePayPurchaseStatusResponse
+  parent: Yort.LatitudePay.InStore
+  children:
+  - Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Message
+  - Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Status
+  - Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Token
+  langs:
+  - csharp
+  - vb
+  name: LatitudePayPurchaseStatusResponse
+  nameWithType: LatitudePayPurchaseStatusResponse
+  fullName: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse
+  type: Class
+  source:
+    remote:
+      path: src/LatitudePayPurchaseStatusResponse.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: LatitudePayPurchaseStatusResponse
+    path: LatitudePayPurchaseStatusResponse.cs
+    startLine: 10
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nRepresents the status of a payment plan as returned by a <xref href=\"Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)\" data-throw-if-not-resolved=\"false\"></xref> request.\n"
+  example: []
+  syntax:
+    content: public class LatitudePayPurchaseStatusResponse
+    content.vb: Public Class LatitudePayPurchaseStatusResponse
+  seealso:
+  - linkId: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest
+    commentId: T:Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest
+  - linkId: Yort.LatitudePay.InStore.LatitudePayClient
+    commentId: T:Yort.LatitudePay.InStore.LatitudePayClient
+  - linkId: Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)
+    commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Token
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Token
+  id: Token
+  parent: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse
+  langs:
+  - csharp
+  - vb
+  name: Token
+  nameWithType: LatitudePayPurchaseStatusResponse.Token
+  fullName: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Token
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayPurchaseStatusResponse.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: Token
+    path: LatitudePayPurchaseStatusResponse.cs
+    startLine: 18
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGets or sets the payment token.\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("token")]
+
+      public string Token { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe token.\n"
+    content.vb: >-
+      <JsonProperty("token")>
+
+      Public Property Token As String
+  overload: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Token*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: token
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Status
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Status
+  id: Status
+  parent: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse
+  langs:
+  - csharp
+  - vb
+  name: Status
+  nameWithType: LatitudePayPurchaseStatusResponse.Status
+  fullName: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Status
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayPurchaseStatusResponse.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: Status
+    path: LatitudePayPurchaseStatusResponse.cs
+    startLine: 27
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGets or sets the status of the payment plan.\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("status")]
+
+      public string Status { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe status.\n"
+    content.vb: >-
+      <JsonProperty("status")>
+
+      Public Property Status As String
+  overload: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Status*
+  seealso:
+  - linkId: Yort.LatitudePay.InStore.LatitudePayConstants
+    commentId: T:Yort.LatitudePay.InStore.LatitudePayConstants
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: status
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Message
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Message
+  id: Message
+  parent: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse
+  langs:
+  - csharp
+  - vb
+  name: Message
+  nameWithType: LatitudePayPurchaseStatusResponse.Message
+  fullName: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Message
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayPurchaseStatusResponse.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: Message
+    path: LatitudePayPurchaseStatusResponse.cs
+    startLine: 35
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGets or sets a human readable message related to the status of this payment plan.\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("message")]
+
+      public string Message { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe message.\n"
+    content.vb: >-
+      <JsonProperty("message")>
+
+      Public Property Message As String
+  overload: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Message*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: message
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)
+  commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)
+  isExternal: true
+- uid: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest
+  parent: Yort.LatitudePay.InStore
+  name: LatitudePayPurchaseStatusRequest
+  nameWithType: LatitudePayPurchaseStatusRequest
+  fullName: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest
+- uid: Yort.LatitudePay.InStore.LatitudePayClient
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayClient
+  name: LatitudePayClient
+  nameWithType: LatitudePayClient
+  fullName: Yort.LatitudePay.InStore.LatitudePayClient
+- uid: Yort.LatitudePay.InStore
+  commentId: N:Yort.LatitudePay.InStore
+  name: Yort.LatitudePay.InStore
+  nameWithType: Yort.LatitudePay.InStore
+  fullName: Yort.LatitudePay.InStore
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Token*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Token
+  name: Token
+  nameWithType: LatitudePayPurchaseStatusResponse.Token
+  fullName: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Token
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Yort.LatitudePay.InStore.LatitudePayConstants
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayConstants
+  name: LatitudePayConstants
+  nameWithType: LatitudePayConstants
+  fullName: Yort.LatitudePay.InStore.LatitudePayConstants
+- uid: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Status*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Status
+  name: Status
+  nameWithType: LatitudePayPurchaseStatusResponse.Status
+  fullName: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Status
+- uid: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Message*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Message
+  name: Message
+  nameWithType: LatitudePayPurchaseStatusResponse.Message
+  fullName: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Message

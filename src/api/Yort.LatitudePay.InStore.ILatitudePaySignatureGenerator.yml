@@ -1,0 +1,142 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.LatitudePay.InStore.ILatitudePaySignatureGenerator
+  commentId: T:Yort.LatitudePay.InStore.ILatitudePaySignatureGenerator
+  id: ILatitudePaySignatureGenerator
+  parent: Yort.LatitudePay.InStore
+  children:
+  - Yort.LatitudePay.InStore.ILatitudePaySignatureGenerator.GenerateSignature(System.String)
+  langs:
+  - csharp
+  - vb
+  name: ILatitudePaySignatureGenerator
+  nameWithType: ILatitudePaySignatureGenerator
+  fullName: Yort.LatitudePay.InStore.ILatitudePaySignatureGenerator
+  type: Interface
+  source:
+    remote:
+      path: src/ILatitudePaySignatureGenerator.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: ILatitudePaySignatureGenerator
+    path: ILatitudePaySignatureGenerator.cs
+    startLine: 13
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nAn interface for components that can calculate a signature for LatitudePay requests.\n"
+  remarks: "\n<p>This interface exists mostly for future expansion (in case the algorithm or hash used changes) and internal testing, it is not expected to be used directly from application code.</p>\n"
+  example: []
+  syntax:
+    content: 'public interface ILatitudePaySignatureGenerator : IDisposable'
+    content.vb: >-
+      Public Interface ILatitudePaySignatureGenerator
+          Inherits IDisposable
+  seealso:
+  - linkId: System.IDisposable
+    commentId: T:System.IDisposable
+  inheritedMembers:
+  - System.IDisposable.Dispose
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: Yort.LatitudePay.InStore.ILatitudePaySignatureGenerator.GenerateSignature(System.String)
+  commentId: M:Yort.LatitudePay.InStore.ILatitudePaySignatureGenerator.GenerateSignature(System.String)
+  id: GenerateSignature(System.String)
+  parent: Yort.LatitudePay.InStore.ILatitudePaySignatureGenerator
+  langs:
+  - csharp
+  - vb
+  name: GenerateSignature(String)
+  nameWithType: ILatitudePaySignatureGenerator.GenerateSignature(String)
+  fullName: Yort.LatitudePay.InStore.ILatitudePaySignatureGenerator.GenerateSignature(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/ILatitudePaySignatureGenerator.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: GenerateSignature
+    path: ILatitudePaySignatureGenerator.cs
+    startLine: 20
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGenerates a signature for the specified payload.\n"
+  example: []
+  syntax:
+    content: string GenerateSignature(string jsonPayload)
+    parameters:
+    - id: jsonPayload
+      type: System.String
+      description: The json payload to calculate a signature for.
+    return:
+      type: System.String
+      description: ''
+    content.vb: Function GenerateSignature(jsonPayload As String) As String
+  overload: Yort.LatitudePay.InStore.ILatitudePaySignatureGenerator.GenerateSignature*
+references:
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: Yort.LatitudePay.InStore
+  commentId: N:Yort.LatitudePay.InStore
+  name: Yort.LatitudePay.InStore
+  nameWithType: Yort.LatitudePay.InStore
+  fullName: Yort.LatitudePay.InStore
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.LatitudePay.InStore.ILatitudePaySignatureGenerator.GenerateSignature*
+  commentId: Overload:Yort.LatitudePay.InStore.ILatitudePaySignatureGenerator.GenerateSignature
+  name: GenerateSignature
+  nameWithType: ILatitudePaySignatureGenerator.GenerateSignature
+  fullName: Yort.LatitudePay.InStore.ILatitudePaySignatureGenerator.GenerateSignature
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

@@ -1,0 +1,105 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.LatitudePay.InStore.ILatitudePaySystemClock
+  commentId: T:Yort.LatitudePay.InStore.ILatitudePaySystemClock
+  id: ILatitudePaySystemClock
+  parent: Yort.LatitudePay.InStore
+  children:
+  - Yort.LatitudePay.InStore.ILatitudePaySystemClock.Now
+  langs:
+  - csharp
+  - vb
+  name: ILatitudePaySystemClock
+  nameWithType: ILatitudePaySystemClock
+  fullName: Yort.LatitudePay.InStore.ILatitudePaySystemClock
+  type: Interface
+  source:
+    remote:
+      path: src/ILatitudePaySystemClock.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: ILatitudePaySystemClock
+    path: ILatitudePaySystemClock.cs
+    startLine: 8
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nInterface for components that can return the current date and time.\n"
+  example: []
+  syntax:
+    content: public interface ILatitudePaySystemClock
+    content.vb: Public Interface ILatitudePaySystemClock
+  see:
+  - linkId: Yort.LatitudePay.InStore.LatitudePaySystemClock
+    commentId: T:Yort.LatitudePay.InStore.LatitudePaySystemClock
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: Yort.LatitudePay.InStore.ILatitudePaySystemClock.Now
+  commentId: P:Yort.LatitudePay.InStore.ILatitudePaySystemClock.Now
+  id: Now
+  parent: Yort.LatitudePay.InStore.ILatitudePaySystemClock
+  langs:
+  - csharp
+  - vb
+  name: Now
+  nameWithType: ILatitudePaySystemClock.Now
+  fullName: Yort.LatitudePay.InStore.ILatitudePaySystemClock.Now
+  type: Property
+  source:
+    remote:
+      path: src/ILatitudePaySystemClock.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: Now
+    path: ILatitudePaySystemClock.cs
+    startLine: 13
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nReturns the current date and time as a <xref href=\"System.DateTimeOffset\" data-throw-if-not-resolved=\"false\"></xref> value.\n"
+  example: []
+  syntax:
+    content: DateTimeOffset Now { get; }
+    parameters: []
+    return:
+      type: System.DateTimeOffset
+    content.vb: ReadOnly Property Now As DateTimeOffset
+  overload: Yort.LatitudePay.InStore.ILatitudePaySystemClock.Now*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+references:
+- uid: Yort.LatitudePay.InStore.LatitudePaySystemClock
+  commentId: T:Yort.LatitudePay.InStore.LatitudePaySystemClock
+  parent: Yort.LatitudePay.InStore
+  name: LatitudePaySystemClock
+  nameWithType: LatitudePaySystemClock
+  fullName: Yort.LatitudePay.InStore.LatitudePaySystemClock
+- uid: Yort.LatitudePay.InStore
+  commentId: N:Yort.LatitudePay.InStore
+  name: Yort.LatitudePay.InStore
+  nameWithType: Yort.LatitudePay.InStore
+  fullName: Yort.LatitudePay.InStore
+- uid: System.DateTimeOffset
+  commentId: T:System.DateTimeOffset
+  parent: System
+  isExternal: true
+  name: DateTimeOffset
+  nameWithType: DateTimeOffset
+  fullName: System.DateTimeOffset
+- uid: Yort.LatitudePay.InStore.ILatitudePaySystemClock.Now*
+  commentId: Overload:Yort.LatitudePay.InStore.ILatitudePaySystemClock.Now
+  name: Now
+  nameWithType: ILatitudePaySystemClock.Now
+  fullName: Yort.LatitudePay.InStore.ILatitudePaySystemClock.Now
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System

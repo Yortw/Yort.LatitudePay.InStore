@@ -1,0 +1,1346 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.LatitudePay.InStore.LatitudePayClient
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayClient
+  id: LatitudePayClient
+  parent: Yort.LatitudePay.InStore
+  children:
+  - Yort.LatitudePay.InStore.LatitudePayClient.#ctor(Yort.LatitudePay.InStore.LatitudePayClientConfiguration)
+  - Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)
+  - Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+  - Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+  - Yort.LatitudePay.InStore.LatitudePayClient.Dispose
+  - Yort.LatitudePay.InStore.LatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)
+  - Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)
+  langs:
+  - csharp
+  - vb
+  name: LatitudePayClient
+  nameWithType: LatitudePayClient
+  fullName: Yort.LatitudePay.InStore.LatitudePayClient
+  type: Class
+  source:
+    remote:
+      path: src/LatitudePayClient.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: LatitudePayClient
+    path: LatitudePayClient.cs
+    startLine: 19
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nThe primary class used to integrate to the LatitudePay API.\n"
+  remarks: "\n<p>Instances of this class should be reused between requests. If working in a single POS, create a copy on startup or first use and then re-use for subsequent payments. \nDispose only when you&apos;re done with the instance completely, such as on shutdown or if about to create a new instance with alternate configuration.</p>\n<p>If working in a payment service/gateway or web POS handling multiple lanes, then create a pool of instances (one for each lane) and re-use as appropriate.</p>\n<p>Instances of this class should be thread safe, multiple calls for the same or different payments through the same instance should work as expected.</p>\n"
+  example: []
+  syntax:
+    content: 'public sealed class LatitudePayClient : ILatitudePayClient, IDisposable'
+    content.vb: >-
+      Public NotInheritable Class LatitudePayClient
+          Implements ILatitudePayClient, IDisposable
+  seealso:
+  - linkId: Yort.LatitudePay.InStore.ILatitudePayClient
+    commentId: T:Yort.LatitudePay.InStore.ILatitudePayClient
+  inheritance:
+  - System.Object
+  implements:
+  - Yort.LatitudePay.InStore.ILatitudePayClient
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Yort.LatitudePay.InStore.LatitudePayClient.#ctor(Yort.LatitudePay.InStore.LatitudePayClientConfiguration)
+  commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.#ctor(Yort.LatitudePay.InStore.LatitudePayClientConfiguration)
+  id: '#ctor(Yort.LatitudePay.InStore.LatitudePayClientConfiguration)'
+  parent: Yort.LatitudePay.InStore.LatitudePayClient
+  langs:
+  - csharp
+  - vb
+  name: LatitudePayClient(LatitudePayClientConfiguration)
+  nameWithType: LatitudePayClient.LatitudePayClient(LatitudePayClientConfiguration)
+  fullName: Yort.LatitudePay.InStore.LatitudePayClient.LatitudePayClient(Yort.LatitudePay.InStore.LatitudePayClientConfiguration)
+  type: Constructor
+  source:
+    remote:
+      path: src/LatitudePayClient.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: .ctor
+    path: LatitudePayClient.cs
+    startLine: 44
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nInitializes a new instance of the <xref href=\"Yort.LatitudePay.InStore.LatitudePayClient\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public LatitudePayClient(LatitudePayClientConfiguration configuration)
+    parameters:
+    - id: configuration
+      type: Yort.LatitudePay.InStore.LatitudePayClientConfiguration
+      description: A <xref href="Yort.LatitudePay.InStore.LatitudePayClientConfiguration" data-throw-if-not-resolved="false"></xref> instance containing information required to connect to the LatitudePay API.
+    content.vb: Public Sub New(configuration As LatitudePayClientConfiguration)
+  overload: Yort.LatitudePay.InStore.LatitudePayClient.#ctor*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">configuration</code> is null, or if <xref href="Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiSecret" data-throw-if-not-resolved="false"></xref> is null.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if <xref href="Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiSecret" data-throw-if-not-resolved="false"></xref> is an empty string or contains only whitespace.
+  seealso:
+  - linkId: Yort.LatitudePay.InStore.LatitudePayClientConfiguration
+    commentId: T:Yort.LatitudePay.InStore.LatitudePayClientConfiguration
+  - linkId: Yort.LatitudePay.InStore.ILatitudePayClient
+    commentId: T:Yort.LatitudePay.InStore.ILatitudePayClient
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)
+  commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)
+  id: GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)
+  parent: Yort.LatitudePay.InStore.LatitudePayClient
+  langs:
+  - csharp
+  - vb
+  name: GetConfigurationAsync(LatitudePayConfigurationRequest)
+  nameWithType: LatitudePayClient.GetConfigurationAsync(LatitudePayConfigurationRequest)
+  fullName: Yort.LatitudePay.InStore.LatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)
+  type: Method
+  source:
+    remote:
+      path: src/LatitudePayClient.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: GetConfigurationAsync
+    path: LatitudePayClient.cs
+    startLine: 82
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGets configuration information for the current merchant account, specifying the supported currency, minimum and maximum purchase values etc.\n"
+  example: []
+  syntax:
+    content: public Task<LatitudePayConfigurationResponse> GetConfigurationAsync(LatitudePayConfigurationRequest request)
+    parameters:
+    - id: request
+      type: Yort.LatitudePay.InStore.LatitudePayConfigurationRequest
+      description: A <xref href="Yort.LatitudePay.InStore.LatitudePayConfigurationRequest" data-throw-if-not-resolved="false"></xref> that specifies options for the data returned.
+    return:
+      type: System.Threading.Tasks.Task{Yort.LatitudePay.InStore.LatitudePayConfigurationResponse}
+      description: "\nA <xref href=\"Yort.LatitudePay.InStore.LatitudePayConfigurationResponse\" data-throw-if-not-resolved=\"false\"></xref> instance.\n"
+    content.vb: Public Function GetConfigurationAsync(request As LatitudePayConfigurationRequest) As Task(Of LatitudePayConfigurationResponse)
+  overload: Yort.LatitudePay.InStore.LatitudePayClient.GetConfigurationAsync*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: Thrown if <xref href="Yort.LatitudePay.InStore.LatitudePayClient.Dispose" data-throw-if-not-resolved="false"></xref> has been called on this instance.
+  - type: System.UnauthorizedAccessException
+    commentId: T:System.UnauthorizedAccessException
+    description: Thrown if the system is unable to obtain an authorisation token from the API (see the inner exception for details).
+  - type: System.Net.Http.HttpRequestException
+    commentId: T:System.Net.Http.HttpRequestException
+    description: Thrown if an error occurs making the request to the API.
+  implements:
+  - Yort.LatitudePay.InStore.ILatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+  commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+  id: CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+  parent: Yort.LatitudePay.InStore.LatitudePayClient
+  langs:
+  - csharp
+  - vb
+  name: CreatePosPurchaseAsync(LatitudePayCreatePosPurchaseRequest)
+  nameWithType: LatitudePayClient.CreatePosPurchaseAsync(LatitudePayCreatePosPurchaseRequest)
+  fullName: Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+  type: Method
+  source:
+    remote:
+      path: src/LatitudePayClient.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: CreatePosPurchaseAsync
+    path: LatitudePayClient.cs
+    startLine: 108
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nCreates a new &apos;payment plan&apos;.\n"
+  example: []
+  syntax:
+    content: public Task<LatitudePayCreatePosPurchaseResponse> CreatePosPurchaseAsync(LatitudePayCreatePosPurchaseRequest request)
+    parameters:
+    - id: request
+      type: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+      description: A <xref href="Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest" data-throw-if-not-resolved="false"></xref> instance specifying options for the payment plan to be created.
+    return:
+      type: System.Threading.Tasks.Task{Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse}
+      description: "\nA <xref href=\"Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse\" data-throw-if-not-resolved=\"false\"></xref> instance containing details of the pending payment plan.\n"
+    content.vb: Public Function CreatePosPurchaseAsync(request As LatitudePayCreatePosPurchaseRequest) As Task(Of LatitudePayCreatePosPurchaseResponse)
+  overload: Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: Thrown if <xref href="Yort.LatitudePay.InStore.LatitudePayClient.Dispose" data-throw-if-not-resolved="false"></xref> has been called on this instance.
+  - type: System.UnauthorizedAccessException
+    commentId: T:System.UnauthorizedAccessException
+    description: Thrown if the system is unable to obtain an authorisation token from the API (see the inner exception for details).
+  - type: System.Net.Http.HttpRequestException
+    commentId: T:System.Net.Http.HttpRequestException
+    description: Thrown if an error occurs making the request to the API.
+  seealso:
+  - linkId: Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)
+    commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)
+  - linkId: Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)
+    commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)
+  - linkId: Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+    commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+  implements:
+  - Yort.LatitudePay.InStore.ILatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)
+  commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)
+  id: GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)
+  parent: Yort.LatitudePay.InStore.LatitudePayClient
+  langs:
+  - csharp
+  - vb
+  name: GetPurchaseStatusAsync(LatitudePayPurchaseStatusRequest)
+  nameWithType: LatitudePayClient.GetPurchaseStatusAsync(LatitudePayPurchaseStatusRequest)
+  fullName: Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)
+  type: Method
+  source:
+    remote:
+      path: src/LatitudePayClient.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: GetPurchaseStatusAsync
+    path: LatitudePayClient.cs
+    startLine: 139
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGets the status of a payment plan previously requested via <xref href=\"Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public Task<LatitudePayPurchaseStatusResponse> GetPurchaseStatusAsync(LatitudePayPurchaseStatusRequest request)
+    parameters:
+    - id: request
+      type: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest
+      description: A <xref href="Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest" data-throw-if-not-resolved="false"></xref> instance containing the token of the payment plan who&apos;s status should be queried.
+    return:
+      type: System.Threading.Tasks.Task{Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse}
+      description: "\nA <xref href=\"Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse\" data-throw-if-not-resolved=\"false\"></xref> instance containing the status and other details of the plan.\n"
+    content.vb: Public Function GetPurchaseStatusAsync(request As LatitudePayPurchaseStatusRequest) As Task(Of LatitudePayPurchaseStatusResponse)
+  overload: Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: Thrown if <xref href="Yort.LatitudePay.InStore.LatitudePayClient.Dispose" data-throw-if-not-resolved="false"></xref> has been called on this instance.
+  - type: System.UnauthorizedAccessException
+    commentId: T:System.UnauthorizedAccessException
+    description: Thrown if the system is unable to obtain an authorisation token from the API (see the inner exception for details).
+  - type: System.Net.Http.HttpRequestException
+    commentId: T:System.Net.Http.HttpRequestException
+    description: Thrown if an error occurs making the request to the API.
+  seealso:
+  - linkId: Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+    commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+  - linkId: Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)
+    commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)
+  implements:
+  - Yort.LatitudePay.InStore.ILatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)
+  commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)
+  id: CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)
+  parent: Yort.LatitudePay.InStore.LatitudePayClient
+  langs:
+  - csharp
+  - vb
+  name: CancelPurchaseAsync(LatitudePayCancelPurchaseRequest)
+  nameWithType: LatitudePayClient.CancelPurchaseAsync(LatitudePayCancelPurchaseRequest)
+  fullName: Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)
+  type: Method
+  source:
+    remote:
+      path: src/LatitudePayClient.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: CancelPurchaseAsync
+    path: LatitudePayClient.cs
+    startLine: 168
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nCancels a (pending) payment plan previously requested via <xref href=\"Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  remarks: "\nThis only cancels pending/unapproved payment plans. If a plan has been accepted/approved you must refund it instead of cancel it.\n"
+  example: []
+  syntax:
+    content: public Task<LatitudePayCancelPurchaseResponse> CancelPurchaseAsync(LatitudePayCancelPurchaseRequest request)
+    parameters:
+    - id: request
+      type: Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest
+      description: A <xref href="Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest" data-throw-if-not-resolved="false"></xref> containing the token of the payment plan to cancel.
+    return:
+      type: System.Threading.Tasks.Task{Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse}
+      description: "\nAn instance of a <xref href=\"Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse\" data-throw-if-not-resolved=\"false\"></xref> indicating if the cancellation was successful.\n"
+    content.vb: Public Function CancelPurchaseAsync(request As LatitudePayCancelPurchaseRequest) As Task(Of LatitudePayCancelPurchaseResponse)
+  overload: Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: Thrown if <xref href="Yort.LatitudePay.InStore.LatitudePayClient.Dispose" data-throw-if-not-resolved="false"></xref> has been called on this instance.
+  - type: System.UnauthorizedAccessException
+    commentId: T:System.UnauthorizedAccessException
+    description: Thrown if the system is unable to obtain an authorisation token from the API (see the inner exception for details).
+  - type: System.Net.Http.HttpRequestException
+    commentId: T:System.Net.Http.HttpRequestException
+    description: Thrown if an error occurs making the request to the API.
+  seealso:
+  - linkId: Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+    commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+  - linkId: Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+    commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+  implements:
+  - Yort.LatitudePay.InStore.ILatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+  commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+  id: CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+  parent: Yort.LatitudePay.InStore.LatitudePayClient
+  langs:
+  - csharp
+  - vb
+  name: CreateRefundAsync(LatitudePayCreateRefundRequest)
+  nameWithType: LatitudePayClient.CreateRefundAsync(LatitudePayCreateRefundRequest)
+  fullName: Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+  type: Method
+  source:
+    remote:
+      path: src/LatitudePayClient.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: CreateRefundAsync
+    path: LatitudePayClient.cs
+    startLine: 199
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nRefunds a previously approved payment plan.\n"
+  remarks: "\n<p>You can only refund a previously accepted payment plan. Use <xref href=\"Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)\" data-throw-if-not-resolved=\"false\"></xref> to cancel a payment plan that is pending.</p>\n<p>A refund can be full or partial, and multiple partial refunds can be made. You can only refund up to the total amount of the original payment plan, across all refunds.</p>\n"
+  example: []
+  syntax:
+    content: public Task<LatitudePayCreateRefundResponse> CreateRefundAsync(LatitudePayCreateRefundRequest request)
+    parameters:
+    - id: request
+      type: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest
+      description: A <xref href="Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest" data-throw-if-not-resolved="false"></xref> instance containing details of the refund and payment plan to refund against.
+    return:
+      type: System.Threading.Tasks.Task{Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse}
+      description: "\nA <xref href=\"Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse\" data-throw-if-not-resolved=\"false\"></xref> instance indicating if the refund was successful and details of the refund created.\n"
+    content.vb: Public Function CreateRefundAsync(request As LatitudePayCreateRefundRequest) As Task(Of LatitudePayCreateRefundResponse)
+  overload: Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.
+  - type: System.ObjectDisposedException
+    commentId: T:System.ObjectDisposedException
+    description: Thrown if <xref href="Yort.LatitudePay.InStore.LatitudePayClient.Dispose" data-throw-if-not-resolved="false"></xref> has been called on this instance.
+  - type: System.UnauthorizedAccessException
+    commentId: T:System.UnauthorizedAccessException
+    description: Thrown if the system is unable to obtain an authorisation token from the API (see the inner exception for details).
+  - type: System.Net.Http.HttpRequestException
+    commentId: T:System.Net.Http.HttpRequestException
+    description: Thrown if an error occurs making the request to the API.
+  implements:
+  - Yort.LatitudePay.InStore.ILatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayClient.Dispose
+  commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.Dispose
+  id: Dispose
+  parent: Yort.LatitudePay.InStore.LatitudePayClient
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: LatitudePayClient.Dispose()
+  fullName: Yort.LatitudePay.InStore.LatitudePayClient.Dispose()
+  type: Method
+  source:
+    remote:
+      path: src/LatitudePayClient.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: Dispose
+    path: LatitudePayClient.cs
+    startLine: 224
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nPerforms application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.\n"
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: Yort.LatitudePay.InStore.LatitudePayClient.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Yort.LatitudePay.InStore.ILatitudePayClient
+  commentId: T:Yort.LatitudePay.InStore.ILatitudePayClient
+  parent: Yort.LatitudePay.InStore
+  name: ILatitudePayClient
+  nameWithType: ILatitudePayClient
+  fullName: Yort.LatitudePay.InStore.ILatitudePayClient
+- uid: Yort.LatitudePay.InStore
+  commentId: N:Yort.LatitudePay.InStore
+  name: Yort.LatitudePay.InStore
+  nameWithType: Yort.LatitudePay.InStore
+  fullName: Yort.LatitudePay.InStore
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.LatitudePay.InStore.LatitudePayClient
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayClient
+  name: LatitudePayClient
+  nameWithType: LatitudePayClient
+  fullName: Yort.LatitudePay.InStore.LatitudePayClient
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayClientConfiguration
+  parent: Yort.LatitudePay.InStore
+  name: LatitudePayClientConfiguration
+  nameWithType: LatitudePayClientConfiguration
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiSecret
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiSecret
+  isExternal: true
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+  isExternal: true
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+  isExternal: true
+- uid: Yort.LatitudePay.InStore.LatitudePayClient.#ctor*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayClient.#ctor
+  name: LatitudePayClient
+  nameWithType: LatitudePayClient.LatitudePayClient
+  fullName: Yort.LatitudePay.InStore.LatitudePayClient.LatitudePayClient
+- uid: Yort.LatitudePay.InStore.LatitudePayConfigurationRequest
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayConfigurationRequest
+  parent: Yort.LatitudePay.InStore
+  name: LatitudePayConfigurationRequest
+  nameWithType: LatitudePayConfigurationRequest
+  fullName: Yort.LatitudePay.InStore.LatitudePayConfigurationRequest
+- uid: Yort.LatitudePay.InStore.LatitudePayConfigurationResponse
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayConfigurationResponse
+  name: LatitudePayConfigurationResponse
+  nameWithType: LatitudePayConfigurationResponse
+  fullName: Yort.LatitudePay.InStore.LatitudePayConfigurationResponse
+- uid: Yort.LatitudePay.InStore.LatitudePayClient.Dispose
+  commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.Dispose
+  isExternal: true
+- uid: System.ObjectDisposedException
+  commentId: T:System.ObjectDisposedException
+  isExternal: true
+- uid: System.UnauthorizedAccessException
+  commentId: T:System.UnauthorizedAccessException
+  isExternal: true
+- uid: System.Net.Http.HttpRequestException
+  commentId: T:System.Net.Http.HttpRequestException
+  isExternal: true
+- uid: Yort.LatitudePay.InStore.LatitudePayClient.GetConfigurationAsync*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayClient.GetConfigurationAsync
+  name: GetConfigurationAsync
+  nameWithType: LatitudePayClient.GetConfigurationAsync
+  fullName: Yort.LatitudePay.InStore.LatitudePayClient.GetConfigurationAsync
+- uid: Yort.LatitudePay.InStore.ILatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)
+  commentId: M:Yort.LatitudePay.InStore.ILatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)
+  parent: Yort.LatitudePay.InStore.ILatitudePayClient
+  name: GetConfigurationAsync(LatitudePayConfigurationRequest)
+  nameWithType: ILatitudePayClient.GetConfigurationAsync(LatitudePayConfigurationRequest)
+  fullName: Yort.LatitudePay.InStore.ILatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)
+  spec.csharp:
+  - uid: Yort.LatitudePay.InStore.ILatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)
+    name: GetConfigurationAsync
+    nameWithType: ILatitudePayClient.GetConfigurationAsync
+    fullName: Yort.LatitudePay.InStore.ILatitudePayClient.GetConfigurationAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.LatitudePay.InStore.LatitudePayConfigurationRequest
+    name: LatitudePayConfigurationRequest
+    nameWithType: LatitudePayConfigurationRequest
+    fullName: Yort.LatitudePay.InStore.LatitudePayConfigurationRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.LatitudePay.InStore.ILatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)
+    name: GetConfigurationAsync
+    nameWithType: ILatitudePayClient.GetConfigurationAsync
+    fullName: Yort.LatitudePay.InStore.ILatitudePayClient.GetConfigurationAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.LatitudePay.InStore.LatitudePayConfigurationRequest
+    name: LatitudePayConfigurationRequest
+    nameWithType: LatitudePayConfigurationRequest
+    fullName: Yort.LatitudePay.InStore.LatitudePayConfigurationRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task{Yort.LatitudePay.InStore.LatitudePayConfigurationResponse}
+  commentId: T:System.Threading.Tasks.Task{Yort.LatitudePay.InStore.LatitudePayConfigurationResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<LatitudePayConfigurationResponse>
+  nameWithType: Task<LatitudePayConfigurationResponse>
+  fullName: System.Threading.Tasks.Task<Yort.LatitudePay.InStore.LatitudePayConfigurationResponse>
+  nameWithType.vb: Task(Of LatitudePayConfigurationResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Yort.LatitudePay.InStore.LatitudePayConfigurationResponse)
+  name.vb: Task(Of LatitudePayConfigurationResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Yort.LatitudePay.InStore.LatitudePayConfigurationResponse
+    name: LatitudePayConfigurationResponse
+    nameWithType: LatitudePayConfigurationResponse
+    fullName: Yort.LatitudePay.InStore.LatitudePayConfigurationResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Yort.LatitudePay.InStore.LatitudePayConfigurationResponse
+    name: LatitudePayConfigurationResponse
+    nameWithType: LatitudePayConfigurationResponse
+    fullName: Yort.LatitudePay.InStore.LatitudePayConfigurationResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+  parent: Yort.LatitudePay.InStore
+  name: LatitudePayCreatePosPurchaseRequest
+  nameWithType: LatitudePayCreatePosPurchaseRequest
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse
+  name: LatitudePayCreatePosPurchaseResponse
+  nameWithType: LatitudePayCreatePosPurchaseResponse
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse
+- uid: Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)
+  commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)
+  isExternal: true
+- uid: Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)
+  commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)
+  isExternal: true
+- uid: Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+  commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+  isExternal: true
+- uid: Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync
+  name: CreatePosPurchaseAsync
+  nameWithType: LatitudePayClient.CreatePosPurchaseAsync
+  fullName: Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync
+- uid: Yort.LatitudePay.InStore.ILatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+  commentId: M:Yort.LatitudePay.InStore.ILatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+  parent: Yort.LatitudePay.InStore.ILatitudePayClient
+  name: CreatePosPurchaseAsync(LatitudePayCreatePosPurchaseRequest)
+  nameWithType: ILatitudePayClient.CreatePosPurchaseAsync(LatitudePayCreatePosPurchaseRequest)
+  fullName: Yort.LatitudePay.InStore.ILatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+  spec.csharp:
+  - uid: Yort.LatitudePay.InStore.ILatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+    name: CreatePosPurchaseAsync
+    nameWithType: ILatitudePayClient.CreatePosPurchaseAsync
+    fullName: Yort.LatitudePay.InStore.ILatitudePayClient.CreatePosPurchaseAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+    name: LatitudePayCreatePosPurchaseRequest
+    nameWithType: LatitudePayCreatePosPurchaseRequest
+    fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.LatitudePay.InStore.ILatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+    name: CreatePosPurchaseAsync
+    nameWithType: ILatitudePayClient.CreatePosPurchaseAsync
+    fullName: Yort.LatitudePay.InStore.ILatitudePayClient.CreatePosPurchaseAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+    name: LatitudePayCreatePosPurchaseRequest
+    nameWithType: LatitudePayCreatePosPurchaseRequest
+    fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task{Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse}
+  commentId: T:System.Threading.Tasks.Task{Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<LatitudePayCreatePosPurchaseResponse>
+  nameWithType: Task<LatitudePayCreatePosPurchaseResponse>
+  fullName: System.Threading.Tasks.Task<Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse>
+  nameWithType.vb: Task(Of LatitudePayCreatePosPurchaseResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse)
+  name.vb: Task(Of LatitudePayCreatePosPurchaseResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse
+    name: LatitudePayCreatePosPurchaseResponse
+    nameWithType: LatitudePayCreatePosPurchaseResponse
+    fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse
+    name: LatitudePayCreatePosPurchaseResponse
+    nameWithType: LatitudePayCreatePosPurchaseResponse
+    fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+  commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+  isExternal: true
+- uid: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest
+  parent: Yort.LatitudePay.InStore
+  name: LatitudePayPurchaseStatusRequest
+  nameWithType: LatitudePayPurchaseStatusRequest
+  fullName: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest
+- uid: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse
+  name: LatitudePayPurchaseStatusResponse
+  nameWithType: LatitudePayPurchaseStatusResponse
+  fullName: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse
+- uid: Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync
+  name: GetPurchaseStatusAsync
+  nameWithType: LatitudePayClient.GetPurchaseStatusAsync
+  fullName: Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync
+- uid: Yort.LatitudePay.InStore.ILatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)
+  commentId: M:Yort.LatitudePay.InStore.ILatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)
+  parent: Yort.LatitudePay.InStore.ILatitudePayClient
+  name: GetPurchaseStatusAsync(LatitudePayPurchaseStatusRequest)
+  nameWithType: ILatitudePayClient.GetPurchaseStatusAsync(LatitudePayPurchaseStatusRequest)
+  fullName: Yort.LatitudePay.InStore.ILatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)
+  spec.csharp:
+  - uid: Yort.LatitudePay.InStore.ILatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)
+    name: GetPurchaseStatusAsync
+    nameWithType: ILatitudePayClient.GetPurchaseStatusAsync
+    fullName: Yort.LatitudePay.InStore.ILatitudePayClient.GetPurchaseStatusAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest
+    name: LatitudePayPurchaseStatusRequest
+    nameWithType: LatitudePayPurchaseStatusRequest
+    fullName: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.LatitudePay.InStore.ILatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)
+    name: GetPurchaseStatusAsync
+    nameWithType: ILatitudePayClient.GetPurchaseStatusAsync
+    fullName: Yort.LatitudePay.InStore.ILatitudePayClient.GetPurchaseStatusAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest
+    name: LatitudePayPurchaseStatusRequest
+    nameWithType: LatitudePayPurchaseStatusRequest
+    fullName: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task{Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse}
+  commentId: T:System.Threading.Tasks.Task{Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<LatitudePayPurchaseStatusResponse>
+  nameWithType: Task<LatitudePayPurchaseStatusResponse>
+  fullName: System.Threading.Tasks.Task<Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse>
+  nameWithType.vb: Task(Of LatitudePayPurchaseStatusResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse)
+  name.vb: Task(Of LatitudePayPurchaseStatusResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse
+    name: LatitudePayPurchaseStatusResponse
+    nameWithType: LatitudePayPurchaseStatusResponse
+    fullName: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse
+    name: LatitudePayPurchaseStatusResponse
+    nameWithType: LatitudePayPurchaseStatusResponse
+    fullName: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest
+  parent: Yort.LatitudePay.InStore
+  name: LatitudePayCancelPurchaseRequest
+  nameWithType: LatitudePayCancelPurchaseRequest
+  fullName: Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest
+- uid: Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse
+  name: LatitudePayCancelPurchaseResponse
+  nameWithType: LatitudePayCancelPurchaseResponse
+  fullName: Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse
+- uid: Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync
+  name: CancelPurchaseAsync
+  nameWithType: LatitudePayClient.CancelPurchaseAsync
+  fullName: Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync
+- uid: Yort.LatitudePay.InStore.ILatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)
+  commentId: M:Yort.LatitudePay.InStore.ILatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)
+  parent: Yort.LatitudePay.InStore.ILatitudePayClient
+  name: CancelPurchaseAsync(LatitudePayCancelPurchaseRequest)
+  nameWithType: ILatitudePayClient.CancelPurchaseAsync(LatitudePayCancelPurchaseRequest)
+  fullName: Yort.LatitudePay.InStore.ILatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)
+  spec.csharp:
+  - uid: Yort.LatitudePay.InStore.ILatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)
+    name: CancelPurchaseAsync
+    nameWithType: ILatitudePayClient.CancelPurchaseAsync
+    fullName: Yort.LatitudePay.InStore.ILatitudePayClient.CancelPurchaseAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest
+    name: LatitudePayCancelPurchaseRequest
+    nameWithType: LatitudePayCancelPurchaseRequest
+    fullName: Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.LatitudePay.InStore.ILatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)
+    name: CancelPurchaseAsync
+    nameWithType: ILatitudePayClient.CancelPurchaseAsync
+    fullName: Yort.LatitudePay.InStore.ILatitudePayClient.CancelPurchaseAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest
+    name: LatitudePayCancelPurchaseRequest
+    nameWithType: LatitudePayCancelPurchaseRequest
+    fullName: Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task{Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse}
+  commentId: T:System.Threading.Tasks.Task{Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<LatitudePayCancelPurchaseResponse>
+  nameWithType: Task<LatitudePayCancelPurchaseResponse>
+  fullName: System.Threading.Tasks.Task<Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse>
+  nameWithType.vb: Task(Of LatitudePayCancelPurchaseResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse)
+  name.vb: Task(Of LatitudePayCancelPurchaseResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse
+    name: LatitudePayCancelPurchaseResponse
+    nameWithType: LatitudePayCancelPurchaseResponse
+    fullName: Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse
+    name: LatitudePayCancelPurchaseResponse
+    nameWithType: LatitudePayCancelPurchaseResponse
+    fullName: Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest
+  parent: Yort.LatitudePay.InStore
+  name: LatitudePayCreateRefundRequest
+  nameWithType: LatitudePayCreateRefundRequest
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest
+- uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse
+  name: LatitudePayCreateRefundResponse
+  nameWithType: LatitudePayCreateRefundResponse
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse
+- uid: Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync
+  name: CreateRefundAsync
+  nameWithType: LatitudePayClient.CreateRefundAsync
+  fullName: Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync
+- uid: Yort.LatitudePay.InStore.ILatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+  commentId: M:Yort.LatitudePay.InStore.ILatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+  parent: Yort.LatitudePay.InStore.ILatitudePayClient
+  name: CreateRefundAsync(LatitudePayCreateRefundRequest)
+  nameWithType: ILatitudePayClient.CreateRefundAsync(LatitudePayCreateRefundRequest)
+  fullName: Yort.LatitudePay.InStore.ILatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+  spec.csharp:
+  - uid: Yort.LatitudePay.InStore.ILatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+    name: CreateRefundAsync
+    nameWithType: ILatitudePayClient.CreateRefundAsync
+    fullName: Yort.LatitudePay.InStore.ILatitudePayClient.CreateRefundAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest
+    name: LatitudePayCreateRefundRequest
+    nameWithType: LatitudePayCreateRefundRequest
+    fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.LatitudePay.InStore.ILatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+    name: CreateRefundAsync
+    nameWithType: ILatitudePayClient.CreateRefundAsync
+    fullName: Yort.LatitudePay.InStore.ILatitudePayClient.CreateRefundAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest
+    name: LatitudePayCreateRefundRequest
+    nameWithType: LatitudePayCreateRefundRequest
+    fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task{Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse}
+  commentId: T:System.Threading.Tasks.Task{Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<LatitudePayCreateRefundResponse>
+  nameWithType: Task<LatitudePayCreateRefundResponse>
+  fullName: System.Threading.Tasks.Task<Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse>
+  nameWithType.vb: Task(Of LatitudePayCreateRefundResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse)
+  name.vb: Task(Of LatitudePayCreateRefundResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse
+    name: LatitudePayCreateRefundResponse
+    nameWithType: LatitudePayCreateRefundResponse
+    fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse
+    name: LatitudePayCreateRefundResponse
+    nameWithType: LatitudePayCreateRefundResponse
+    fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.LatitudePay.InStore.LatitudePayClient.Dispose*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayClient.Dispose
+  name: Dispose
+  nameWithType: LatitudePayClient.Dispose
+  fullName: Yort.LatitudePay.InStore.LatitudePayClient.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

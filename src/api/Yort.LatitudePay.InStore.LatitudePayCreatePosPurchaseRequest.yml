@@ -1,0 +1,1086 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+  id: LatitudePayCreatePosPurchaseRequest
+  parent: Yort.LatitudePay.InStore
+  children:
+  - Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.BillingAddress
+  - Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Customer
+  - Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Products
+  - Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Reference
+  - Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ReturnUrls
+  - Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingAddress
+  - Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingLines
+  - Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TaxAmount
+  - Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TotalAmount
+  langs:
+  - csharp
+  - vb
+  name: LatitudePayCreatePosPurchaseRequest
+  nameWithType: LatitudePayCreatePosPurchaseRequest
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+  type: Class
+  source:
+    remote:
+      path: src/LatitudePayCreatePosPurchaseRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: LatitudePayCreatePosPurchaseRequest
+    path: LatitudePayCreatePosPurchaseRequest.cs
+    startLine: 13
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nRepresents a request to create a new payment plan.\n"
+  example: []
+  syntax:
+    content: public class LatitudePayCreatePosPurchaseRequest
+    content.vb: Public Class LatitudePayCreatePosPurchaseRequest
+  seealso:
+  - linkId: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse
+    commentId: T:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse
+  see:
+  - linkId: Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+    commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Customer
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Customer
+  id: Customer
+  parent: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+  langs:
+  - csharp
+  - vb
+  name: Customer
+  nameWithType: LatitudePayCreatePosPurchaseRequest.Customer
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Customer
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayCreatePosPurchaseRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: Customer
+    path: LatitudePayCreatePosPurchaseRequest.cs
+    startLine: 24
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGets or sets details about the customer the payment plan is for.\n"
+  remarks: "\n<p>You must provide a <xref href=\"Yort.LatitudePay.InStore.LatitudePayCustomer\" data-throw-if-not-resolved=\"false\"></xref> instance with the <xref href=\"Yort.LatitudePay.InStore.LatitudePayCustomer.MobileNumber\" data-throw-if-not-resolved=\"false\"></xref> set, but providing additional details when known can speed the sign up process for new customers.</p>\n"
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      [JsonProperty("customer")]
+
+      public LatitudePayCustomer Customer { get; set; }
+    parameters: []
+    return:
+      type: Yort.LatitudePay.InStore.LatitudePayCustomer
+      description: "\nA <xref href=\"Yort.LatitudePay.InStore.LatitudePayCustomer\" data-throw-if-not-resolved=\"false\"></xref> containing details of the customer.\n"
+    content.vb: >-
+      <Required>
+
+      <JsonProperty("customer")>
+
+      Public Property Customer As LatitudePayCustomer
+  overload: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Customer*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: customer
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingAddress
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingAddress
+  id: ShippingAddress
+  parent: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+  langs:
+  - csharp
+  - vb
+  name: ShippingAddress
+  nameWithType: LatitudePayCreatePosPurchaseRequest.ShippingAddress
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingAddress
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayCreatePosPurchaseRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: ShippingAddress
+    path: LatitudePayCreatePosPurchaseRequest.cs
+    startLine: 34
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGets or sets the shipping address for products purchased with this payment plan.\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("shippingAddress")]
+
+      public LatitudePayAddress ShippingAddress { get; set; }
+    parameters: []
+    return:
+      type: Yort.LatitudePay.InStore.LatitudePayAddress
+      description: "\nThe shipping address.\n"
+    content.vb: >-
+      <JsonProperty("shippingAddress")>
+
+      Public Property ShippingAddress As LatitudePayAddress
+  overload: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingAddress*
+  seealso:
+  - linkId: Yort.LatitudePay.InStore.LatitudePayAddress
+    commentId: T:Yort.LatitudePay.InStore.LatitudePayAddress
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: shippingAddress
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.BillingAddress
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.BillingAddress
+  id: BillingAddress
+  parent: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+  langs:
+  - csharp
+  - vb
+  name: BillingAddress
+  nameWithType: LatitudePayCreatePosPurchaseRequest.BillingAddress
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.BillingAddress
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayCreatePosPurchaseRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: BillingAddress
+    path: LatitudePayCreatePosPurchaseRequest.cs
+    startLine: 43
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGets or sets the billing address for this payment plan.\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("billingAddress")]
+
+      public LatitudePayAddress BillingAddress { get; set; }
+    parameters: []
+    return:
+      type: Yort.LatitudePay.InStore.LatitudePayAddress
+      description: "\nThe billing address.\n"
+    content.vb: >-
+      <JsonProperty("billingAddress")>
+
+      Public Property BillingAddress As LatitudePayAddress
+  overload: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.BillingAddress*
+  seealso:
+  - linkId: Yort.LatitudePay.InStore.LatitudePayAddress
+    commentId: T:Yort.LatitudePay.InStore.LatitudePayAddress
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: billingAddress
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Products
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Products
+  id: Products
+  parent: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+  langs:
+  - csharp
+  - vb
+  name: Products
+  nameWithType: LatitudePayCreatePosPurchaseRequest.Products
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Products
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayCreatePosPurchaseRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: Products
+    path: LatitudePayCreatePosPurchaseRequest.cs
+    startLine: 52
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGets or sets details of the items purchased with this payment plan.\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("products")]
+
+      public IEnumerable<LatitudePayProduct> Products { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{Yort.LatitudePay.InStore.LatitudePayProduct}
+      description: "\nThe products purchased.\n"
+    content.vb: >-
+      <JsonProperty("products")>
+
+      Public Property Products As IEnumerable(Of LatitudePayProduct)
+  overload: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Products*
+  seealso:
+  - linkId: Yort.LatitudePay.InStore.LatitudePayProduct
+    commentId: T:Yort.LatitudePay.InStore.LatitudePayProduct
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: products
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingLines
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingLines
+  id: ShippingLines
+  parent: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+  langs:
+  - csharp
+  - vb
+  name: ShippingLines
+  nameWithType: LatitudePayCreatePosPurchaseRequest.ShippingLines
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingLines
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayCreatePosPurchaseRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: ShippingLines
+    path: LatitudePayCreatePosPurchaseRequest.cs
+    startLine: 61
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGets or sets a collection of details about shipments paid for with this payment plan, if any.\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("shippingLines")]
+
+      public IEnumerable<LatitiudePayShippingLine> ShippingLines { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{Yort.LatitudePay.InStore.LatitiudePayShippingLine}
+      description: "\nThe shipping lines.\n"
+    content.vb: >-
+      <JsonProperty("shippingLines")>
+
+      Public Property ShippingLines As IEnumerable(Of LatitiudePayShippingLine)
+  overload: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingLines*
+  seealso:
+  - linkId: Yort.LatitudePay.InStore.LatitiudePayShippingLine
+    commentId: T:Yort.LatitudePay.InStore.LatitiudePayShippingLine
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: shippingLines
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TaxAmount
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TaxAmount
+  id: TaxAmount
+  parent: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+  langs:
+  - csharp
+  - vb
+  name: TaxAmount
+  nameWithType: LatitudePayCreatePosPurchaseRequest.TaxAmount
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TaxAmount
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayCreatePosPurchaseRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: TaxAmount
+    path: LatitudePayCreatePosPurchaseRequest.cs
+    startLine: 71
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGets or sets the amount of tax included in <xref href=\"Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TotalAmount\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("taxAmount")]
+
+      public LatitudePayMoney TaxAmount { get; set; }
+    parameters: []
+    return:
+      type: Yort.LatitudePay.InStore.LatitudePayMoney
+      description: "\nThe tax amount included in this payment plan.\n"
+    content.vb: >-
+      <JsonProperty("taxAmount")>
+
+      Public Property TaxAmount As LatitudePayMoney
+  overload: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TaxAmount*
+  seealso:
+  - linkId: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TotalAmount
+    commentId: P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TotalAmount
+  - linkId: Yort.LatitudePay.InStore.LatitudePayMoney
+    commentId: T:Yort.LatitudePay.InStore.LatitudePayMoney
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: taxAmount
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Reference
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Reference
+  id: Reference
+  parent: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+  langs:
+  - csharp
+  - vb
+  name: Reference
+  nameWithType: LatitudePayCreatePosPurchaseRequest.Reference
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Reference
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayCreatePosPurchaseRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: Reference
+    path: LatitudePayCreatePosPurchaseRequest.cs
+    startLine: 80
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nA unique reference for this payment plan.\n"
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      [JsonProperty("reference")]
+
+      public string Reference { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe client generated reference for this payment plan.\n"
+    content.vb: >-
+      <Required>
+
+      <JsonProperty("reference")>
+
+      Public Property Reference As String
+  overload: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Reference*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: reference
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TotalAmount
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TotalAmount
+  id: TotalAmount
+  parent: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+  langs:
+  - csharp
+  - vb
+  name: TotalAmount
+  nameWithType: LatitudePayCreatePosPurchaseRequest.TotalAmount
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TotalAmount
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayCreatePosPurchaseRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: TotalAmount
+    path: LatitudePayCreatePosPurchaseRequest.cs
+    startLine: 95
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGets or sets the total amount.\n"
+  remarks: "\n<p>The amount specified here is the full amount charged as part of the payment plan. It does not have to match the sum of values from <xref href=\"Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Products\" data-throw-if-not-resolved=\"false\"></xref> in the case of split payments or complex POS transactions.</p>\n"
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      [JsonProperty("totalAmount")]
+
+      public LatitudePayMoney TotalAmount { get; set; }
+    parameters: []
+    return:
+      type: Yort.LatitudePay.InStore.LatitudePayMoney
+      description: "\nThe total amount.\n"
+    content.vb: >-
+      <Required>
+
+      <JsonProperty("totalAmount")>
+
+      Public Property TotalAmount As LatitudePayMoney
+  overload: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TotalAmount*
+  seealso:
+  - linkId: Yort.LatitudePay.InStore.LatitudePayMoney
+    commentId: T:Yort.LatitudePay.InStore.LatitudePayMoney
+  - linkId: Yort.LatitudePay.InStore.LatitudePayMoney
+    commentId: T:Yort.LatitudePay.InStore.LatitudePayMoney
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: totalAmount
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ReturnUrls
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ReturnUrls
+  id: ReturnUrls
+  parent: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+  langs:
+  - csharp
+  - vb
+  name: ReturnUrls
+  nameWithType: LatitudePayCreatePosPurchaseRequest.ReturnUrls
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ReturnUrls
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayCreatePosPurchaseRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: ReturnUrls
+    path: LatitudePayCreatePosPurchaseRequest.cs
+    startLine: 105
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGets or sets url&apos;s that will be used for callbacks when the payment plan changes status.\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("returnUrls")]
+
+      public LatitudePayReturnUrls ReturnUrls { get; set; }
+    parameters: []
+    return:
+      type: Yort.LatitudePay.InStore.LatitudePayReturnUrls
+      description: "\nThe callback urls.\n"
+    content.vb: >-
+      <JsonProperty("returnUrls")>
+
+      Public Property ReturnUrls As LatitudePayReturnUrls
+  overload: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ReturnUrls*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: returnUrls
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+  commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+  isExternal: true
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse
+  name: LatitudePayCreatePosPurchaseResponse
+  nameWithType: LatitudePayCreatePosPurchaseResponse
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse
+- uid: Yort.LatitudePay.InStore
+  commentId: N:Yort.LatitudePay.InStore
+  name: Yort.LatitudePay.InStore
+  nameWithType: Yort.LatitudePay.InStore
+  fullName: Yort.LatitudePay.InStore
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.LatitudePay.InStore.LatitudePayCustomer
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayCustomer
+  parent: Yort.LatitudePay.InStore
+  name: LatitudePayCustomer
+  nameWithType: LatitudePayCustomer
+  fullName: Yort.LatitudePay.InStore.LatitudePayCustomer
+- uid: Yort.LatitudePay.InStore.LatitudePayCustomer.MobileNumber
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayCustomer.MobileNumber
+  isExternal: true
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Customer*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Customer
+  name: Customer
+  nameWithType: LatitudePayCreatePosPurchaseRequest.Customer
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Customer
+- uid: Yort.LatitudePay.InStore.LatitudePayAddress
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayAddress
+  parent: Yort.LatitudePay.InStore
+  name: LatitudePayAddress
+  nameWithType: LatitudePayAddress
+  fullName: Yort.LatitudePay.InStore.LatitudePayAddress
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingAddress*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingAddress
+  name: ShippingAddress
+  nameWithType: LatitudePayCreatePosPurchaseRequest.ShippingAddress
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingAddress
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.BillingAddress*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.BillingAddress
+  name: BillingAddress
+  nameWithType: LatitudePayCreatePosPurchaseRequest.BillingAddress
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.BillingAddress
+- uid: Yort.LatitudePay.InStore.LatitudePayProduct
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayProduct
+  name: LatitudePayProduct
+  nameWithType: LatitudePayProduct
+  fullName: Yort.LatitudePay.InStore.LatitudePayProduct
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Products*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Products
+  name: Products
+  nameWithType: LatitudePayCreatePosPurchaseRequest.Products
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Products
+- uid: System.Collections.Generic.IEnumerable{Yort.LatitudePay.InStore.LatitudePayProduct}
+  commentId: T:System.Collections.Generic.IEnumerable{Yort.LatitudePay.InStore.LatitudePayProduct}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<LatitudePayProduct>
+  nameWithType: IEnumerable<LatitudePayProduct>
+  fullName: System.Collections.Generic.IEnumerable<Yort.LatitudePay.InStore.LatitudePayProduct>
+  nameWithType.vb: IEnumerable(Of LatitudePayProduct)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Yort.LatitudePay.InStore.LatitudePayProduct)
+  name.vb: IEnumerable(Of LatitudePayProduct)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Yort.LatitudePay.InStore.LatitudePayProduct
+    name: LatitudePayProduct
+    nameWithType: LatitudePayProduct
+    fullName: Yort.LatitudePay.InStore.LatitudePayProduct
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Yort.LatitudePay.InStore.LatitudePayProduct
+    name: LatitudePayProduct
+    nameWithType: LatitudePayProduct
+    fullName: Yort.LatitudePay.InStore.LatitudePayProduct
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: Yort.LatitudePay.InStore.LatitiudePayShippingLine
+  commentId: T:Yort.LatitudePay.InStore.LatitiudePayShippingLine
+  name: LatitiudePayShippingLine
+  nameWithType: LatitiudePayShippingLine
+  fullName: Yort.LatitudePay.InStore.LatitiudePayShippingLine
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingLines*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingLines
+  name: ShippingLines
+  nameWithType: LatitudePayCreatePosPurchaseRequest.ShippingLines
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingLines
+- uid: System.Collections.Generic.IEnumerable{Yort.LatitudePay.InStore.LatitiudePayShippingLine}
+  commentId: T:System.Collections.Generic.IEnumerable{Yort.LatitudePay.InStore.LatitiudePayShippingLine}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<LatitiudePayShippingLine>
+  nameWithType: IEnumerable<LatitiudePayShippingLine>
+  fullName: System.Collections.Generic.IEnumerable<Yort.LatitudePay.InStore.LatitiudePayShippingLine>
+  nameWithType.vb: IEnumerable(Of LatitiudePayShippingLine)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Yort.LatitudePay.InStore.LatitiudePayShippingLine)
+  name.vb: IEnumerable(Of LatitiudePayShippingLine)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Yort.LatitudePay.InStore.LatitiudePayShippingLine
+    name: LatitiudePayShippingLine
+    nameWithType: LatitiudePayShippingLine
+    fullName: Yort.LatitudePay.InStore.LatitiudePayShippingLine
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Yort.LatitudePay.InStore.LatitiudePayShippingLine
+    name: LatitiudePayShippingLine
+    nameWithType: LatitiudePayShippingLine
+    fullName: Yort.LatitudePay.InStore.LatitiudePayShippingLine
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TotalAmount
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TotalAmount
+  isExternal: true
+- uid: Yort.LatitudePay.InStore.LatitudePayMoney
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayMoney
+  parent: Yort.LatitudePay.InStore
+  name: LatitudePayMoney
+  nameWithType: LatitudePayMoney
+  fullName: Yort.LatitudePay.InStore.LatitudePayMoney
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TaxAmount*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TaxAmount
+  name: TaxAmount
+  nameWithType: LatitudePayCreatePosPurchaseRequest.TaxAmount
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TaxAmount
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Reference*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Reference
+  name: Reference
+  nameWithType: LatitudePayCreatePosPurchaseRequest.Reference
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Reference
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Products
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Products
+  isExternal: true
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TotalAmount*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TotalAmount
+  name: TotalAmount
+  nameWithType: LatitudePayCreatePosPurchaseRequest.TotalAmount
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TotalAmount
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ReturnUrls*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ReturnUrls
+  name: ReturnUrls
+  nameWithType: LatitudePayCreatePosPurchaseRequest.ReturnUrls
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ReturnUrls
+- uid: Yort.LatitudePay.InStore.LatitudePayReturnUrls
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayReturnUrls
+  parent: Yort.LatitudePay.InStore
+  name: LatitudePayReturnUrls
+  nameWithType: LatitudePayReturnUrls
+  fullName: Yort.LatitudePay.InStore.LatitudePayReturnUrls

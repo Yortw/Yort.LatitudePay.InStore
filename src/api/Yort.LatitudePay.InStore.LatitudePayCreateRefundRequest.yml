@@ -1,0 +1,594 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest
+  id: LatitudePayCreateRefundRequest
+  parent: Yort.LatitudePay.InStore
+  children:
+  - Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Amount
+  - Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken
+  - Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reason
+  - Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reference
+  langs:
+  - csharp
+  - vb
+  name: LatitudePayCreateRefundRequest
+  nameWithType: LatitudePayCreateRefundRequest
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest
+  type: Class
+  source:
+    remote:
+      path: src/LatitudePayCreateRefundRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: LatitudePayCreateRefundRequest
+    path: LatitudePayCreateRefundRequest.cs
+    startLine: 10
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nRepresents a request to refund some or all of an accepted payment plan.\n"
+  example: []
+  syntax:
+    content: public class LatitudePayCreateRefundRequest
+    content.vb: Public Class LatitudePayCreateRefundRequest
+  seealso:
+  - linkId: Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse
+    commentId: T:Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse
+  - linkId: Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+    commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken
+  id: PaymentPlanToken
+  parent: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest
+  langs:
+  - csharp
+  - vb
+  name: PaymentPlanToken
+  nameWithType: LatitudePayCreateRefundRequest.PaymentPlanToken
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayCreateRefundRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: PaymentPlanToken
+    path: LatitudePayCreateRefundRequest.cs
+    startLine: 18
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGets or sets the token of the payment plan to refund against.\n"
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      [JsonIgnore]
+
+      public string PaymentPlanToken { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe payment plan token.\n"
+    content.vb: >-
+      <Required>
+
+      <JsonIgnore>
+
+      Public Property PaymentPlanToken As String
+  overload: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reference
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reference
+  id: Reference
+  parent: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest
+  langs:
+  - csharp
+  - vb
+  name: Reference
+  nameWithType: LatitudePayCreateRefundRequest.Reference
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reference
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayCreateRefundRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: Reference
+    path: LatitudePayCreateRefundRequest.cs
+    startLine: 28
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGets or sets the merchants unique reference for this refund.\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("reference")]
+
+      public string Reference { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe reference.\n"
+    content.vb: >-
+      <JsonProperty("reference")>
+
+      Public Property Reference As String
+  overload: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reference*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: reference
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reason
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reason
+  id: Reason
+  parent: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest
+  langs:
+  - csharp
+  - vb
+  name: Reason
+  nameWithType: LatitudePayCreateRefundRequest.Reason
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reason
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayCreateRefundRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: Reason
+    path: LatitudePayCreateRefundRequest.cs
+    startLine: 37
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGets or sets a descriptive reason for the refund.\n"
+  example: []
+  syntax:
+    content: public string Reason { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe reason.\n"
+    content.vb: Public Property Reason As String
+  overload: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reason*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Amount
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Amount
+  id: Amount
+  parent: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest
+  langs:
+  - csharp
+  - vb
+  name: Amount
+  nameWithType: LatitudePayCreateRefundRequest.Amount
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Amount
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayCreateRefundRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: Amount
+    path: LatitudePayCreateRefundRequest.cs
+    startLine: 45
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGets or sets the amount of this refund.\n"
+  example: []
+  syntax:
+    content: >-
+      [Required]
+
+      [JsonProperty("amount")]
+
+      public LatitudePayMoney Amount { get; set; }
+    parameters: []
+    return:
+      type: Yort.LatitudePay.InStore.LatitudePayMoney
+      description: "\nThe amount.\n"
+    content.vb: >-
+      <Required>
+
+      <JsonProperty("amount")>
+
+      Public Property Amount As LatitudePayMoney
+  overload: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Amount*
+  attributes:
+  - type: System.ComponentModel.DataAnnotations.RequiredAttribute
+    ctor: System.ComponentModel.DataAnnotations.RequiredAttribute.#ctor
+    arguments: []
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: amount
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse
+  name: LatitudePayCreateRefundResponse
+  nameWithType: LatitudePayCreateRefundResponse
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse
+- uid: Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+  commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+  isExternal: true
+- uid: Yort.LatitudePay.InStore
+  commentId: N:Yort.LatitudePay.InStore
+  name: Yort.LatitudePay.InStore
+  nameWithType: Yort.LatitudePay.InStore
+  fullName: Yort.LatitudePay.InStore
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken
+  name: PaymentPlanToken
+  nameWithType: LatitudePayCreateRefundRequest.PaymentPlanToken
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reference*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reference
+  name: Reference
+  nameWithType: LatitudePayCreateRefundRequest.Reference
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reference
+- uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reason*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reason
+  name: Reason
+  nameWithType: LatitudePayCreateRefundRequest.Reason
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reason
+- uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Amount*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Amount
+  name: Amount
+  nameWithType: LatitudePayCreateRefundRequest.Amount
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Amount
+- uid: Yort.LatitudePay.InStore.LatitudePayMoney
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayMoney
+  parent: Yort.LatitudePay.InStore
+  name: LatitudePayMoney
+  nameWithType: LatitudePayMoney
+  fullName: Yort.LatitudePay.InStore.LatitudePayMoney

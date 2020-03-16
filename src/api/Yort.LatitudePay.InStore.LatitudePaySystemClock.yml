@@ -1,0 +1,476 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.LatitudePay.InStore.LatitudePaySystemClock
+  commentId: T:Yort.LatitudePay.InStore.LatitudePaySystemClock
+  id: LatitudePaySystemClock
+  parent: Yort.LatitudePay.InStore
+  children:
+  - Yort.LatitudePay.InStore.LatitudePaySystemClock.DefaultInstance
+  - Yort.LatitudePay.InStore.LatitudePaySystemClock.Now
+  langs:
+  - csharp
+  - vb
+  name: LatitudePaySystemClock
+  nameWithType: LatitudePaySystemClock
+  fullName: Yort.LatitudePay.InStore.LatitudePaySystemClock
+  type: Class
+  source:
+    remote:
+      path: src/AfterPaySystemClock.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: LatitudePaySystemClock
+    path: AfterPaySystemClock.cs
+    startLine: 13
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nRepresents the default system clock used by the Yort.LatitudePay.Instore library to retrieve the current date and time.\n"
+  remarks: "\n<p>This implementation simply wraps the <xref href=\"System.DateTimeOffset.Now\" data-throw-if-not-resolved=\"false\"></xref> property and relies on the underlying system clock for accuracy.</p>\n<p>This class has a private constructor and cannot be created by user code. To obtain and instance use the static <xref href=\"Yort.LatitudePay.InStore.LatitudePaySystemClock.DefaultInstance\" data-throw-if-not-resolved=\"false\"></xref> property.</p>\n"
+  example: []
+  syntax:
+    content: 'public sealed class LatitudePaySystemClock : ILatitudePaySystemClock'
+    content.vb: >-
+      Public NotInheritable Class LatitudePaySystemClock
+          Implements ILatitudePaySystemClock
+  inheritance:
+  - System.Object
+  implements:
+  - Yort.LatitudePay.InStore.ILatitudePaySystemClock
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Yort.LatitudePay.InStore.LatitudePaySystemClock.Now
+  commentId: P:Yort.LatitudePay.InStore.LatitudePaySystemClock.Now
+  id: Now
+  parent: Yort.LatitudePay.InStore.LatitudePaySystemClock
+  langs:
+  - csharp
+  - vb
+  name: Now
+  nameWithType: LatitudePaySystemClock.Now
+  fullName: Yort.LatitudePay.InStore.LatitudePaySystemClock.Now
+  type: Property
+  source:
+    remote:
+      path: src/AfterPaySystemClock.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: Now
+    path: AfterPaySystemClock.cs
+    startLine: 26
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nReturns the current date and time from the system clock.\n"
+  example: []
+  syntax:
+    content: public DateTimeOffset Now { get; }
+    parameters: []
+    return:
+      type: System.DateTimeOffset
+    content.vb: Public ReadOnly Property Now As DateTimeOffset
+  overload: Yort.LatitudePay.InStore.LatitudePaySystemClock.Now*
+  see:
+  - linkId: System.DateTimeOffset.Now
+    commentId: P:System.DateTimeOffset.Now
+  implements:
+  - Yort.LatitudePay.InStore.ILatitudePaySystemClock.Now
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Yort.LatitudePay.InStore.LatitudePaySystemClock.DefaultInstance
+  commentId: P:Yort.LatitudePay.InStore.LatitudePaySystemClock.DefaultInstance
+  id: DefaultInstance
+  parent: Yort.LatitudePay.InStore.LatitudePaySystemClock
+  langs:
+  - csharp
+  - vb
+  name: DefaultInstance
+  nameWithType: LatitudePaySystemClock.DefaultInstance
+  fullName: Yort.LatitudePay.InStore.LatitudePaySystemClock.DefaultInstance
+  type: Property
+  source:
+    remote:
+      path: src/AfterPaySystemClock.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: DefaultInstance
+    path: AfterPaySystemClock.cs
+    startLine: 45
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nReturns an instance of this clock.\n"
+  remarks: "\n<p>The instance returned by this method is cached after the first call to reduce allocations, so all subsquent calls will receive the same shared instance. \nHowever the property is not thread-safe and two threads calling the method simultanously for the first time may receive different instances. \nThis should not cause a problem as clients should not (and are instructed not to) compare instances or rely on shared instances.</p>\n"
+  example: []
+  syntax:
+    content: public static LatitudePaySystemClock DefaultInstance { get; }
+    parameters: []
+    return:
+      type: Yort.LatitudePay.InStore.LatitudePaySystemClock
+    content.vb: Public Shared ReadOnly Property DefaultInstance As LatitudePaySystemClock
+  overload: Yort.LatitudePay.InStore.LatitudePaySystemClock.DefaultInstance*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+references:
+- uid: System.DateTimeOffset.Now
+  commentId: P:System.DateTimeOffset.Now
+  isExternal: true
+- uid: Yort.LatitudePay.InStore.LatitudePaySystemClock.DefaultInstance
+  commentId: P:Yort.LatitudePay.InStore.LatitudePaySystemClock.DefaultInstance
+  isExternal: true
+- uid: Yort.LatitudePay.InStore
+  commentId: N:Yort.LatitudePay.InStore
+  name: Yort.LatitudePay.InStore
+  nameWithType: Yort.LatitudePay.InStore
+  fullName: Yort.LatitudePay.InStore
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Yort.LatitudePay.InStore.ILatitudePaySystemClock
+  commentId: T:Yort.LatitudePay.InStore.ILatitudePaySystemClock
+  parent: Yort.LatitudePay.InStore
+  name: ILatitudePaySystemClock
+  nameWithType: ILatitudePaySystemClock
+  fullName: Yort.LatitudePay.InStore.ILatitudePaySystemClock
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.LatitudePay.InStore.LatitudePaySystemClock.Now*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePaySystemClock.Now
+  name: Now
+  nameWithType: LatitudePaySystemClock.Now
+  fullName: Yort.LatitudePay.InStore.LatitudePaySystemClock.Now
+- uid: Yort.LatitudePay.InStore.ILatitudePaySystemClock.Now
+  commentId: P:Yort.LatitudePay.InStore.ILatitudePaySystemClock.Now
+  parent: Yort.LatitudePay.InStore.ILatitudePaySystemClock
+  name: Now
+  nameWithType: ILatitudePaySystemClock.Now
+  fullName: Yort.LatitudePay.InStore.ILatitudePaySystemClock.Now
+- uid: System.DateTimeOffset
+  commentId: T:System.DateTimeOffset
+  parent: System
+  isExternal: true
+  name: DateTimeOffset
+  nameWithType: DateTimeOffset
+  fullName: System.DateTimeOffset
+- uid: Yort.LatitudePay.InStore.LatitudePaySystemClock.DefaultInstance*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePaySystemClock.DefaultInstance
+  name: DefaultInstance
+  nameWithType: LatitudePaySystemClock.DefaultInstance
+  fullName: Yort.LatitudePay.InStore.LatitudePaySystemClock.DefaultInstance
+- uid: Yort.LatitudePay.InStore.LatitudePaySystemClock
+  commentId: T:Yort.LatitudePay.InStore.LatitudePaySystemClock
+  parent: Yort.LatitudePay.InStore
+  name: LatitudePaySystemClock
+  nameWithType: LatitudePaySystemClock
+  fullName: Yort.LatitudePay.InStore.LatitudePaySystemClock

@@ -4,3 +4,57 @@
   items:
   - uid: Yort.LatitudePay.InStore.ILatitudePayClient
     name: ILatitudePayClient
+  - uid: Yort.LatitudePay.InStore.ILatitudePaySignatureGenerator
+    name: ILatitudePaySignatureGenerator
+  - uid: Yort.LatitudePay.InStore.ILatitudePaySystemClock
+    name: ILatitudePaySystemClock
+  - uid: Yort.LatitudePay.InStore.LatitiudePayShippingLine
+    name: LatitiudePayShippingLine
+  - uid: Yort.LatitudePay.InStore.LatitudePayAddress
+    name: LatitudePayAddress
+  - uid: Yort.LatitudePay.InStore.LatitudePayAuthToken
+    name: LatitudePayAuthToken
+  - uid: Yort.LatitudePay.InStore.LatitudePayAvailability
+    name: LatitudePayAvailability
+  - uid: Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest
+    name: LatitudePayCancelPurchaseRequest
+  - uid: Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse
+    name: LatitudePayCancelPurchaseResponse
+  - uid: Yort.LatitudePay.InStore.LatitudePayClient
+    name: LatitudePayClient
+  - uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration
+    name: LatitudePayClientConfiguration
+  - uid: Yort.LatitudePay.InStore.LatitudePayConfigurationRequest
+    name: LatitudePayConfigurationRequest
+  - uid: Yort.LatitudePay.InStore.LatitudePayConfigurationResponse
+    name: LatitudePayConfigurationResponse
+  - uid: Yort.LatitudePay.InStore.LatitudePayConstants
+    name: LatitudePayConstants
+  - uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+    name: LatitudePayCreatePosPurchaseRequest
+  - uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse
+    name: LatitudePayCreatePosPurchaseResponse
+  - uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest
+    name: LatitudePayCreateRefundRequest
+  - uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse
+    name: LatitudePayCreateRefundResponse
+  - uid: Yort.LatitudePay.InStore.LatitudePayCurrencies
+    name: LatitudePayCurrencies
+  - uid: Yort.LatitudePay.InStore.LatitudePayCustomer
+    name: LatitudePayCustomer
+  - uid: Yort.LatitudePay.InStore.LatitudePayEnvironment
+    name: LatitudePayEnvironment
+  - uid: Yort.LatitudePay.InStore.LatitudePayHMACSHA256SignatureGenerator
+    name: LatitudePayHMACSHA256SignatureGenerator
+  - uid: Yort.LatitudePay.InStore.LatitudePayMoney
+    name: LatitudePayMoney
+  - uid: Yort.LatitudePay.InStore.LatitudePayProduct
+    name: LatitudePayProduct
+  - uid: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest
+    name: LatitudePayPurchaseStatusRequest
+  - uid: Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse
+    name: LatitudePayPurchaseStatusResponse
+  - uid: Yort.LatitudePay.InStore.LatitudePayReturnUrls
+    name: LatitudePayReturnUrls
+  - uid: Yort.LatitudePay.InStore.LatitudePaySystemClock
+    name: LatitudePaySystemClock

@@ -1,0 +1,634 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.LatitudePay.InStore.LatitudePayAvailability
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayAvailability
+  id: LatitudePayAvailability
+  parent: Yort.LatitudePay.InStore
+  children:
+  - Yort.LatitudePay.InStore.LatitudePayAvailability.Country
+  - Yort.LatitudePay.InStore.LatitudePayAvailability.CountryCode
+  - Yort.LatitudePay.InStore.LatitudePayAvailability.Currency
+  - Yort.LatitudePay.InStore.LatitudePayAvailability.CurrencySymbol
+  langs:
+  - csharp
+  - vb
+  name: LatitudePayAvailability
+  nameWithType: LatitudePayAvailability
+  fullName: Yort.LatitudePay.InStore.LatitudePayAvailability
+  type: Class
+  source:
+    remote:
+      path: src/LatitudePayAvailability.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: LatitudePayAvailability
+    path: LatitudePayAvailability.cs
+    startLine: 12
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nRepresents details of an available country &amp; currency combination that can be used with the current LatitudePay account.\n"
+  remarks: "\n<p>Returns as part of <xref href=\"Yort.LatitudePay.InStore.LatitudePayConfigurationResponse\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+  example: []
+  syntax:
+    content: public class LatitudePayAvailability
+    content.vb: Public Class LatitudePayAvailability
+  seealso:
+  - linkId: Yort.LatitudePay.InStore.LatitudePayConfigurationRequest
+    commentId: T:Yort.LatitudePay.InStore.LatitudePayConfigurationRequest
+  - linkId: Yort.LatitudePay.InStore.ILatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)
+    commentId: M:Yort.LatitudePay.InStore.ILatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Yort.LatitudePay.InStore.LatitudePayAvailability.Country
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayAvailability.Country
+  id: Country
+  parent: Yort.LatitudePay.InStore.LatitudePayAvailability
+  langs:
+  - csharp
+  - vb
+  name: Country
+  nameWithType: LatitudePayAvailability.Country
+  fullName: Yort.LatitudePay.InStore.LatitudePayAvailability.Country
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayAvailability.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: Country
+    path: LatitudePayAvailability.cs
+    startLine: 20
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGets or sets the name of a country associated with this account.\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("country")]
+
+      public string Country { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe country name.\n"
+    content.vb: >-
+      <JsonProperty("country")>
+
+      Public Property Country As String
+  overload: Yort.LatitudePay.InStore.LatitudePayAvailability.Country*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: country
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayAvailability.CountryCode
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayAvailability.CountryCode
+  id: CountryCode
+  parent: Yort.LatitudePay.InStore.LatitudePayAvailability
+  langs:
+  - csharp
+  - vb
+  name: CountryCode
+  nameWithType: LatitudePayAvailability.CountryCode
+  fullName: Yort.LatitudePay.InStore.LatitudePayAvailability.CountryCode
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayAvailability.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: CountryCode
+    path: LatitudePayAvailability.cs
+    startLine: 28
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGets or sets the ISO code of a country associated with this account.\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("countryCode")]
+
+      public string CountryCode { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe country code.\n"
+    content.vb: >-
+      <JsonProperty("countryCode")>
+
+      Public Property CountryCode As String
+  overload: Yort.LatitudePay.InStore.LatitudePayAvailability.CountryCode*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: countryCode
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayAvailability.Currency
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayAvailability.Currency
+  id: Currency
+  parent: Yort.LatitudePay.InStore.LatitudePayAvailability
+  langs:
+  - csharp
+  - vb
+  name: Currency
+  nameWithType: LatitudePayAvailability.Currency
+  fullName: Yort.LatitudePay.InStore.LatitudePayAvailability.Currency
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayAvailability.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: Currency
+    path: LatitudePayAvailability.cs
+    startLine: 36
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGets or sets the ISO currency code associated with this account.\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("currency")]
+
+      public string Currency { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe currency.\n"
+    content.vb: >-
+      <JsonProperty("currency")>
+
+      Public Property Currency As String
+  overload: Yort.LatitudePay.InStore.LatitudePayAvailability.Currency*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: currency
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayAvailability.CurrencySymbol
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayAvailability.CurrencySymbol
+  id: CurrencySymbol
+  parent: Yort.LatitudePay.InStore.LatitudePayAvailability
+  langs:
+  - csharp
+  - vb
+  name: CurrencySymbol
+  nameWithType: LatitudePayAvailability.CurrencySymbol
+  fullName: Yort.LatitudePay.InStore.LatitudePayAvailability.CurrencySymbol
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayAvailability.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: CurrencySymbol
+    path: LatitudePayAvailability.cs
+    startLine: 44
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGets or sets the symbol (i.e $) used with the currency associated with this account.\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("currencySymbol")]
+
+      public string CurrencySymbol { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe currency symbol.\n"
+    content.vb: >-
+      <JsonProperty("currencySymbol")>
+
+      Public Property CurrencySymbol As String
+  overload: Yort.LatitudePay.InStore.LatitudePayAvailability.CurrencySymbol*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: currencySymbol
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: Yort.LatitudePay.InStore.LatitudePayConfigurationResponse
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayConfigurationResponse
+  name: LatitudePayConfigurationResponse
+  nameWithType: LatitudePayConfigurationResponse
+  fullName: Yort.LatitudePay.InStore.LatitudePayConfigurationResponse
+- uid: Yort.LatitudePay.InStore.LatitudePayConfigurationRequest
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayConfigurationRequest
+  parent: Yort.LatitudePay.InStore
+  name: LatitudePayConfigurationRequest
+  nameWithType: LatitudePayConfigurationRequest
+  fullName: Yort.LatitudePay.InStore.LatitudePayConfigurationRequest
+- uid: Yort.LatitudePay.InStore.ILatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)
+  commentId: M:Yort.LatitudePay.InStore.ILatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)
+  parent: Yort.LatitudePay.InStore.ILatitudePayClient
+  name: GetConfigurationAsync(LatitudePayConfigurationRequest)
+  nameWithType: ILatitudePayClient.GetConfigurationAsync(LatitudePayConfigurationRequest)
+  fullName: Yort.LatitudePay.InStore.ILatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)
+  spec.csharp:
+  - uid: Yort.LatitudePay.InStore.ILatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)
+    name: GetConfigurationAsync
+    nameWithType: ILatitudePayClient.GetConfigurationAsync
+    fullName: Yort.LatitudePay.InStore.ILatitudePayClient.GetConfigurationAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.LatitudePay.InStore.LatitudePayConfigurationRequest
+    name: LatitudePayConfigurationRequest
+    nameWithType: LatitudePayConfigurationRequest
+    fullName: Yort.LatitudePay.InStore.LatitudePayConfigurationRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.LatitudePay.InStore.ILatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)
+    name: GetConfigurationAsync
+    nameWithType: ILatitudePayClient.GetConfigurationAsync
+    fullName: Yort.LatitudePay.InStore.ILatitudePayClient.GetConfigurationAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.LatitudePay.InStore.LatitudePayConfigurationRequest
+    name: LatitudePayConfigurationRequest
+    nameWithType: LatitudePayConfigurationRequest
+    fullName: Yort.LatitudePay.InStore.LatitudePayConfigurationRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.LatitudePay.InStore
+  commentId: N:Yort.LatitudePay.InStore
+  name: Yort.LatitudePay.InStore
+  nameWithType: Yort.LatitudePay.InStore
+  fullName: Yort.LatitudePay.InStore
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.LatitudePay.InStore.ILatitudePayClient
+  commentId: T:Yort.LatitudePay.InStore.ILatitudePayClient
+  parent: Yort.LatitudePay.InStore
+  name: ILatitudePayClient
+  nameWithType: ILatitudePayClient
+  fullName: Yort.LatitudePay.InStore.ILatitudePayClient
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.LatitudePay.InStore.LatitudePayAvailability.Country*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayAvailability.Country
+  name: Country
+  nameWithType: LatitudePayAvailability.Country
+  fullName: Yort.LatitudePay.InStore.LatitudePayAvailability.Country
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Yort.LatitudePay.InStore.LatitudePayAvailability.CountryCode*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayAvailability.CountryCode
+  name: CountryCode
+  nameWithType: LatitudePayAvailability.CountryCode
+  fullName: Yort.LatitudePay.InStore.LatitudePayAvailability.CountryCode
+- uid: Yort.LatitudePay.InStore.LatitudePayAvailability.Currency*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayAvailability.Currency
+  name: Currency
+  nameWithType: LatitudePayAvailability.Currency
+  fullName: Yort.LatitudePay.InStore.LatitudePayAvailability.Currency
+- uid: Yort.LatitudePay.InStore.LatitudePayAvailability.CurrencySymbol*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayAvailability.CurrencySymbol
+  name: CurrencySymbol
+  nameWithType: LatitudePayAvailability.CurrencySymbol
+  fullName: Yort.LatitudePay.InStore.LatitudePayAvailability.CurrencySymbol

@@ -4,20 +4,1229 @@
         <name>Yort.LatitudePay.InStore</name>
     </assembly>
     <members>
-        <member name="T:Yort.LatitudePay.InStore.ErrorMessage">
+        <member name="T:Yort.LatitudePay.InStore.LatitudePaySystemClock">
+            <summary>
+            Represents the default system clock used by the Yort.LatitudePay.Instore library to retrieve the current date and time.
+            </summary>
+            <remarks>
+            <para>This implementation simply wraps the <see cref="P:System.DateTimeOffset.Now"/> property and relies on the underlying system clock for accuracy.</para>
+            <para>This class has a private constructor and cannot be created by user code. To obtain and instance use the static <see cref="P:Yort.LatitudePay.InStore.LatitudePaySystemClock.DefaultInstance"/> property.</para>
+            </remarks>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePaySystemClock.Now">
+            <summary>
+            Returns the current date and time from the system clock.
+            </summary>
+            <see cref="P:System.DateTimeOffset.Now"/>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePaySystemClock.DefaultInstance">
+            <summary>
+            Returns an instance of this clock.
+            </summary>
+            <remarks>
+            <para>The instance returned by this method is cached after the first call to reduce allocations, so all subsquent calls will receive the same shared instance. 
+            However the property is not thread-safe and two threads calling the method simultanously for the first time may receive different instances. 
+            This should not cause a problem as clients should not (and are instructed not to) compare instances or rely on shared instances.</para>
+            </remarks>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.ErrorMessages">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
-        <member name="P:Yort.LatitudePay.InStore.ErrorMessage.ResourceManager">
+        <member name="P:Yort.LatitudePay.InStore.ErrorMessages.ResourceManager">
             <summary>
               Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
-        <member name="P:Yort.LatitudePay.InStore.ErrorMessage.Culture">
+        <member name="P:Yort.LatitudePay.InStore.ErrorMessages.Culture">
             <summary>
               Overrides the current thread's CurrentUICulture property for all
               resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.ErrorMessages.ConfigurationPropertiesLocked">
+            <summary>
+              Looks up a localized string similar to Cannot change LatitudePayConfiguration properties once configuration in use..
+            </summary>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.ErrorMessages.UnableToObtainToken">
+            <summary>
+              Looks up a localized string similar to Unable to obtain token from LatitudePay..
+            </summary>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.ILatitudePayClient">
+            <summary>
+            Interface for the <see cref="T:Yort.LatitudePay.InStore.ILatitudePayClient"/>, provided to make testing via mocks/stubs etc. easier.
+            </summary>
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.ILatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)">
+            <summary>
+            Gets configuration information for the current merchant account, specifying the supported currency, minimum and maximum purchase values etc.
+            </summary>
+            <param name="request">A <see cref="T:Yort.LatitudePay.InStore.LatitudePayConfigurationRequest"/> that specifies options for the data returned.</param>
+            <returns>A <see cref="T:Yort.LatitudePay.InStore.LatitudePayConfigurationResponse"/> instance.</returns>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.ILatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)">
+            <summary>
+            Creates a new 'payment plan'.
+            </summary>
+            <param name="request">A <see cref="T:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest"/> instance specifying options for the payment plan to be created.</param>
+            <returns>A <see cref="T:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse"/> instance containing details of the pending payment plan.</returns>
+            <seealso cref="M:Yort.LatitudePay.InStore.ILatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)"/>
+            <seealso cref="M:Yort.LatitudePay.InStore.ILatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)"/>
+            <seealso cref="M:Yort.LatitudePay.InStore.ILatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)"/>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.ILatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)">
+            <summary>
+            Gets the status of a payment plan previously requested via <see cref="M:Yort.LatitudePay.InStore.ILatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)"/>.
+            </summary>
+            <param name="request">A <see cref="T:Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest"/> instance containing the token of the payment plan who's status should be queried.</param>
+            <returns>A <see cref="T:Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse"/> instance containing the status and other details of the plan.</returns>
+            <seealso cref="M:Yort.LatitudePay.InStore.ILatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)"/>
+            <seealso cref="M:Yort.LatitudePay.InStore.ILatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)"/>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.ILatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)">
+            <summary>
+            Cancels a (pending) payment plan previously requested via <see cref="M:Yort.LatitudePay.InStore.ILatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)"/>.
+            </summary>
+            <remarks>
+            <para>This only cancels pending/unapproved payment plans. If a plan has been accepted/approved you must refund it instead of cancel it.</para>
+            </remarks>
+            <param name="request">A <see cref="T:Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest"/> containing the token of the payment plan to cancel.</param>
+            <returns>An instance of a <see cref="T:Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse"/> indicating if the cancellation was successful.</returns>
+            <seealso cref="M:Yort.LatitudePay.InStore.ILatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)"/>
+            <seealso cref="M:Yort.LatitudePay.InStore.ILatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)"/>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.ILatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)">
+            <summary>
+            Refunds a previously approved payment plan.
+            </summary>
+            <remarks>
+            <para>You can only refund a previously accepted payment plan. Use <see cref="M:Yort.LatitudePay.InStore.ILatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)"/> to cancel a payment plan that is pending.</para>
+            <para>A refund can be full or partial, and multiple partial refunds can be made. You can only refund up to the total amount of the original payment plan, across all refunds.</para>
+            </remarks>
+            <param name="request">A <see cref="T:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest"/> instance containing details of the refund and payment plan to refund against.</param>
+            <returns>A <see cref="T:Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse"/> instance indicating if the refund was successful and details of the refund created.</returns>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.ILatitudePaySignatureGenerator">
+            <summary>
+            An interface for components that can calculate a signature for LatitudePay requests.
+            </summary>
+            <remarks>
+            <para>This interface exists mostly for future expansion (in case the algorithm or hash used changes) and internal testing, it is not expected to be used directly from application code.</para>
+            </remarks>
+            <seealso cref="T:System.IDisposable" />
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.ILatitudePaySignatureGenerator.GenerateSignature(System.String)">
+            <summary>
+            Generates a signature for the specified payload.
+            </summary>
+            <param name="jsonPayload">The json payload to calculate a signature for.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.ILatitudePaySystemClock">
+            <summary>
+            Interface for components that can return the current date and time.
+            </summary>
+            <see cref="T:Yort.LatitudePay.InStore.LatitudePaySystemClock"/>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.ILatitudePaySystemClock.Now">
+            <summary>
+            Returns the current date and time as a <see cref="T:System.DateTimeOffset"/> value.
+            </summary>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitiudePayShippingLine">
+            <summary>
+            Represents a shipping charge as part of a <see cref="T:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest"/>.
+            </summary>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest"/>
+            <seealso cref="M:Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)"/>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitiudePayShippingLine.Carrier">
+            <summary>
+            Gets or sets the name of carrier providing shipping services.
+            </summary>
+            <value>
+            The carrier name.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitiudePayShippingLine.Price">
+            <summary>
+            Gets or sets the price charged to the customer for this shipping service on this payment plan.
+            </summary>
+            <value>
+            The shipping price.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitiudePayShippingLine.TaxIncluded">
+            <summary>
+            Gets or sets a value indicating whether tax is included in the <see cref="P:Yort.LatitudePay.InStore.LatitiudePayShippingLine.Price"/> property.
+            </summary>
+            <value>
+              <c>true</c> if <see cref="P:Yort.LatitudePay.InStore.LatitiudePayShippingLine.Price"/> is tax inclusive, else <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayAddress">
+            <summary>
+            Represents a physical/postal address used for delivery/shipping or billing.
+            </summary>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayAddress.AddressLine1">
+            <summary>
+            Gets or sets the first address line.
+            </summary>
+            <value>
+            The first address line.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayAddress.AddressLine2">
+            <summary>
+            Gets or sets the second address line.
+            </summary>
+            <value>
+            The second address line.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayAddress.Suburb">
+            <summary>
+            Gets or sets the suburb.
+            </summary>
+            <value>
+            The suburb.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayAddress.CityTown">
+            <summary>
+            Gets or sets the city or town.
+            </summary>
+            <value>
+            The city or town.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayAddress.State">
+            <summary>
+            Gets or sets the state or province.
+            </summary>
+            <value>
+            The state or province.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayAddress.Postcode">
+            <summary>
+            Gets or sets the postcode.
+            </summary>
+            <value>
+            The postcode.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayAddress.CountryCode">
+            <summary>
+            Gets or sets the country code.
+            </summary>
+            <value>
+            The country code.
+            </value>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayAuthToken">
+            <summary>
+            Represents a token returned from the LatitudePay Authorization endpoint.
+            </summary>
+            <remarks>
+            <para>This class is used internally by <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> which will automatically request and renew tokens as required. It is not expected to be used directly by application code.</para>
+            </remarks>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayAuthToken.Token">
+            <summary>
+            Gets or sets the authorization token return by LatitudePay.
+            </summary>
+            <value>
+            The token.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayAuthToken.ExpiryDate">
+            <summary>
+            Gets or sets the date and time at which this token expires.
+            </summary>
+            <value>
+            The expiry date and time.
+            </value>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayAuthToken.IsValid(Yort.LatitudePay.InStore.ILatitudePaySystemClock)">
+            <summary>
+            Returns a boolean indicating if this <see cref="P:Yort.LatitudePay.InStore.LatitudePayAuthToken.Token"/> value should currently be usable with the LatitudePay API.
+            </summary>
+            <param name="clock">An instance implementing <see cref="T:Yort.LatitudePay.InStore.ILatitudePaySystemClock"/> used to determine the current time.</param>
+            <remarks>
+            <para>Returns true if <paramref name="clock"/> is not empty and the current time (using <paramref name="clock"/>) is more than one minute before <see cref="P:Yort.LatitudePay.InStore.LatitudePayAuthToken.ExpiryDate"/>.</para>
+            <para>If <paramref name="clock"/> is null then <see cref="P:Yort.LatitudePay.InStore.LatitudePaySystemClock.DefaultInstance"/> is used.</para>
+            </remarks>
+            <returns>
+              <c>true</c> if the specified clock is valid; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayAvailability">
+            <summary>
+            Represents details of an available country &amp; currency combination that can be used with the current LatitudePay account.
+            </summary>
+            <remarks>
+            <para>Returns as part of <see cref="T:Yort.LatitudePay.InStore.LatitudePayConfigurationResponse"/>.</para>
+            </remarks>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayConfigurationRequest"/>
+            <seealso cref="M:Yort.LatitudePay.InStore.ILatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)"/>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayAvailability.Country">
+            <summary>
+            Gets or sets the name of a country associated with this account.
+            </summary>
+            <value>
+            The country name.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayAvailability.CountryCode">
+            <summary>
+            Gets or sets the ISO code of a country associated with this account.
+            </summary>
+            <value>
+            The country code.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayAvailability.Currency">
+            <summary>
+            Gets or sets the ISO currency code associated with this account.
+            </summary>
+            <value>
+            The currency.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayAvailability.CurrencySymbol">
+            <summary>
+            Gets or sets the symbol (i.e $) used with the currency associated with this account.
+            </summary>
+            <value>
+            The currency symbol.
+            </value>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest">
+            <summary>
+            Represents a request to cancel a payment plan previously requested and not yet accepted or declined.
+            </summary>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest.PaymentPlanToken">
+            <summary>
+            Gets or sets the payment token of the plan to be cancelled.
+            </summary>
+            <value>
+            The payment plan token.
+            </value>
+            <seealso cref="M:Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)"/>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse"/>
+            <seealso cref="P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.Token"/>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse">
+            <summary>
+            Represents the response to a request to cancel a pending payment plan (via <see cref="M:Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)"/>).
+            </summary>
+            <seealso cref="M:Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)"/>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse"/>
+            <seealso cref="P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.Token"/>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse.Token">
+            <summary>
+            Gets or sets the token of the payment plan to be cancelled.
+            </summary>
+            <value>
+            The token.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse.CancelledDate">
+            <summary>
+            Gets or sets the date and time at which the plan was cancelled.
+            </summary>
+            <value>
+            The cancelled date.
+            </value>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayClient">
+            <summary>
+            The primary class used to integrate to the LatitudePay API.
+            </summary>
+            <remarks>
+            <para>Instances of this class should be reused between requests. If working in a single POS, create a copy on startup or first use and then re-use for subsequent payments. 
+            Dispose only when you're done with the instance completely, such as on shutdown or if about to create a new instance with alternate configuration.</para>
+            <para>If working in a payment service/gateway or web POS handling multiple lanes, then create a pool of instances (one for each lane) and re-use as appropriate.</para>
+            <para>Instances of this class should be thread safe, multiple calls for the same or different payments through the same instance should work as expected.</para>
+            </remarks>
+            <seealso cref="T:Yort.LatitudePay.InStore.ILatitudePayClient" />
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayClient.#ctor(Yort.LatitudePay.InStore.LatitudePayClientConfiguration)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> class.
+            </summary>
+            <param name="configuration">A <see cref="T:Yort.LatitudePay.InStore.LatitudePayClientConfiguration"/> instance containing information required to connect to the LatitudePay API.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="configuration"/> is null, or if <see cref="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiSecret"/> is null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown if <see cref="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiSecret"/> is an empty string or contains only whitespace.</exception>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayClientConfiguration"/>
+            <seealso cref="T:Yort.LatitudePay.InStore.ILatitudePayClient"/>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)">
+            <summary>
+            Gets configuration information for the current merchant account, specifying the supported currency, minimum and maximum purchase values etc.
+            </summary>
+            <param name="request">A <see cref="T:Yort.LatitudePay.InStore.LatitudePayConfigurationRequest" /> that specifies options for the data returned.</param>
+            <returns>
+            A <see cref="T:Yort.LatitudePay.InStore.LatitudePayConfigurationResponse" /> instance.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown if <see cref="M:Yort.LatitudePay.InStore.LatitudePayClient.Dispose"/> has been called on this instance.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown if the system is unable to obtain an authorisation token from the API (see the inner exception for details).</exception>
+            <exception cref="T:System.Net.Http.HttpRequestException">Thrown if an error occurs making the request to the API.</exception>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)">
+            <summary>
+            Creates a new 'payment plan'.
+            </summary>
+            <param name="request">A <see cref="T:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest" /> instance specifying options for the payment plan to be created.</param>
+            <returns>
+            A <see cref="T:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse" /> instance containing details of the pending payment plan.
+            </returns>
+            <seealso cref="M:Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)" />
+            <seealso cref="M:Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)" />
+            <seealso cref="M:Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)" />
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown if <see cref="M:Yort.LatitudePay.InStore.LatitudePayClient.Dispose"/> has been called on this instance.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown if the system is unable to obtain an authorisation token from the API (see the inner exception for details).</exception>
+            <exception cref="T:System.Net.Http.HttpRequestException">Thrown if an error occurs making the request to the API.</exception>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)">
+            <summary>
+            Gets the status of a payment plan previously requested via <see cref="M:Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)" />.
+            </summary>
+            <param name="request">A <see cref="T:Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest" /> instance containing the token of the payment plan who's status should be queried.</param>
+            <returns>
+            A <see cref="T:Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse" /> instance containing the status and other details of the plan.
+            </returns>
+            <seealso cref="M:Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)" />
+            <seealso cref="M:Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)" />
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown if <see cref="M:Yort.LatitudePay.InStore.LatitudePayClient.Dispose"/> has been called on this instance.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown if the system is unable to obtain an authorisation token from the API (see the inner exception for details).</exception>
+            <exception cref="T:System.Net.Http.HttpRequestException">Thrown if an error occurs making the request to the API.</exception>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)">
+            <summary>
+            Cancels a (pending) payment plan previously requested via <see cref="M:Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)" />.
+            </summary>
+            <param name="request">A <see cref="T:Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest" /> containing the token of the payment plan to cancel.</param>
+            <returns>
+            An instance of a <see cref="T:Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse" /> indicating if the cancellation was successful.
+            </returns>
+            <remarks>
+            This only cancels pending/unapproved payment plans. If a plan has been accepted/approved you must refund it instead of cancel it.
+            </remarks>
+            <seealso cref="M:Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)" />
+            <seealso cref="M:Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)" />
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown if <see cref="M:Yort.LatitudePay.InStore.LatitudePayClient.Dispose"/> has been called on this instance.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown if the system is unable to obtain an authorisation token from the API (see the inner exception for details).</exception>
+            <exception cref="T:System.Net.Http.HttpRequestException">Thrown if an error occurs making the request to the API.</exception>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)">
+            <summary>
+            Refunds a previously approved payment plan.
+            </summary>
+            <param name="request">A <see cref="T:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest" /> instance containing details of the refund and payment plan to refund against.</param>
+            <returns>
+            A <see cref="T:Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse" /> instance indicating if the refund was successful and details of the refund created.
+            </returns>
+            <remarks>
+            <para>You can only refund a previously accepted payment plan. Use <see cref="M:Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)" /> to cancel a payment plan that is pending.</para>
+            <para>A refund can be full or partial, and multiple partial refunds can be made. You can only refund up to the total amount of the original payment plan, across all refunds.</para>
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+            <exception cref="T:System.ObjectDisposedException">Thrown if <see cref="M:Yort.LatitudePay.InStore.LatitudePayClient.Dispose"/> has been called on this instance.</exception>
+            <exception cref="T:System.UnauthorizedAccessException">Thrown if the system is unable to obtain an authorisation token from the API (see the inner exception for details).</exception>
+            <exception cref="T:System.Net.Http.HttpRequestException">Thrown if an error occurs making the request to the API.</exception>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayClient.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayClientConfiguration">
+            <summary>
+            Instances of this class represent configuration options for <see cref="T:Yort.LatitudePay.InStore.ILatitudePayClient"/> instances. The static members of this class provide global configuration common to all instances.
+            </summary>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.#ctor">
+            <summary>
+            Default contructor, creates a new instance.
+            </summary>
+            <remarks>
+            <para>Instances of this type become immmutable once passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance. Trying to set properties after this has occurred will result in an <see cref="T:System.InvalidOperationException"/>.</para>
+            </remarks>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.Environment">
+            <summary>
+            Sets or returns the LatitudePay API environment to be used.
+            </summary>
+            <exception cref="T:System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.HttpClient">
+            <summary>
+            Sets or returns an <see cref="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.HttpClient"/> instance used to make calls to the LatitudePay API. If null/unset, the system will create it's own instance on first use.
+            </summary>
+            <remarks>
+            <para>The library reserves the right to modify the provided client, such as setting default headers. A client can be shared amongst configuration object, but should not be shared/use outside of other <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instaces.
+            The primary purpose of this method is to allow a client with injected handlers to be used. If you do not need to inject custom handlers, then leave this blank.</para>
+            </remarks>
+            <exception cref="T:System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductName">
+            <summary>
+            Sets or returns the product name that will be used as part of the user agent string when calling the LatitudePay API.
+            </summary>
+            <remarks>
+            <para>If null, empty string or only whitespace the name of the Yort.LatitudePay.Instore assembly being used will be substituted as a default.</para>
+            </remarks>
+            <exception cref="T:System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductVersion">
+            <summary>
+            Sets or returns the version number of the <see cref="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductName"/> name that will be used as part of the user agent string when calling the LatitudePay API.
+            </summary>
+            <remarks>
+            <para>If null, empty string or only whitespace the version of the Yort.LatitudePay.Instore assembly being used will be substituted as a default.</para>
+            </remarks>
+            <exception cref="T:System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductVendor">
+            <summary>
+            Sets or returns the name of the vendor that will be used as part of the user agent string when calling the LatitudePay API.
+            </summary>
+            <remarks>
+            <para>If null, empty string or only whitespace, "Yort" assembly being used will be substituted as a default.</para>
+            </remarks>
+            <exception cref="T:System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiKey">
+            <summary>
+            Sets or returns the API key that identifies the merchant account to use with LatitudePay.
+            </summary>
+            <exception cref="T:System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiSecret">
+            <summary>
+            Sets or returns the secret value used to access the LatitudePay API.
+            </summary>
+            <exception cref="T:System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.MinimumRetries">
+            <summary>
+            The minumum number of automatic retries to perform when a create transaction (order/refund/order reversal/refund reversal etc) times out.
+            </summary>
+            <remarks>
+            <para>This property defaults to a value of 2. A value of zero or less is allowed, in which case only the initial attempt will be made - no retries will be performed within the library and any error handling logic will need to be entirely implemented by the application.</para>
+            <para>The library may attempt more retries than specified if the total time since the initial call is less than the (full, LatitudePay) recommended timeout for the endpoint being called.</para>
+            </remarks>
+            <exception cref="T:System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.RetryDelaySeconds">
+            <summary>
+            Sets or returns the number of seconds to wait before attempting a retry.
+            </summary>
+            <remarks>
+            <para>When a transactional call (CreateOrder/Refund etc) times out the system will perform a retry (based on the <see cref="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.MinimumRetries"/> setting). 
+            If that retry attempt returns a 409 conflict response indicating the first request is still in progres, 
+            then the system will wait this many seconds before the next retry. See https://docs.LatitudePay.com.au/instore-api-v1.html#distributed-state-considerations and https://docs.LatitudePay.com.au/instore-api-v1.html#create-order for more details.</para>
+            <para>The minimum value is 5 seconds. Any value less than 5 seconds will be ignored, and a 5 second delay will occur instead.</para>
+            </remarks>
+            <exception cref="T:System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.SystemClock">
+            <summary>
+            Sets or returns an implementation of <see cref="T:Yort.LatitudePay.InStore.ILatitudePaySystemClock"/> that will be used by the library to determine the current date and time.
+            </summary>
+            <remarks>
+            <para>If not clock is explicitly set, or if the property is set to null, then <see cref="P:Yort.LatitudePay.InStore.LatitudePaySystemClock.DefaultInstance"/> will be used (and returned as the current value of the property).</para>
+            <para>This property can be used to provide a mocked clock for unit testing, or to provide a clock adjusted by a calculated offset via an NTP client etc. if the system clock cannot be relied upon for accuracy.</para>
+            <para>This is a static property and the value set here affects all clients/objects from the Yort.LatitudePay.InStore API unless otherwise specified.</para>
+            </remarks>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.DefaultCurrency">
+            <summary>
+            Sets or returns the default currency for new <see cref="T:Yort.LatitudePay.InStore.LatitudePayMoney"/> instances where the currency is not explicitly provided.
+            </summary>
+            <remarks>
+            <para>If this property is null or an empty string then <see cref="F:Yort.LatitudePay.InStore.LatitudePayCurrencies.AustralianDollars"/> will be used as a default.</para>
+            </remarks>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayConfigurationRequest">
+            <summary>
+            Represents the options available when requesting configuration information from the LatitudePay API.
+            </summary>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayConfigurationResponse"/>
+            <seealso cref="M:Yort.LatitudePay.InStore.LatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)"/>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayConfigurationRequest.TotalAmount">
+            <summary>
+            Gets or sets the total purchase amount, inclusive of any shipping and tax components.
+            </summary>
+            <value>
+            The total purchase amount, inclusive of any shipping and tax components.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayConfigurationRequest.DisplayInModal">
+            <summary>
+            If true the description field will not contain any reference to redirecting to the user to the LatitudePay application.
+            </summary>
+            <value>
+              <c>true</c> if the description shoud mention redirecting to LatitudePay, otherwise <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayConfigurationResponse">
+            <summary>
+            Represents the response from a <see cref="M:Yort.LatitudePay.InStore.LatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)"/> call.
+            </summary>
+            <seealso cref="M:Yort.LatitudePay.InStore.LatitudePayClient.GetConfigurationAsync(Yort.LatitudePay.InStore.LatitudePayConfigurationRequest)"/>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayConfigurationRequest"/>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayConfigurationResponse.Name">
+            <summary>
+            Gets or sets the name of the service (LatitudePay/GenoaPay etc).
+            </summary>
+            <value>
+            The service name.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayConfigurationResponse.Description">
+            <summary>
+            Gets or setsa description of a payment plan using the <see cref="P:Yort.LatitudePay.InStore.LatitudePayConfigurationRequest.TotalAmount"/> specified.
+            </summary>
+            <value>
+            The supposed payment plan description.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayConfigurationResponse.MinimumAmount">
+            <summary>
+            Gets or sets the minimum purchase amount.
+            </summary>
+            <value>
+            The minimum purchase amount.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayConfigurationResponse.MaximumAmount">
+            <summary>
+            Gets or sets the maximum purchase amount.
+            </summary>
+            <value>
+            The maximum purchase amount.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayConfigurationResponse.Availability">
+            <summary>
+            Gets or sets a collection of <see cref="P:Yort.LatitudePay.InStore.LatitudePayConfigurationResponse.Availability"/> instances specifying currencies and countries usable with the current merchant account.
+            </summary>
+            <value>
+            The availability details for the current merchant account.
+            </value>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayConstants">
+            <summary>
+            Contains constants for useful for dealing with the LatitudePay API.
+            </summary>
+        </member>
+        <member name="F:Yort.LatitudePay.InStore.LatitudePayConstants.ProductionRootUrl">
+            <summary>
+            Returns a string containing the root url for the live/production LatitudePay API.
+            </summary>
+        </member>
+        <member name="F:Yort.LatitudePay.InStore.LatitudePayConstants.UatRootUrl">
+            <summary>
+            Returns a string containing the root url for the UAT/sandbox/test LatitudePay API.
+            </summary>
+        </member>
+        <member name="F:Yort.LatitudePay.InStore.LatitudePayConstants.LatitudePayV3ContentType">
+            <summary>
+            Returns the content-type to use for HTTP requests to the LatitudePay API for version 3 content entities.
+            </summary>
+        </member>
+        <member name="F:Yort.LatitudePay.InStore.LatitudePayConstants.StatusApproved">
+            <summary>
+            The status of a payment plan that has been approved by the customer and payment processor.
+            </summary>
+        </member>
+        <member name="F:Yort.LatitudePay.InStore.LatitudePayConstants.StatusDeclined">
+            <summary>
+            The status of a payment plan that has been cancelled or declined for some reason (i.e insufficient funds).
+            </summary>
+        </member>
+        <member name="F:Yort.LatitudePay.InStore.LatitudePayConstants.StatusPending">
+            <summary>
+            The status of a payment plan that has been requested but not yet approved or declined.
+            </summary>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest">
+            <summary>
+            Represents a request to create a new payment plan.
+            </summary>
+            <see cref="M:Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)"/>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse"/>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Customer">
+            <summary>
+            Gets or sets details about the customer the payment plan is for.
+            </summary>
+            <remarks>
+            <para>You must provide a <see cref="T:Yort.LatitudePay.InStore.LatitudePayCustomer"/> instance with the <see cref="P:Yort.LatitudePay.InStore.LatitudePayCustomer.MobileNumber"/> set, but providing additional details when known can speed the sign up process for new customers.</para>
+            </remarks>
+            <value>
+            A <see cref="T:Yort.LatitudePay.InStore.LatitudePayCustomer"/> containing details of the customer.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingAddress">
+            <summary>
+            Gets or sets the shipping address for products purchased with this payment plan.
+            </summary>
+            <value>
+            The shipping address.
+            </value>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayAddress"/>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.BillingAddress">
+            <summary>
+            Gets or sets the billing address for this payment plan.
+            </summary>
+            <value>
+            The billing address.
+            </value>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayAddress"/>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Products">
+            <summary>
+            Gets or sets details of the items purchased with this payment plan.
+            </summary>
+            <value>
+            The products purchased.
+            </value>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayProduct"/>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingLines">
+            <summary>
+            Gets or sets a collection of details about shipments paid for with this payment plan, if any.
+            </summary>
+            <value>
+            The shipping lines.
+            </value>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitiudePayShippingLine"/>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TaxAmount">
+            <summary>
+            Gets or sets the amount of tax included in <see cref="P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TotalAmount"/>.
+            </summary>
+            <value>
+            The tax amount included in this payment plan.
+            </value>
+            <seealso cref="P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TotalAmount"/>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayMoney"/>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Reference">
+            <summary>
+            A unique reference for this payment plan.
+            </summary>
+            <value>
+            The client generated reference for this payment plan.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TotalAmount">
+            <summary>
+            Gets or sets the total amount.
+            </summary>
+            <value>
+            The total amount.
+            </value>
+            <remarks>
+            <para>The amount specified here is the full amount charged as part of the payment plan. It does not have to match the sum of values from <see cref="P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Products"/> in the case of split payments or complex POS transactions.</para>
+            </remarks>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayMoney"/>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayMoney"/>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ReturnUrls">
+            <summary>
+            Gets or sets url's that will be used for callbacks when the payment plan changes status.
+            </summary>
+            <value>
+            The callback urls.
+            </value>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse">
+            <summary>
+            Represents a response from a <see cref="M:Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)"/> request. 
+            </summary>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest"/>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.Token">
+            <summary>
+            Gets or sets the payment token for the plan created.
+            </summary>
+            <value>
+            The payment token.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.StatusUrl">
+            <summary>
+            Gets or sets a URL that can be called to check the payment status.
+            </summary>
+            <value>
+            The status URL.
+            </value>
+            <remarks>
+            <para>Provided for completeness but typically not used with this library as you use <see cref="M:Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)"/> method with the payment token.</para>
+            </remarks>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.ExpiryDate">
+            <summary>
+            Gets or sets the last date and time at which the customer can approve this payment plan.
+            </summary>
+            <value>
+            The expiry date.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.CommissionAmount">
+            <summary>
+            Gets or sets the dollar figure of the fees charged to the merchant by LatitudePay for this payment plan.
+            </summary>
+            <value>
+            The commission amount.
+            </value>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest">
+            <summary>
+            Represents a request to refund some or all of an accepted payment plan.
+            </summary>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse"/>
+            <seealso cref="M:Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)"/>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken">
+            <summary>
+            Gets or sets the token of the payment plan to refund against.
+            </summary>
+            <value>
+            The payment plan token.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reference">
+            <summary>
+            Gets or sets the merchants unique reference for this refund.
+            </summary>
+            <value>
+            The reference.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reason">
+            <summary>
+            Gets or sets a descriptive reason for the refund.
+            </summary>
+            <value>
+            The reason.
+            </value>		[JsonProperty("reason")]
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Amount">
+            <summary>
+            Gets or sets the amount of this refund.
+            </summary>
+            <value>
+            The amount.
+            </value>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse">
+            <summary>
+            Represents a response to a request to refund some or all of an accepted payment plan (via <see cref="M:Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)"/>).
+            </summary>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest"/>
+            <seealso cref="M:Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)"/>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse.RefundId">
+            <summary>
+            Gets or sets the refund identifier generated by LatitudePay.
+            </summary>
+            <value>
+            The refund identifier.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse.RefundDate">
+            <summary>
+            Gets or sets the date and time the refund was created.
+            </summary>
+            <value>
+            The refund date.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse.Reference">
+            <summary>
+            Gets or sets the merchant reference for the refund as provided in the request.
+            </summary>
+            <value>
+            The reference.
+            </value>		[JsonProperty("reference")]
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse.CommissionAmount">
+            <summary>
+            Gets or sets the fees charged to the retailer for this refund.
+            </summary>
+            <value>
+            The commission amount.
+            </value>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayCurrencies">
+            <summary>
+            Provides constants for currency codes known to be used by the LatitudePay API.
+            </summary>
+        </member>
+        <member name="F:Yort.LatitudePay.InStore.LatitudePayCurrencies.AustralianDollars">
+            <summary>
+            Returns "AUD" for Australian currency.
+            </summary>
+        </member>
+        <member name="F:Yort.LatitudePay.InStore.LatitudePayCurrencies.NewZealandDollars">
+            <summary>
+            Returns "NZD" for New Zealand currency.
+            </summary>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayCustomer">
+            <summary>
+            Represents a customer as part of a <see cref="T:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest"/>.
+            </summary>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCustomer.MobileNumber">
+            <summary>
+            Gets or sets the mobile number of the customer.
+            </summary>
+            <remarks>
+            <para>Required as this is used to send the customer an SMS message prompting them to approve the payment plan.</para>
+            </remarks>
+            <value>
+            The mobile number.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCustomer.FirstName">
+            <summary>
+            Gets or sets the first name of the customer.
+            </summary>
+            <value>
+            The first name.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCustomer.Surname">
+            <summary>
+            Gets or sets the surname of the customer.
+            </summary>
+            <value>
+            The surname.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCustomer.Email">
+            <summary>
+            Gets or sets the email address of the customer.
+            </summary>
+            <value>
+            The email.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCustomer.Address">
+            <summary>
+            Gets or sets the physical/postal address of the customer.
+            </summary>
+            <value>
+            The address.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCustomer.DateOfBirth">
+            <summary>
+            Gets or sets the birth date of the customer.
+            </summary>
+            <value>
+            The date of birth.
+            </value>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayEnvironment">
+            <summary>
+            A enum providing a list of environments for the LatitudePay API.
+            </summary>
+        </member>
+        <member name="F:Yort.LatitudePay.InStore.LatitudePayEnvironment.Uat">
+            <summary>
+            The test/sandbox API.
+            </summary>
+        </member>
+        <member name="F:Yort.LatitudePay.InStore.LatitudePayEnvironment.Production">
+            <summary>
+            The live/production API.
+            </summary>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayMoney">
+            <summary>
+            Represents a monetary or financial value in the LatitudePay API as a tuple containing a numeric value and a string representing the associated currency.
+            </summary>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayCurrencies"/>
+            <remarks>
+            <para>This is an immutable value type. To set the value or currency you must use the <see cref="M:Yort.LatitudePay.InStore.LatitudePayMoney.#ctor(System.Decimal,System.String)"/> constructor.</para>
+            <para>Instances created using the default construtor will return a zero value with the <see cref="P:Yort.LatitudePay.InStore.LatitudePayMoney.Currency"/> property returning the value of <see cref="F:Yort.LatitudePay.InStore.LatitudePayCurrencies.NewZealandDollars"/>.</para>
+            <para>
+            <code>
+            	//Assuming you have an variable called payment with a 'value' property containing the decimal amount 
+            	//you want to send.
+            	var amount = new LatitudePayMoney(Math.Round(payment.Value, 2));
+            	
+            	//This sample uses a literal value for illustration purposes
+            	var amount = new LatitudePayMoney(Math.Round(99.9900, 2));
+            </code>
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayMoney.#ctor(System.Decimal)">
+            <summary>
+            Constructs a new instance using the specified amount and currency.
+            </summary>
+            <remarks>
+            <para>This constructor uses the <see cref="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.DefaultCurrency"/> value for the <see cref="P:Yort.LatitudePay.InStore.LatitudePayMoney.Currency"/> property of this instance. 
+            If <see cref="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.DefaultCurrency"/> is null or empty string then <see cref="F:Yort.LatitudePay.InStore.LatitudePayCurrencies.AustralianDollars"/> will be used.</para>
+            </remarks>
+            <param name="amount">A decimal value indicating the numeric value of this monetary value. This value should be rounded to the appropriate number of decimal places associated with the currency specified by <see cref="P:Yort.LatitudePay.InStore.LatitudePayMoney.Currency"/>.</param>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayMoney.#ctor(System.Decimal,System.String)">
+            <summary>
+            Constructs a new instance using the specified amount and currency.
+            </summary>
+            <param name="amount">A decimal value indicating the numeric value of this monetary value. This value should be rounded to the appropriate number of decimal places associated with the currency specified by <see cref="P:Yort.LatitudePay.InStore.LatitudePayMoney.Currency"/>.</param>
+            <param name="currency">A three chracter string that identifies the currency this monetary value is in.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown if <paramref name="currency"/> is null.</exception>
+            <exception cref="T:System.ArgumentException">Thrown if <paramref name="currency"/> is an empty string or contains only whitespace, or has a length other than 3.</exception>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayMoney.Amount">
+            <summary>
+            Returns the numeric amount of this monetary value in the currency specified by <see cref="P:Yort.LatitudePay.InStore.LatitudePayMoney.Currency"/>.
+            </summary>
+            <remarks>
+            <para>This value should be rounded to the appropriate number of decimal places associated with the currency specified by <see cref="P:Yort.LatitudePay.InStore.LatitudePayMoney.Currency"/>.</para>
+            </remarks>
+            <seealso cref="P:Yort.LatitudePay.InStore.LatitudePayMoney.Currency"/>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayMoney.Currency">
+            <summary>
+            Specifies the currency of the <see cref="P:Yort.LatitudePay.InStore.LatitudePayMoney.Amount"/>/
+            </summary>
+            <seealso cref="P:Yort.LatitudePay.InStore.LatitudePayMoney.Amount"/>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayMoney.ToString">
+            <summary>
+            Returns the <see cref="P:Yort.LatitudePay.InStore.LatitudePayMoney.Amount"/> property formatted as a currency using the current thread culture (which may or may not match the currency defined by <see cref="P:Yort.LatitudePay.InStore.LatitudePayMoney.Currency"/>).
+            </summary>
+            <returns>A string containing the formatted amount.</returns>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayMoney.GetHashCode">
+            <summary>
+            Returns the hashcode for this instance.
+            </summary>
+            <returns>A integer that is the hashcode for this instance.</returns>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayMoney.Equals(System.Object)">
+            <summary>
+            Compares this instance to an object value and returns true if they are both <see cref="T:Yort.LatitudePay.InStore.LatitudePayMoney"/> instances that are considered equal, otherwise false.
+            </summary>
+            <param name="obj">The other value to comnpare to.</param>
+            <returns>True if <paramref name="obj"/> is considered equal to this instance.</returns>
+            <remarks>
+            <para>If <paramref name="obj"/> is null or not an instance of <see cref="T:Yort.LatitudePay.InStore.LatitudePayMoney"/> then false is returned, otherwise the result of <see cref="M:Yort.LatitudePay.InStore.LatitudePayMoney.Equals(Yort.LatitudePay.InStore.LatitudePayMoney)"/> is returned.</para>
+            </remarks>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayMoney.Equals(Yort.LatitudePay.InStore.LatitudePayMoney)">
+            <summary>
+            Returns true if this instance is considered equal to <paramref name="other"/>, otherwise returns false.
+            </summary>
+            <param name="other">The other instance to compare to.</param>
+            <remarks>
+            <para>Equality is determined by comparing the <see cref="P:Yort.LatitudePay.InStore.LatitudePayMoney.Amount"/> properties for an exact match and the <see cref="P:Yort.LatitudePay.InStore.LatitudePayMoney.Currency"/> properties for an ordinal, case-insensitive match.</para>
+            </remarks>
+            <returns>True if the two instances are considered equal.</returns>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayMoney.op_Equality(Yort.LatitudePay.InStore.LatitudePayMoney,Yort.LatitudePay.InStore.LatitudePayMoney)">
+            <summary>
+            Performs equality checking on <see cref="T:Yort.LatitudePay.InStore.LatitudePayMoney"/> instances.
+            </summary>
+            <param name="value1">A <see cref="T:Yort.LatitudePay.InStore.LatitudePayMoney"/> instance.</param>
+            <param name="value2">A <see cref="T:Yort.LatitudePay.InStore.LatitudePayMoney"/> instance.</param>
+            <remarks>
+            <para>Equality is determined by comparing the <see cref="P:Yort.LatitudePay.InStore.LatitudePayMoney.Amount"/> properties for an exact match and the <see cref="P:Yort.LatitudePay.InStore.LatitudePayMoney.Currency"/> properties for an ordinal, case-insensitive match.</para>
+            </remarks>
+            <returns>True if the instances are equal, otherwise false.</returns>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayMoney.op_Inequality(Yort.LatitudePay.InStore.LatitudePayMoney,Yort.LatitudePay.InStore.LatitudePayMoney)">
+            <summary>
+            Performs inequality checking on <see cref="T:Yort.LatitudePay.InStore.LatitudePayMoney"/> instances.
+            </summary>
+            <param name="value1">A <see cref="T:Yort.LatitudePay.InStore.LatitudePayMoney"/> instance.</param>
+            <param name="value2">A <see cref="T:Yort.LatitudePay.InStore.LatitudePayMoney"/> instance.</param>
+            <remarks>Inverts the result of an == comparison.</remarks>
+            <returns>True if the instances are not equal, otherwise false.</returns>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayProduct">
+            <summary>
+            Represents details of an item purchased via a <see cref="T:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest"/>.
+            </summary>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/>
+            <seealso cref="M:Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)"/>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest"/>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayProduct.Name">
+            <summary>
+            Gets or sets the name/description of the product.
+            </summary>
+            <value>
+            The name.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayProduct.Price">
+            <summary>
+            Gets or sets the unit price of the product.
+            </summary>
+            <value>
+            The price.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayProduct.Sku">
+            <summary>
+            Gets or sets the SKU of the item.
+            </summary>
+            <value>
+            The sku.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayProduct.Quantity">
+            <summary>
+            Gets or sets the quantity of this item purchased.
+            </summary>
+            <value>
+            The quantity.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayProduct.TaxIncluded">
+            <summary>
+            Gets or sets a value indicating whether <see cref="P:Yort.LatitudePay.InStore.LatitudePayProduct.Price"/> is inclusive of tax.
+            </summary>
+            <value>
+              <c>true</c> if tax is included in <see cref="P:Yort.LatitudePay.InStore.LatitudePayProduct.Price"/>; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest">
+            <summary>
+            Represents a request to obtain the status of a payment plan created via <see cref="M:Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)"/>.
+            </summary>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest.PaymentPlanToken">
+            <summary>
+            Gets or sets the payment token for the plan.
+            </summary>
+            <value>
+            The payment plan token.
+            </value>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse">
+            <summary>
+            Represents the status of a payment plan as returned by a <see cref="M:Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)"/> request.
+            </summary>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest"/>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/>
+            <seealso cref="M:Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)"/>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Token">
+            <summary>
+            Gets or sets the payment token.
+            </summary>
+            <value>
+            The token.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Status">
+            <summary>
+            Gets or sets the status of the payment plan.
+            </summary>
+            <value>
+            The status.
+            </value>
+            <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayConstants"/>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.Message">
+            <summary>
+            Gets or sets a human readable message related to the status of this payment plan.
+            </summary>
+            <value>
+            The message.
+            </value>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayReturnUrls">
+            <summary>
+            Provides a set of URLs to be called by LatitudePay as the payment plan changes status.
+            </summary>
+            <remarks>
+            <para>LatitudePay with make HTTP GET requests to any callback provided, with query string arguments for details of the payment plan and status associated.</para>
+            <para>Also included should be a Signature query argument that can be used to verify the callback came from LatitudePay and is not malicious.</para>
+            </remarks>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayReturnUrls.SuccessUrl">
+            <summary>
+            Gets or sets the URL to call when the payment plan is approved.
+            </summary>
+            <value>
+            The success URL.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayReturnUrls.FailUrl">
+            <summary>
+            Gets or sets the URL to call when the payment plan is declined or cancelled..
+            </summary>
+            <value>
+            The fail URL.
+            </value>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayReturnUrls.CallbackUrl">
+            <summary>
+            Gets or sets a URL to call approximately 10 seconds after the initial callback, as a backup notification in case the first is missed.
+            </summary>
+            <value>
+            The callback URL.
+            </value>
+        </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayHMACSHA256SignatureGenerator">
+            <summary>
+            Generates signatures for LatitudePay requests using HMACSHA256.
+            </summary>
+            <seealso cref="T:Yort.LatitudePay.InStore.ILatitudePaySignatureGenerator" />
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayHMACSHA256SignatureGenerator.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Yort.LatitudePay.InStore.LatitudePayHMACSHA256SignatureGenerator"/> class.
+            </summary>
+            <param name="apiSecret">The LatitudePay API secret.</param>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayHMACSHA256SignatureGenerator.GenerateSignature(System.String)">
+            <summary>
+            Generates the signature for a string containing a LatitudePay request body in json format.
+            </summary>
+            <param name="jsonPayload">The json payload.</param>
+            <remarks>
+            <para>If <paramref name="jsonPayload"/> is null or an empty string then null is returned as the signature.</para>
+            </remarks>
+            <returns>A string containing the required signature.</returns>
+            <exception cref="T:System.ObjectDisposedException">Thrown if <see cref="M:Yort.LatitudePay.InStore.LatitudePayHMACSHA256SignatureGenerator.Dispose"/> has been called on this instance.</exception>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayHMACSHA256SignatureGenerator.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
             </summary>
         </member>
     </members>

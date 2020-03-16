@@ -33,6 +33,8 @@
     <None Remove="articles\**" />
     <None Remove="images\**" />
     <None Remove="_site\**" />
+    <None Remove="log.txt" />
+    <None Remove="Yort.LatitudePay.InStore.xml" />
     <None Include="images\projecticon128.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
@@ -46,6 +48,9 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+		<PackageReference Include="Mozzarella" Version="2.0.1" />
+		<PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+		<PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
@@ -62,17 +67,17 @@
 	</ItemGroup>
 
 	<ItemGroup>
-    <Compile Update="ErrorMessage.Designer.cs">
+    <Compile Update="ErrorMessages.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>ErrorMessage.resx</DependentUpon>
+      <DependentUpon>ErrorMessages.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="ErrorMessage.resx">
+    <EmbeddedResource Update="ErrorMessages.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ErrorMessage.Designer.cs</LastGenOutput>
+      <LastGenOutput>ErrorMessages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

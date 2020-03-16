@@ -18,7 +18,331 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.LatitudePay.InStore.ILatitudePayClient.html",
-          "hash": "lRh1toYlV4VxB69WEnll+g=="
+          "hash": "Cw3AJ1KWCRburx9uQRDdCQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.ILatitudePaySignatureGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.ILatitudePaySignatureGenerator.html",
+          "hash": "d09an4CMtYSKOcOKTtGBBg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.ILatitudePaySystemClock.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.ILatitudePaySystemClock.html",
+          "hash": "xhZlN9qw9ttOgTQDZaQeDg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitiudePayShippingLine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitiudePayShippingLine.html",
+          "hash": "P4SEwi00BDbWhJyrzD8BfA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayAddress.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayAddress.html",
+          "hash": "YhxqNKa5dY0SMajuBOfmcQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayAuthToken.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayAuthToken.html",
+          "hash": "R1dcxL7XQ3rkqrmWjNTFeg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayAvailability.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayAvailability.html",
+          "hash": "cxm4mjj/I8+PePdtjVmdWQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest.html",
+          "hash": "39Wcs1a/Lp0ATZiMsvLXvw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayCancelPurchaseResponse.html",
+          "hash": "vyqAl3x/Ci3q6m5YrgyEvg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayClient.html",
+          "hash": "pnZLLu97K/B5gK2F6jZVlw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayClientConfiguration.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayClientConfiguration.html",
+          "hash": "qQjKxUgkQNLzpQ7b1+kX0Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayConfigurationRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayConfigurationRequest.html",
+          "hash": "JMYCt5SEO49Ij7AI01xtTQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayConfigurationResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayConfigurationResponse.html",
+          "hash": "VGBAHuFToiPUZPo9ZBWLSg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayConstants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayConstants.html",
+          "hash": "jMeAO8YtPlOLdvFtS0/0vg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.html",
+          "hash": "GUJg7LWqPFzWfenFtuo3hA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.html",
+          "hash": "LgNzIQ9w05oFhmSbKwJMDQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.html",
+          "hash": "ZFi8wxzhMaLnBqQBwJEYYg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse.html",
+          "hash": "TwluZhyXlzUemAMjuHp2XQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayCurrencies.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayCurrencies.html",
+          "hash": "h3UssEiKB9z5suBY/w5L4g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayCustomer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayCustomer.html",
+          "hash": "tkG+kDYDKMtTotsBA2C9+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayEnvironment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayEnvironment.html",
+          "hash": "eElCIoJ2yzr0Gonp0GnPOA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayHMACSHA256SignatureGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayHMACSHA256SignatureGenerator.html",
+          "hash": "Gq1Q70S67cDw/KpYjgAdgg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayMoney.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayMoney.html",
+          "hash": "fYzkYJFDdBiK8PEJ2tQKXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayProduct.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayProduct.html",
+          "hash": "92XVFe6LaZmiIetoleRsQQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest.html",
+          "hash": "utpYf1kt0MffOfhUxoSg+Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayPurchaseStatusResponse.html",
+          "hash": "n+gNV2btphYji9mu8J9Vfg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePayReturnUrls.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayReturnUrls.html",
+          "hash": "sVKwuc4atwfxS9f1aRSq+Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Yort.LatitudePay.InStore.LatitudePaySystemClock.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Yort.LatitudePay.InStore.LatitudePaySystemClock.html",
+          "hash": "lHu2A134hVkBT/u8hs2+GQ=="
         }
       },
       "is_incremental": false,
@@ -30,7 +354,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.LatitudePay.InStore.html",
-          "hash": "haJ9/sY3/o/hWlcIoIJmGQ=="
+          "hash": "6mpdaK/ySrk/deMr2HDY+Q=="
         }
       },
       "is_incremental": false,
@@ -63,19 +387,14 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Disable incremental build by force rebuild option.",
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0
+        "skipped_file_count": 0,
+        "full_build_reason_code": "ForceRebuild"
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -83,17 +402,24 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 2,
-          "skipped_file_count": 2
+          "total_file_count": 0,
+          "skipped_file_count": 0
         },
         "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 1,
-          "skipped_file_count": 1
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 29,
+          "skipped_file_count": 0
         }
       }
     },

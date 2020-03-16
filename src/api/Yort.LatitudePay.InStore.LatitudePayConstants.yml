@@ -1,0 +1,568 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.LatitudePay.InStore.LatitudePayConstants
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayConstants
+  id: LatitudePayConstants
+  parent: Yort.LatitudePay.InStore
+  children:
+  - Yort.LatitudePay.InStore.LatitudePayConstants.LatitudePayV3ContentType
+  - Yort.LatitudePay.InStore.LatitudePayConstants.ProductionRootUrl
+  - Yort.LatitudePay.InStore.LatitudePayConstants.StatusApproved
+  - Yort.LatitudePay.InStore.LatitudePayConstants.StatusDeclined
+  - Yort.LatitudePay.InStore.LatitudePayConstants.StatusPending
+  - Yort.LatitudePay.InStore.LatitudePayConstants.UatRootUrl
+  langs:
+  - csharp
+  - vb
+  name: LatitudePayConstants
+  nameWithType: LatitudePayConstants
+  fullName: Yort.LatitudePay.InStore.LatitudePayConstants
+  type: Class
+  source:
+    remote:
+      path: src/LatitudePayConstants.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: LatitudePayConstants
+    path: LatitudePayConstants.cs
+    startLine: 5
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nContains constants for useful for dealing with the LatitudePay API.\n"
+  example: []
+  syntax:
+    content: public static class LatitudePayConstants
+    content.vb: Public Module LatitudePayConstants
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Yort.LatitudePay.InStore.LatitudePayConstants.ProductionRootUrl
+  commentId: F:Yort.LatitudePay.InStore.LatitudePayConstants.ProductionRootUrl
+  id: ProductionRootUrl
+  parent: Yort.LatitudePay.InStore.LatitudePayConstants
+  langs:
+  - csharp
+  - vb
+  name: ProductionRootUrl
+  nameWithType: LatitudePayConstants.ProductionRootUrl
+  fullName: Yort.LatitudePay.InStore.LatitudePayConstants.ProductionRootUrl
+  type: Field
+  source:
+    remote:
+      path: src/LatitudePayConstants.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: ProductionRootUrl
+    path: LatitudePayConstants.cs
+    startLine: 10
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nReturns a string containing the root url for the live/production LatitudePay API.\n"
+  example: []
+  syntax:
+    content: public const string ProductionRootUrl = "https://api.latitudepay.com"
+    return:
+      type: System.String
+    content.vb: Public Const ProductionRootUrl As String = "https://api.latitudepay.com"
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Yort.LatitudePay.InStore.LatitudePayConstants.UatRootUrl
+  commentId: F:Yort.LatitudePay.InStore.LatitudePayConstants.UatRootUrl
+  id: UatRootUrl
+  parent: Yort.LatitudePay.InStore.LatitudePayConstants
+  langs:
+  - csharp
+  - vb
+  name: UatRootUrl
+  nameWithType: LatitudePayConstants.UatRootUrl
+  fullName: Yort.LatitudePay.InStore.LatitudePayConstants.UatRootUrl
+  type: Field
+  source:
+    remote:
+      path: src/LatitudePayConstants.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: UatRootUrl
+    path: LatitudePayConstants.cs
+    startLine: 14
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nReturns a string containing the root url for the UAT/sandbox/test LatitudePay API.\n"
+  example: []
+  syntax:
+    content: public const string UatRootUrl = "https://api.uat.latitudepay.com"
+    return:
+      type: System.String
+    content.vb: Public Const UatRootUrl As String = "https://api.uat.latitudepay.com"
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Yort.LatitudePay.InStore.LatitudePayConstants.LatitudePayV3ContentType
+  commentId: F:Yort.LatitudePay.InStore.LatitudePayConstants.LatitudePayV3ContentType
+  id: LatitudePayV3ContentType
+  parent: Yort.LatitudePay.InStore.LatitudePayConstants
+  langs:
+  - csharp
+  - vb
+  name: LatitudePayV3ContentType
+  nameWithType: LatitudePayConstants.LatitudePayV3ContentType
+  fullName: Yort.LatitudePay.InStore.LatitudePayConstants.LatitudePayV3ContentType
+  type: Field
+  source:
+    remote:
+      path: src/LatitudePayConstants.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: LatitudePayV3ContentType
+    path: LatitudePayConstants.cs
+    startLine: 19
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nReturns the content-type to use for HTTP requests to the LatitudePay API for version 3 content entities.\n"
+  example: []
+  syntax:
+    content: public const string LatitudePayV3ContentType = "application/com.latitudepay.ecom-v3.0+json"
+    return:
+      type: System.String
+    content.vb: Public Const LatitudePayV3ContentType As String = "application/com.latitudepay.ecom-v3.0+json"
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Yort.LatitudePay.InStore.LatitudePayConstants.StatusApproved
+  commentId: F:Yort.LatitudePay.InStore.LatitudePayConstants.StatusApproved
+  id: StatusApproved
+  parent: Yort.LatitudePay.InStore.LatitudePayConstants
+  langs:
+  - csharp
+  - vb
+  name: StatusApproved
+  nameWithType: LatitudePayConstants.StatusApproved
+  fullName: Yort.LatitudePay.InStore.LatitudePayConstants.StatusApproved
+  type: Field
+  source:
+    remote:
+      path: src/LatitudePayConstants.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: StatusApproved
+    path: LatitudePayConstants.cs
+    startLine: 24
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nThe status of a payment plan that has been approved by the customer and payment processor.\n"
+  example: []
+  syntax:
+    content: public const string StatusApproved = "APPROVED"
+    return:
+      type: System.String
+    content.vb: Public Const StatusApproved As String = "APPROVED"
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Yort.LatitudePay.InStore.LatitudePayConstants.StatusDeclined
+  commentId: F:Yort.LatitudePay.InStore.LatitudePayConstants.StatusDeclined
+  id: StatusDeclined
+  parent: Yort.LatitudePay.InStore.LatitudePayConstants
+  langs:
+  - csharp
+  - vb
+  name: StatusDeclined
+  nameWithType: LatitudePayConstants.StatusDeclined
+  fullName: Yort.LatitudePay.InStore.LatitudePayConstants.StatusDeclined
+  type: Field
+  source:
+    remote:
+      path: src/LatitudePayConstants.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: StatusDeclined
+    path: LatitudePayConstants.cs
+    startLine: 29
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nThe status of a payment plan that has been cancelled or declined for some reason (i.e insufficient funds).\n"
+  example: []
+  syntax:
+    content: public const string StatusDeclined = "DECLINED"
+    return:
+      type: System.String
+    content.vb: Public Const StatusDeclined As String = "DECLINED"
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Yort.LatitudePay.InStore.LatitudePayConstants.StatusPending
+  commentId: F:Yort.LatitudePay.InStore.LatitudePayConstants.StatusPending
+  id: StatusPending
+  parent: Yort.LatitudePay.InStore.LatitudePayConstants
+  langs:
+  - csharp
+  - vb
+  name: StatusPending
+  nameWithType: LatitudePayConstants.StatusPending
+  fullName: Yort.LatitudePay.InStore.LatitudePayConstants.StatusPending
+  type: Field
+  source:
+    remote:
+      path: src/LatitudePayConstants.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: StatusPending
+    path: LatitudePayConstants.cs
+    startLine: 34
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nThe status of a payment plan that has been requested but not yet approved or declined.\n"
+  example: []
+  syntax:
+    content: public const string StatusPending = "PENDING"
+    return:
+      type: System.String
+    content.vb: Public Const StatusPending As String = "PENDING"
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: Yort.LatitudePay.InStore
+  commentId: N:Yort.LatitudePay.InStore
+  name: Yort.LatitudePay.InStore
+  nameWithType: Yort.LatitudePay.InStore
+  fullName: Yort.LatitudePay.InStore
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

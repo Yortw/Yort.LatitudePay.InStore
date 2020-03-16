@@ -1,0 +1,983 @@
+### YamlMime:ManagedReference
+items:
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayClientConfiguration
+  id: LatitudePayClientConfiguration
+  parent: Yort.LatitudePay.InStore
+  children:
+  - Yort.LatitudePay.InStore.LatitudePayClientConfiguration.#ctor
+  - Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiKey
+  - Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiSecret
+  - Yort.LatitudePay.InStore.LatitudePayClientConfiguration.DefaultCurrency
+  - Yort.LatitudePay.InStore.LatitudePayClientConfiguration.Environment
+  - Yort.LatitudePay.InStore.LatitudePayClientConfiguration.HttpClient
+  - Yort.LatitudePay.InStore.LatitudePayClientConfiguration.MinimumRetries
+  - Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductName
+  - Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductVendor
+  - Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductVersion
+  - Yort.LatitudePay.InStore.LatitudePayClientConfiguration.RetryDelaySeconds
+  - Yort.LatitudePay.InStore.LatitudePayClientConfiguration.SystemClock
+  langs:
+  - csharp
+  - vb
+  name: LatitudePayClientConfiguration
+  nameWithType: LatitudePayClientConfiguration
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration
+  type: Class
+  source:
+    remote:
+      path: src/LatitudePayClientConfiguration.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: LatitudePayClientConfiguration
+    path: LatitudePayClientConfiguration.cs
+    startLine: 10
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nInstances of this class represent configuration options for <xref href=\"Yort.LatitudePay.InStore.ILatitudePayClient\" data-throw-if-not-resolved=\"false\"></xref> instances. The static members of this class provide global configuration common to all instances.\n"
+  example: []
+  syntax:
+    content: public sealed class LatitudePayClientConfiguration
+    content.vb: Public NotInheritable Class LatitudePayClientConfiguration
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.#ctor
+  commentId: M:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.#ctor
+  id: '#ctor'
+  parent: Yort.LatitudePay.InStore.LatitudePayClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: LatitudePayClientConfiguration()
+  nameWithType: LatitudePayClientConfiguration.LatitudePayClientConfiguration()
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.LatitudePayClientConfiguration()
+  type: Constructor
+  source:
+    remote:
+      path: src/LatitudePayClientConfiguration.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: .ctor
+    path: LatitudePayClientConfiguration.cs
+    startLine: 35
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nDefault contructor, creates a new instance.\n"
+  remarks: "\n<p>Instances of this type become immmutable once passed to a <xref href=\"Yort.LatitudePay.InStore.LatitudePayClient\" data-throw-if-not-resolved=\"false\"></xref> instance. Trying to set properties after this has occurred will result in an <xref href=\"System.InvalidOperationException\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+  example: []
+  syntax:
+    content: public LatitudePayClientConfiguration()
+    content.vb: Public Sub New
+  overload: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.Environment
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.Environment
+  id: Environment
+  parent: Yort.LatitudePay.InStore.LatitudePayClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: Environment
+  nameWithType: LatitudePayClientConfiguration.Environment
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.Environment
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayClientConfiguration.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: Environment
+    path: LatitudePayClientConfiguration.cs
+    startLine: 44
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nSets or returns the LatitudePay API environment to be used.\n"
+  example: []
+  syntax:
+    content: public LatitudePayEnvironment Environment { get; set; }
+    parameters: []
+    return:
+      type: Yort.LatitudePay.InStore.LatitudePayEnvironment
+    content.vb: Public Property Environment As LatitudePayEnvironment
+  overload: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.Environment*
+  exceptions:
+  - type: System.InvalidProgramException
+    commentId: T:System.InvalidProgramException
+    description: Thrown if this property is modified after it has been passed to a <xref href="Yort.LatitudePay.InStore.LatitudePayClient" data-throw-if-not-resolved="false"></xref> instance.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.HttpClient
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.HttpClient
+  id: HttpClient
+  parent: Yort.LatitudePay.InStore.LatitudePayClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: HttpClient
+  nameWithType: LatitudePayClientConfiguration.HttpClient
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.HttpClient
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayClientConfiguration.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: HttpClient
+    path: LatitudePayClientConfiguration.cs
+    startLine: 63
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nSets or returns an <xref href=\"Yort.LatitudePay.InStore.LatitudePayClientConfiguration.HttpClient\" data-throw-if-not-resolved=\"false\"></xref> instance used to make calls to the LatitudePay API. If null/unset, the system will create it&apos;s own instance on first use.\n"
+  remarks: "\n<p>The library reserves the right to modify the provided client, such as setting default headers. A client can be shared amongst configuration object, but should not be shared/use outside of other <xref href=\"Yort.LatitudePay.InStore.LatitudePayClient\" data-throw-if-not-resolved=\"false\"></xref> instaces.\nThe primary purpose of this method is to allow a client with injected handlers to be used. If you do not need to inject custom handlers, then leave this blank.</p>\n"
+  example: []
+  syntax:
+    content: public HttpClient HttpClient { get; set; }
+    parameters: []
+    return:
+      type: System.Net.Http.HttpClient
+    content.vb: Public Property HttpClient As HttpClient
+  overload: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.HttpClient*
+  exceptions:
+  - type: System.InvalidProgramException
+    commentId: T:System.InvalidProgramException
+    description: Thrown if this property is modified after it has been passed to a <xref href="Yort.LatitudePay.InStore.LatitudePayClient" data-throw-if-not-resolved="false"></xref> instance.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductName
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductName
+  id: ProductName
+  parent: Yort.LatitudePay.InStore.LatitudePayClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ProductName
+  nameWithType: LatitudePayClientConfiguration.ProductName
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductName
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayClientConfiguration.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: ProductName
+    path: LatitudePayClientConfiguration.cs
+    startLine: 81
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nSets or returns the product name that will be used as part of the user agent string when calling the LatitudePay API.\n"
+  remarks: "\n<p>If null, empty string or only whitespace the name of the Yort.LatitudePay.Instore assembly being used will be substituted as a default.</p>\n"
+  example: []
+  syntax:
+    content: public string ProductName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ProductName As String
+  overload: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductName*
+  exceptions:
+  - type: System.InvalidProgramException
+    commentId: T:System.InvalidProgramException
+    description: Thrown if this property is modified after it has been passed to a <xref href="Yort.LatitudePay.InStore.LatitudePayClient" data-throw-if-not-resolved="false"></xref> instance.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductVersion
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductVersion
+  id: ProductVersion
+  parent: Yort.LatitudePay.InStore.LatitudePayClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ProductVersion
+  nameWithType: LatitudePayClientConfiguration.ProductVersion
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductVersion
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayClientConfiguration.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: ProductVersion
+    path: LatitudePayClientConfiguration.cs
+    startLine: 99
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nSets or returns the version number of the <xref href=\"Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductName\" data-throw-if-not-resolved=\"false\"></xref> name that will be used as part of the user agent string when calling the LatitudePay API.\n"
+  remarks: "\n<p>If null, empty string or only whitespace the version of the Yort.LatitudePay.Instore assembly being used will be substituted as a default.</p>\n"
+  example: []
+  syntax:
+    content: public string ProductVersion { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ProductVersion As String
+  overload: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductVersion*
+  exceptions:
+  - type: System.InvalidProgramException
+    commentId: T:System.InvalidProgramException
+    description: Thrown if this property is modified after it has been passed to a <xref href="Yort.LatitudePay.InStore.LatitudePayClient" data-throw-if-not-resolved="false"></xref> instance.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductVendor
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductVendor
+  id: ProductVendor
+  parent: Yort.LatitudePay.InStore.LatitudePayClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ProductVendor
+  nameWithType: LatitudePayClientConfiguration.ProductVendor
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductVendor
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayClientConfiguration.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: ProductVendor
+    path: LatitudePayClientConfiguration.cs
+    startLine: 117
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nSets or returns the name of the vendor that will be used as part of the user agent string when calling the LatitudePay API.\n"
+  remarks: "\n<p>If null, empty string or only whitespace, &quot;Yort&quot; assembly being used will be substituted as a default.</p>\n"
+  example: []
+  syntax:
+    content: public string ProductVendor { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ProductVendor As String
+  overload: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductVendor*
+  exceptions:
+  - type: System.InvalidProgramException
+    commentId: T:System.InvalidProgramException
+    description: Thrown if this property is modified after it has been passed to a <xref href="Yort.LatitudePay.InStore.LatitudePayClient" data-throw-if-not-resolved="false"></xref> instance.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiKey
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiKey
+  id: ApiKey
+  parent: Yort.LatitudePay.InStore.LatitudePayClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ApiKey
+  nameWithType: LatitudePayClientConfiguration.ApiKey
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiKey
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayClientConfiguration.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: ApiKey
+    path: LatitudePayClientConfiguration.cs
+    startLine: 132
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nSets or returns the API key that identifies the merchant account to use with LatitudePay.\n"
+  example: []
+  syntax:
+    content: public string ApiKey { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ApiKey As String
+  overload: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiKey*
+  exceptions:
+  - type: System.InvalidProgramException
+    commentId: T:System.InvalidProgramException
+    description: Thrown if this property is modified after it has been passed to a <xref href="Yort.LatitudePay.InStore.LatitudePayClient" data-throw-if-not-resolved="false"></xref> instance.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiSecret
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiSecret
+  id: ApiSecret
+  parent: Yort.LatitudePay.InStore.LatitudePayClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: ApiSecret
+  nameWithType: LatitudePayClientConfiguration.ApiSecret
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiSecret
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayClientConfiguration.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: ApiSecret
+    path: LatitudePayClientConfiguration.cs
+    startLine: 147
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nSets or returns the secret value used to access the LatitudePay API.\n"
+  example: []
+  syntax:
+    content: public string ApiSecret { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ApiSecret As String
+  overload: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiSecret*
+  exceptions:
+  - type: System.InvalidProgramException
+    commentId: T:System.InvalidProgramException
+    description: Thrown if this property is modified after it has been passed to a <xref href="Yort.LatitudePay.InStore.LatitudePayClient" data-throw-if-not-resolved="false"></xref> instance.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.MinimumRetries
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.MinimumRetries
+  id: MinimumRetries
+  parent: Yort.LatitudePay.InStore.LatitudePayClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: MinimumRetries
+  nameWithType: LatitudePayClientConfiguration.MinimumRetries
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.MinimumRetries
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayClientConfiguration.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: MinimumRetries
+    path: LatitudePayClientConfiguration.cs
+    startLine: 166
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nThe minumum number of automatic retries to perform when a create transaction (order/refund/order reversal/refund reversal etc) times out.\n"
+  remarks: "\n<p>This property defaults to a value of 2. A value of zero or less is allowed, in which case only the initial attempt will be made - no retries will be performed within the library and any error handling logic will need to be entirely implemented by the application.</p>\n<p>The library may attempt more retries than specified if the total time since the initial call is less than the (full, LatitudePay) recommended timeout for the endpoint being called.</p>\n"
+  example: []
+  syntax:
+    content: public int MinimumRetries { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property MinimumRetries As Integer
+  overload: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.MinimumRetries*
+  exceptions:
+  - type: System.InvalidProgramException
+    commentId: T:System.InvalidProgramException
+    description: Thrown if this property is modified after it has been passed to a <xref href="Yort.LatitudePay.InStore.LatitudePayClient" data-throw-if-not-resolved="false"></xref> instance.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.RetryDelaySeconds
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.RetryDelaySeconds
+  id: RetryDelaySeconds
+  parent: Yort.LatitudePay.InStore.LatitudePayClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: RetryDelaySeconds
+  nameWithType: LatitudePayClientConfiguration.RetryDelaySeconds
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.RetryDelaySeconds
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayClientConfiguration.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: RetryDelaySeconds
+    path: LatitudePayClientConfiguration.cs
+    startLine: 187
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nSets or returns the number of seconds to wait before attempting a retry.\n"
+  remarks: "\n<p>When a transactional call (CreateOrder/Refund etc) times out the system will perform a retry (based on the <xref href=\"Yort.LatitudePay.InStore.LatitudePayClientConfiguration.MinimumRetries\" data-throw-if-not-resolved=\"false\"></xref> setting). \nIf that retry attempt returns a 409 conflict response indicating the first request is still in progres, \nthen the system will wait this many seconds before the next retry. See https://docs.LatitudePay.com.au/instore-api-v1.html#distributed-state-considerations and https://docs.LatitudePay.com.au/instore-api-v1.html#create-order for more details.</p>\n<p>The minimum value is 5 seconds. Any value less than 5 seconds will be ignored, and a 5 second delay will occur instead.</p>\n"
+  example: []
+  syntax:
+    content: public int RetryDelaySeconds { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property RetryDelaySeconds As Integer
+  overload: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.RetryDelaySeconds*
+  exceptions:
+  - type: System.InvalidProgramException
+    commentId: T:System.InvalidProgramException
+    description: Thrown if this property is modified after it has been passed to a <xref href="Yort.LatitudePay.InStore.LatitudePayClient" data-throw-if-not-resolved="false"></xref> instance.
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.SystemClock
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.SystemClock
+  id: SystemClock
+  parent: Yort.LatitudePay.InStore.LatitudePayClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: SystemClock
+  nameWithType: LatitudePayClientConfiguration.SystemClock
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.SystemClock
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayClientConfiguration.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: SystemClock
+    path: LatitudePayClientConfiguration.cs
+    startLine: 223
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nSets or returns an implementation of <xref href=\"Yort.LatitudePay.InStore.ILatitudePaySystemClock\" data-throw-if-not-resolved=\"false\"></xref> that will be used by the library to determine the current date and time.\n"
+  remarks: "\n<p>If not clock is explicitly set, or if the property is set to null, then <xref href=\"Yort.LatitudePay.InStore.LatitudePaySystemClock.DefaultInstance\" data-throw-if-not-resolved=\"false\"></xref> will be used (and returned as the current value of the property).</p>\n<p>This property can be used to provide a mocked clock for unit testing, or to provide a clock adjusted by a calculated offset via an NTP client etc. if the system clock cannot be relied upon for accuracy.</p>\n<p>This is a static property and the value set here affects all clients/objects from the Yort.LatitudePay.InStore API unless otherwise specified.</p>\n"
+  example: []
+  syntax:
+    content: public static ILatitudePaySystemClock SystemClock { get; set; }
+    parameters: []
+    return:
+      type: Yort.LatitudePay.InStore.ILatitudePaySystemClock
+    content.vb: Public Shared Property SystemClock As ILatitudePaySystemClock
+  overload: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.SystemClock*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.DefaultCurrency
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.DefaultCurrency
+  id: DefaultCurrency
+  parent: Yort.LatitudePay.InStore.LatitudePayClientConfiguration
+  langs:
+  - csharp
+  - vb
+  name: DefaultCurrency
+  nameWithType: LatitudePayClientConfiguration.DefaultCurrency
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.DefaultCurrency
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayClientConfiguration.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: DefaultCurrency
+    path: LatitudePayClientConfiguration.cs
+    startLine: 238
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nSets or returns the default currency for new <xref href=\"Yort.LatitudePay.InStore.LatitudePayMoney\" data-throw-if-not-resolved=\"false\"></xref> instances where the currency is not explicitly provided.\n"
+  remarks: "\n<p>If this property is null or an empty string then <xref href=\"Yort.LatitudePay.InStore.LatitudePayCurrencies.AustralianDollars\" data-throw-if-not-resolved=\"false\"></xref> will be used as a default.</p>\n"
+  example: []
+  syntax:
+    content: public static string DefaultCurrency { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared Property DefaultCurrency As String
+  overload: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.DefaultCurrency*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: Yort.LatitudePay.InStore.ILatitudePayClient
+  commentId: T:Yort.LatitudePay.InStore.ILatitudePayClient
+  parent: Yort.LatitudePay.InStore
+  name: ILatitudePayClient
+  nameWithType: ILatitudePayClient
+  fullName: Yort.LatitudePay.InStore.ILatitudePayClient
+- uid: Yort.LatitudePay.InStore
+  commentId: N:Yort.LatitudePay.InStore
+  name: Yort.LatitudePay.InStore
+  nameWithType: Yort.LatitudePay.InStore
+  fullName: Yort.LatitudePay.InStore
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Yort.LatitudePay.InStore.LatitudePayClient
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayClient
+  name: LatitudePayClient
+  nameWithType: LatitudePayClient
+  fullName: Yort.LatitudePay.InStore.LatitudePayClient
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+  isExternal: true
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.#ctor*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.#ctor
+  name: LatitudePayClientConfiguration
+  nameWithType: LatitudePayClientConfiguration.LatitudePayClientConfiguration
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.LatitudePayClientConfiguration
+- uid: System.InvalidProgramException
+  commentId: T:System.InvalidProgramException
+  isExternal: true
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.Environment*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.Environment
+  name: Environment
+  nameWithType: LatitudePayClientConfiguration.Environment
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.Environment
+- uid: Yort.LatitudePay.InStore.LatitudePayEnvironment
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayEnvironment
+  parent: Yort.LatitudePay.InStore
+  name: LatitudePayEnvironment
+  nameWithType: LatitudePayEnvironment
+  fullName: Yort.LatitudePay.InStore.LatitudePayEnvironment
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.HttpClient
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.HttpClient
+  isExternal: true
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.HttpClient*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.HttpClient
+  name: HttpClient
+  nameWithType: LatitudePayClientConfiguration.HttpClient
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.HttpClient
+- uid: System.Net.Http.HttpClient
+  commentId: T:System.Net.Http.HttpClient
+  parent: System.Net.Http
+  isExternal: true
+  name: HttpClient
+  nameWithType: HttpClient
+  fullName: System.Net.Http.HttpClient
+- uid: System.Net.Http
+  commentId: N:System.Net.Http
+  isExternal: true
+  name: System.Net.Http
+  nameWithType: System.Net.Http
+  fullName: System.Net.Http
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductName*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductName
+  name: ProductName
+  nameWithType: LatitudePayClientConfiguration.ProductName
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductName
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductName
+  isExternal: true
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductVersion*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductVersion
+  name: ProductVersion
+  nameWithType: LatitudePayClientConfiguration.ProductVersion
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductVersion
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductVendor*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductVendor
+  name: ProductVendor
+  nameWithType: LatitudePayClientConfiguration.ProductVendor
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductVendor
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiKey*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiKey
+  name: ApiKey
+  nameWithType: LatitudePayClientConfiguration.ApiKey
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiKey
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiSecret*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiSecret
+  name: ApiSecret
+  nameWithType: LatitudePayClientConfiguration.ApiSecret
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiSecret
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.MinimumRetries*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.MinimumRetries
+  name: MinimumRetries
+  nameWithType: LatitudePayClientConfiguration.MinimumRetries
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.MinimumRetries
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.MinimumRetries
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.MinimumRetries
+  isExternal: true
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.RetryDelaySeconds*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.RetryDelaySeconds
+  name: RetryDelaySeconds
+  nameWithType: LatitudePayClientConfiguration.RetryDelaySeconds
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.RetryDelaySeconds
+- uid: Yort.LatitudePay.InStore.ILatitudePaySystemClock
+  commentId: T:Yort.LatitudePay.InStore.ILatitudePaySystemClock
+  parent: Yort.LatitudePay.InStore
+  name: ILatitudePaySystemClock
+  nameWithType: ILatitudePaySystemClock
+  fullName: Yort.LatitudePay.InStore.ILatitudePaySystemClock
+- uid: Yort.LatitudePay.InStore.LatitudePaySystemClock.DefaultInstance
+  commentId: P:Yort.LatitudePay.InStore.LatitudePaySystemClock.DefaultInstance
+  isExternal: true
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.SystemClock*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.SystemClock
+  name: SystemClock
+  nameWithType: LatitudePayClientConfiguration.SystemClock
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.SystemClock
+- uid: Yort.LatitudePay.InStore.LatitudePayMoney
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayMoney
+  parent: Yort.LatitudePay.InStore
+  name: LatitudePayMoney
+  nameWithType: LatitudePayMoney
+  fullName: Yort.LatitudePay.InStore.LatitudePayMoney
+- uid: Yort.LatitudePay.InStore.LatitudePayCurrencies.AustralianDollars
+  commentId: F:Yort.LatitudePay.InStore.LatitudePayCurrencies.AustralianDollars
+  isExternal: true
+- uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.DefaultCurrency*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.DefaultCurrency
+  name: DefaultCurrency
+  nameWithType: LatitudePayClientConfiguration.DefaultCurrency
+  fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.DefaultCurrency
