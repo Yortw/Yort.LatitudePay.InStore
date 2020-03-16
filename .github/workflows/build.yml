@@ -12,7 +12,8 @@ jobs:
     runs-on: windows-latest
     env:
       LatitudePay_ApiKey: ${{ secrets.LatitudePay_ApiKey }}    
-      LatitudePay_ApiSecret: ${{ secrets.LatitudePay_ApiSecret }}    
+      LatitudePay_ApiSecret: ${{ secrets.LatitudePay_ApiSecret }}
+      LatitudePay_TestMobileNumber: ${{ secrets.LatitudePay_TestMobileNumber }}
       Coveralls_Token: ${{ secrets.Coveralls_Token }}   
 
     steps:
