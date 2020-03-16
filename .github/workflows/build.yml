@@ -11,8 +11,8 @@ jobs:
 
     runs-on: windows-latest
     env:
-      LatitudeSandbox_ApiKey: ${{ secrets.LatitudeSandbox_ApiKey }}    
-      LatitudeSandbox_ApiSecret: ${{ secrets.LatitudeSandbox_ApiSecret }}    
+      LatitudeSandbox_ApiKey: ${{ secrets.LatitudePay_ApiKey }}    
+      LatitudeSandbox_ApiSecret: ${{ secrets.LatitudePay_ApiSecret }}    
       Coveralls_Token: ${{ secrets.Coveralls_Token }}   
 
     steps:
