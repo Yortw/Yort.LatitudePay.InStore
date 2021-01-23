@@ -26,32 +26,12 @@ namespace Tests
 		[TestMethod]
 		public async Task Purchase()
 		{
-			var client = GetSandboxClient();
-
-			var request = new LatitudePayCreatePosPurchaseRequest() 
-			{ 
-				Reference = System.Guid.NewGuid().ToString(),
-				BillingAddress = new LatitudePayAddress()
+			using (var client = GetSandboxClient())
+			{
+				var request = new LatitudePayCreatePosPurchaseRequest()
 				{
-					AddressLine1 = "124 Fifth Avenue",
-					Suburb = "Auckland",
-					CityTown = "Auckland",
-					State = "Auckland",
-					Postcode = "1010",
-					CountryCode = "NZ"
-				},
-				ShippingAddress = new LatitudePayAddress()
-				{
-					AddressLine1 = "124 Fifth Avenue",
-					Suburb = "Auckland",
-					CityTown = "Auckland",
-					State = "Auckland",
-					Postcode = "1010",
-					CountryCode = "NZ"
-				},
-				Customer = new LatitudePayCustomer()
-				{
-					Address = new LatitudePayAddress()
+					Reference = System.Guid.NewGuid().ToString(),
+					BillingAddress = new LatitudePayAddress()
 					{
 						AddressLine1 = "124 Fifth Avenue",
 						Suburb = "Auckland",
@@ -60,11 +40,31 @@ namespace Tests
 						Postcode = "1010",
 						CountryCode = "NZ"
 					},
-					FirstName = "John",
-					Surname = "Doe",
-					MobileNumber = Environment.GetEnvironmentVariable("LatitudePay_TestMobileNumber")
-				},
-				Products = new List<LatitudePayProduct>()
+					ShippingAddress = new LatitudePayAddress()
+					{
+						AddressLine1 = "124 Fifth Avenue",
+						Suburb = "Auckland",
+						CityTown = "Auckland",
+						State = "Auckland",
+						Postcode = "1010",
+						CountryCode = "NZ"
+					},
+					Customer = new LatitudePayCustomer()
+					{
+						Address = new LatitudePayAddress()
+						{
+							AddressLine1 = "124 Fifth Avenue",
+							Suburb = "Auckland",
+							CityTown = "Auckland",
+							State = "Auckland",
+							Postcode = "1010",
+							CountryCode = "NZ"
+						},
+						FirstName = "John",
+						Surname = "Doe",
+						MobileNumber = Environment.GetEnvironmentVariable("LatitudePay_TestMobileNumber")
+					},
+					Products = new List<LatitudePayProduct>()
 				{
 					new LatitudePayProduct()
 					{
@@ -75,7 +75,7 @@ namespace Tests
 						TaxIncluded = true
 					}
 				},
-				ShippingLines = new List<LatitiudePayShippingLine>()
+					ShippingLines = new List<LatitiudePayShippingLine>()
 				{
 					new LatitiudePayShippingLine()
 					{
@@ -83,69 +83,50 @@ namespace Tests
 						Price = new LatitudePayMoney(5.5M, "NZD")
 					}
 				},
-				TaxAmount = new LatitudePayMoney(5.325M, "NZD"),
-				TotalAmount = new LatitudePayMoney(35.5M, "NZD"),
-				ReturnUrls = new LatitudePayReturnUrls()
+					TaxAmount = new LatitudePayMoney(5.325M, "NZD"),
+					TotalAmount = new LatitudePayMoney(35.5M, "NZD"),
+					ReturnUrls = new LatitudePayReturnUrls()
+					{
+						SuccessUrl = new Uri("http://genoapay.com/success"),
+						FailUrl = new Uri("http://genoapay.com/fail"),
+						CallbackUrl = new Uri("http://genoapay.com/fail-safe-callback")
+					}
+				};
+				request.IdempotencyKey = request.Reference;
+
+				var purchaseResponse = await client.CreatePosPurchaseAsync(request);
+				Assert.IsNotNull(purchaseResponse);
+				Assert.IsFalse(String.IsNullOrWhiteSpace(purchaseResponse.Token));
+				Assert.IsNotNull(purchaseResponse.StatusUrl);
+
+				//Wait until payment enters final status
+				var statusRequest = new LatitudePayPurchaseStatusRequest() { PaymentPlanToken = purchaseResponse.Token };
+				var finalStatus = false;
+				LatitudePayPurchaseStatusResponse paymentStatus = null;
+				while (!finalStatus)
 				{
-					SuccessUrl = new Uri("http://genoapay.com/success"),
-					FailUrl = new Uri("http://genoapay.com/fail"),
-					CallbackUrl = new Uri("http://genoapay.com/fail-safe-callback")
+					await Task.Delay(5000).ConfigureAwait(false);
+					paymentStatus = await client.GetPurchaseStatusAsync(statusRequest).ConfigureAwait(false);
+
+					finalStatus = !String.Equals(paymentStatus.Status, LatitudePayConstants.StatusPending, StringComparison.OrdinalIgnoreCase);
 				}
-			};
-			request.IdempotencyKey = request.Reference;
 
-			var purchaseResponse = await client.CreatePosPurchaseAsync(request);
-			Assert.IsNotNull(purchaseResponse);
-			Assert.IsFalse(String.IsNullOrWhiteSpace(purchaseResponse.Token));
-			Assert.IsNotNull(purchaseResponse.StatusUrl);
-
-			//Wait until payment enters final status
-			var statusRequest = new LatitudePayPurchaseStatusRequest() { PaymentPlanToken = purchaseResponse.Token };
-			var finalStatus = false;
-			LatitudePayPurchaseStatusResponse paymentStatus = null;
-			while (!finalStatus)
-			{
-				await Task.Delay(5000).ConfigureAwait(false);
-				paymentStatus = await client.GetPurchaseStatusAsync(statusRequest).ConfigureAwait(false);
-
-				finalStatus = !String.Equals(paymentStatus.Status, LatitudePayConstants.StatusPending, StringComparison.OrdinalIgnoreCase);
+				Assert.AreEqual(LatitudePayConstants.StatusApproved, paymentStatus.Status);
+				Assert.IsFalse(String.IsNullOrEmpty(paymentStatus.Token));
+				Assert.IsFalse(String.IsNullOrEmpty(paymentStatus.Message));
 			}
-
-			Assert.AreEqual(LatitudePayConstants.StatusApproved, paymentStatus.Status);
-			Assert.IsFalse(String.IsNullOrEmpty(paymentStatus.Token));
-			Assert.IsFalse(String.IsNullOrEmpty(paymentStatus.Message));
 		}
 
 		[TestCategory("Integration")]
 		[TestMethod]
 		public async Task Cancel()
 		{
-			var client = GetSandboxClient();
-
-			var request = new LatitudePayCreatePosPurchaseRequest()
+			using (var client = GetSandboxClient())
 			{
-				Reference = "TBC-" + System.Guid.NewGuid().ToString(),
-				BillingAddress = new LatitudePayAddress()
+				var request = new LatitudePayCreatePosPurchaseRequest()
 				{
-					AddressLine1 = "124 Fifth Avenue",
-					Suburb = "Auckland",
-					CityTown = "Auckland",
-					State = "Auckland",
-					Postcode = "1010",
-					CountryCode = "NZ"
-				},
-				ShippingAddress = new LatitudePayAddress()
-				{
-					AddressLine1 = "124 Fifth Avenue",
-					Suburb = "Auckland",
-					CityTown = "Auckland",
-					State = "Auckland",
-					Postcode = "1010",
-					CountryCode = "NZ"
-				},
-				Customer = new LatitudePayCustomer()
-				{
-					Address = new LatitudePayAddress()
+					Reference = "TBC-" + System.Guid.NewGuid().ToString(),
+					BillingAddress = new LatitudePayAddress()
 					{
 						AddressLine1 = "124 Fifth Avenue",
 						Suburb = "Auckland",
@@ -154,11 +135,31 @@ namespace Tests
 						Postcode = "1010",
 						CountryCode = "NZ"
 					},
-					FirstName = "John",
-					Surname = "Doe",
-					MobileNumber = Environment.GetEnvironmentVariable("LatitudePay_TestMobileNumber")
-				},
-				Products = new List<LatitudePayProduct>()
+					ShippingAddress = new LatitudePayAddress()
+					{
+						AddressLine1 = "124 Fifth Avenue",
+						Suburb = "Auckland",
+						CityTown = "Auckland",
+						State = "Auckland",
+						Postcode = "1010",
+						CountryCode = "NZ"
+					},
+					Customer = new LatitudePayCustomer()
+					{
+						Address = new LatitudePayAddress()
+						{
+							AddressLine1 = "124 Fifth Avenue",
+							Suburb = "Auckland",
+							CityTown = "Auckland",
+							State = "Auckland",
+							Postcode = "1010",
+							CountryCode = "NZ"
+						},
+						FirstName = "John",
+						Surname = "Doe",
+						MobileNumber = Environment.GetEnvironmentVariable("LatitudePay_TestMobileNumber")
+					},
+					Products = new List<LatitudePayProduct>()
 				{
 					new LatitudePayProduct()
 					{
@@ -169,7 +170,7 @@ namespace Tests
 						TaxIncluded = true
 					}
 				},
-				ShippingLines = new List<LatitiudePayShippingLine>()
+					ShippingLines = new List<LatitiudePayShippingLine>()
 				{
 					new LatitiudePayShippingLine()
 					{
@@ -177,66 +178,47 @@ namespace Tests
 						Price = new LatitudePayMoney(5.5M, "NZD")
 					}
 				},
-				TaxAmount = new LatitudePayMoney(5.325M, "NZD"),
-				TotalAmount = new LatitudePayMoney(35.5M, "NZD"),
-				ReturnUrls = new LatitudePayReturnUrls()
-				{
-					SuccessUrl = new Uri("http://genoapay.com/success"),
-					FailUrl = new Uri("http://genoapay.com/fail"),
-					CallbackUrl = new Uri("http://genoapay.com/fail-safe-callback")
-				}
-			};
+					TaxAmount = new LatitudePayMoney(5.325M, "NZD"),
+					TotalAmount = new LatitudePayMoney(35.5M, "NZD"),
+					ReturnUrls = new LatitudePayReturnUrls()
+					{
+						SuccessUrl = new Uri("http://genoapay.com/success"),
+						FailUrl = new Uri("http://genoapay.com/fail"),
+						CallbackUrl = new Uri("http://genoapay.com/fail-safe-callback")
+					}
+				};
 
-			var purchaseResponse = await client.CreatePosPurchaseAsync(request);
-			Assert.IsNotNull(purchaseResponse);
-			Assert.IsFalse(String.IsNullOrWhiteSpace(purchaseResponse.Token));
-			Assert.IsNotNull(purchaseResponse.StatusUrl);
+				var purchaseResponse = await client.CreatePosPurchaseAsync(request);
+				Assert.IsNotNull(purchaseResponse);
+				Assert.IsFalse(String.IsNullOrWhiteSpace(purchaseResponse.Token));
+				Assert.IsNotNull(purchaseResponse.StatusUrl);
 
-			//Wait until payment enters final status
-			var cancelRequest = new LatitudePayCancelPurchaseRequest() { PaymentPlanToken = purchaseResponse.Token };
+				//Wait until payment enters final status
+				var cancelRequest = new LatitudePayCancelPurchaseRequest() { PaymentPlanToken = purchaseResponse.Token };
 
-			await Task.Delay(5000).ConfigureAwait(false);
-			var cancelResponse = await client.CancelPurchaseAsync(cancelRequest).ConfigureAwait(false);
+				await Task.Delay(5000).ConfigureAwait(false);
+				var cancelResponse = await client.CancelPurchaseAsync(cancelRequest).ConfigureAwait(false);
 
-			Assert.IsNotNull(cancelResponse);
-			Assert.IsFalse(String.IsNullOrWhiteSpace(cancelResponse.Token));
+				Assert.IsNotNull(cancelResponse);
+				Assert.IsFalse(String.IsNullOrWhiteSpace(cancelResponse.Token));
 
-			var statusRequest = new LatitudePayPurchaseStatusRequest() { PaymentPlanToken = purchaseResponse.Token };
-			var paymentStatus = await client.GetPurchaseStatusAsync(statusRequest).ConfigureAwait(false);
-			Assert.IsNotNull(paymentStatus);
-			Assert.AreEqual(LatitudePayConstants.StatusDeclined, paymentStatus.Status);
+				var statusRequest = new LatitudePayPurchaseStatusRequest() { PaymentPlanToken = purchaseResponse.Token };
+				var paymentStatus = await client.GetPurchaseStatusAsync(statusRequest).ConfigureAwait(false);
+				Assert.IsNotNull(paymentStatus);
+				Assert.AreEqual(LatitudePayConstants.StatusDeclined, paymentStatus.Status);
+			}
 		}
 
 		[TestCategory("Integration")]
 		[TestMethod]
 		public async Task Refund()
 		{
-			var client = GetSandboxClient();
-
-			var request = new LatitudePayCreatePosPurchaseRequest()
+			using (var client = GetSandboxClient())
 			{
-				Reference = "TBR-" + System.Guid.NewGuid().ToString(),
-				BillingAddress = new LatitudePayAddress()
+				var request = new LatitudePayCreatePosPurchaseRequest()
 				{
-					AddressLine1 = "124 Fifth Avenue",
-					Suburb = "Auckland",
-					CityTown = "Auckland",
-					State = "Auckland",
-					Postcode = "1010",
-					CountryCode = "NZ"
-				},
-				ShippingAddress = new LatitudePayAddress()
-				{
-					AddressLine1 = "124 Fifth Avenue",
-					Suburb = "Auckland",
-					CityTown = "Auckland",
-					State = "Auckland",
-					Postcode = "1010",
-					CountryCode = "NZ"
-				},
-				Customer = new LatitudePayCustomer()
-				{
-					Address = new LatitudePayAddress()
+					Reference = "TBR-" + System.Guid.NewGuid().ToString(),
+					BillingAddress = new LatitudePayAddress()
 					{
 						AddressLine1 = "124 Fifth Avenue",
 						Suburb = "Auckland",
@@ -245,11 +227,31 @@ namespace Tests
 						Postcode = "1010",
 						CountryCode = "NZ"
 					},
-					FirstName = "John",
-					Surname = "Doe",
-					MobileNumber = Environment.GetEnvironmentVariable("LatitudePay_TestMobileNumber")
-				},
-				Products = new List<LatitudePayProduct>()
+					ShippingAddress = new LatitudePayAddress()
+					{
+						AddressLine1 = "124 Fifth Avenue",
+						Suburb = "Auckland",
+						CityTown = "Auckland",
+						State = "Auckland",
+						Postcode = "1010",
+						CountryCode = "NZ"
+					},
+					Customer = new LatitudePayCustomer()
+					{
+						Address = new LatitudePayAddress()
+						{
+							AddressLine1 = "124 Fifth Avenue",
+							Suburb = "Auckland",
+							CityTown = "Auckland",
+							State = "Auckland",
+							Postcode = "1010",
+							CountryCode = "NZ"
+						},
+						FirstName = "John",
+						Surname = "Doe",
+						MobileNumber = Environment.GetEnvironmentVariable("LatitudePay_TestMobileNumber")
+					},
+					Products = new List<LatitudePayProduct>()
 				{
 					new LatitudePayProduct()
 					{
@@ -260,7 +262,7 @@ namespace Tests
 						TaxIncluded = true
 					}
 				},
-				ShippingLines = new List<LatitiudePayShippingLine>()
+					ShippingLines = new List<LatitiudePayShippingLine>()
 				{
 					new LatitiudePayShippingLine()
 					{
@@ -268,38 +270,141 @@ namespace Tests
 						Price = new LatitudePayMoney(5.5M, "NZD")
 					}
 				},
-				TaxAmount = new LatitudePayMoney(5.325M, "NZD"),
-				TotalAmount = new LatitudePayMoney(35.5M, "NZD"),
-				ReturnUrls = new LatitudePayReturnUrls()
+					TaxAmount = new LatitudePayMoney(5.325M, "NZD"),
+					TotalAmount = new LatitudePayMoney(35.5M, "NZD"),
+					ReturnUrls = new LatitudePayReturnUrls()
+					{
+						SuccessUrl = new Uri("http://genoapay.com/success"),
+						FailUrl = new Uri("http://genoapay.com/fail"),
+						CallbackUrl = new Uri("http://genoapay.com/fail-safe-callback")
+					}
+				};
+
+				var purchaseResponse = await client.CreatePosPurchaseAsync(request);
+				Assert.IsNotNull(purchaseResponse);
+				Assert.IsFalse(String.IsNullOrWhiteSpace(purchaseResponse.Token));
+				Assert.IsNotNull(purchaseResponse.StatusUrl);
+
+				//Wait until payment enters final status
+				var statusRequest = new LatitudePayPurchaseStatusRequest() { PaymentPlanToken = purchaseResponse.Token };
+				var finalStatus = false;
+				LatitudePayPurchaseStatusResponse paymentStatus;
+				while (!finalStatus)
 				{
-					SuccessUrl = new Uri("http://genoapay.com/success"),
-					FailUrl = new Uri("http://genoapay.com/fail"),
-					CallbackUrl = new Uri("http://genoapay.com/fail-safe-callback")
+					await Task.Delay(5000).ConfigureAwait(false);
+					paymentStatus = await client.GetPurchaseStatusAsync(statusRequest).ConfigureAwait(false);
+
+					finalStatus = !String.Equals(paymentStatus.Status, LatitudePayConstants.StatusPending, StringComparison.OrdinalIgnoreCase);
 				}
+
+				var refundRequest = new LatitudePayCreateRefundRequest() { PaymentPlanToken = purchaseResponse.Token, Amount = request.TotalAmount, Reason = "Test refund", Reference = System.Guid.NewGuid().ToString() };
+				var refundResponse = await client.CreateRefundAsync(refundRequest);
+				Assert.IsNotNull(refundResponse);
+				Assert.IsFalse(String.IsNullOrEmpty(refundResponse.RefundId));
+				Assert.IsFalse(String.IsNullOrEmpty(refundResponse.Reference));
+			}
+		}
+
+		[ExpectedException(typeof(UnauthorizedAccessException))]
+		[TestMethod]
+		public async Task ThrowsUnauthorisedException_ForAuthorisationFailure()
+		{
+			var config = new LatitudePayClientConfiguration()
+			{
+				ApiKey = "InvalidKey",
+				ApiSecret = "InvalidSecret",
+				Environment = LatitudePayEnvironment.Uat
 			};
 
-			var purchaseResponse = await client.CreatePosPurchaseAsync(request);
-			Assert.IsNotNull(purchaseResponse);
-			Assert.IsFalse(String.IsNullOrWhiteSpace(purchaseResponse.Token));
-			Assert.IsNotNull(purchaseResponse.StatusUrl);
-
-			//Wait until payment enters final status
-			var statusRequest = new LatitudePayPurchaseStatusRequest() { PaymentPlanToken = purchaseResponse.Token };
-			var finalStatus = false;
-			LatitudePayPurchaseStatusResponse paymentStatus;
-			while (!finalStatus)
+			using (var client = new LatitudePayClient(config))
 			{
-				await Task.Delay(5000).ConfigureAwait(false);
-				paymentStatus = await client.GetPurchaseStatusAsync(statusRequest).ConfigureAwait(false);
+				var request = new LatitudePayCreatePosPurchaseRequest()
+				{
+					Reference = System.Guid.NewGuid().ToString(),
+					BillingAddress = new LatitudePayAddress()
+					{
+						AddressLine1 = "124 Fifth Avenue",
+						Suburb = "Auckland",
+						CityTown = "Auckland",
+						State = "Auckland",
+						Postcode = "1010",
+						CountryCode = "NZ"
+					},
+					ShippingAddress = new LatitudePayAddress()
+					{
+						AddressLine1 = "124 Fifth Avenue",
+						Suburb = "Auckland",
+						CityTown = "Auckland",
+						State = "Auckland",
+						Postcode = "1010",
+						CountryCode = "NZ"
+					},
+					Customer = new LatitudePayCustomer()
+					{
+						Address = new LatitudePayAddress()
+						{
+							AddressLine1 = "124 Fifth Avenue",
+							Suburb = "Auckland",
+							CityTown = "Auckland",
+							State = "Auckland",
+							Postcode = "1010",
+							CountryCode = "NZ"
+						},
+						FirstName = "John",
+						Surname = "Doe",
+						MobileNumber = Environment.GetEnvironmentVariable("LatitudePay_TestMobileNumber")
+					},
+					Products = new List<LatitudePayProduct>()
+				{
+					new LatitudePayProduct()
+					{
+						Name = "Tennis Ball Multipack",
+						Price = new LatitudePayMoney(30, "NZD"),
+						Sku = "abc123",
+						Quantity = 1,
+						TaxIncluded = true
+					}
+				},
+					ShippingLines = new List<LatitiudePayShippingLine>()
+				{
+					new LatitiudePayShippingLine()
+					{
+						Carrier = "NZ Post",
+						Price = new LatitudePayMoney(5.5M, "NZD")
+					}
+				},
+					TaxAmount = new LatitudePayMoney(5.325M, "NZD"),
+					TotalAmount = new LatitudePayMoney(35.5M, "NZD"),
+					ReturnUrls = new LatitudePayReturnUrls()
+					{
+						SuccessUrl = new Uri("http://genoapay.com/success"),
+						FailUrl = new Uri("http://genoapay.com/fail"),
+						CallbackUrl = new Uri("http://genoapay.com/fail-safe-callback")
+					}
+				};
+				request.IdempotencyKey = request.Reference;
 
-				finalStatus = !String.Equals(paymentStatus.Status, LatitudePayConstants.StatusPending, StringComparison.OrdinalIgnoreCase);
+				var purchaseResponse = await client.CreatePosPurchaseAsync(request);
+				Assert.IsNotNull(purchaseResponse);
+				Assert.IsFalse(String.IsNullOrWhiteSpace(purchaseResponse.Token));
+				Assert.IsNotNull(purchaseResponse.StatusUrl);
+
+				//Wait until payment enters final status
+				var statusRequest = new LatitudePayPurchaseStatusRequest() { PaymentPlanToken = purchaseResponse.Token };
+				var finalStatus = false;
+				LatitudePayPurchaseStatusResponse paymentStatus = null;
+				while (!finalStatus)
+				{
+					await Task.Delay(5000).ConfigureAwait(false);
+					paymentStatus = await client.GetPurchaseStatusAsync(statusRequest).ConfigureAwait(false);
+
+					finalStatus = !String.Equals(paymentStatus.Status, LatitudePayConstants.StatusPending, StringComparison.OrdinalIgnoreCase);
+				}
+
+				Assert.AreEqual(LatitudePayConstants.StatusApproved, paymentStatus.Status);
+				Assert.IsFalse(String.IsNullOrEmpty(paymentStatus.Token));
+				Assert.IsFalse(String.IsNullOrEmpty(paymentStatus.Message));
 			}
-
-			var refundRequest = new LatitudePayCreateRefundRequest() { PaymentPlanToken = purchaseResponse.Token, Amount = request.TotalAmount, Reason = "Test refund", Reference = System.Guid.NewGuid().ToString() };
-			var refundResponse = await client.CreateRefundAsync(refundRequest);
-			Assert.IsNotNull(refundResponse);
-			Assert.IsFalse(String.IsNullOrEmpty(refundResponse.RefundId));
-			Assert.IsFalse(String.IsNullOrEmpty(refundResponse.Reference));
 		}
 
 		private ILatitudePayClient GetSandboxClient()
