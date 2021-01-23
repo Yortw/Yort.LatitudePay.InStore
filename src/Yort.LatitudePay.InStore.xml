@@ -676,6 +676,17 @@
             <see cref="M:Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)"/>
             <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse"/>
         </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.IdempotencyKey">
+            <summary>
+            A value unique to this payment, but common to all CreatePosPurchaseRequests sent for this payment, to ensure the payment is created only once.
+            </summary>
+            <remarks>
+            <para>This value is optional but highly recommended as without using it you cannot guarantee network problems and other issues won't lead to customers making payments the system doesn't know about.</para>
+            <para>Set this property to a value that is unique for this *payment* but the same for each call to <see cref="M:Yort.LatitudePay.InStore.ILatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)"/> for that payment.
+            Any repeat requests using the same idempotency key value will return the original response without creating a second payment or sending the customer another message. If the original request never got processed 
+            (due to power failure, network outage etc) then the next request will be treated as the first one. This guarantees the customer gets one and only one request to make payment.</para>
+            </remarks>
+        </member>
         <member name="P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Customer">
             <summary>
             Gets or sets details about the customer the payment plan is for.
@@ -811,6 +822,17 @@
             <seealso cref="T:Yort.LatitudePay.InStore.LatitudePayCreateRefundResponse"/>
             <seealso cref="M:Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)"/>
         </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.IdempotencyKey">
+            <summary>
+            A value unique to this refund, but common to all CreateRefundRequest sent for this payment, to ensure the refund is created only once.
+            </summary>
+            <remarks>
+            <para>This value is optional but highly recommended as without using it you cannot guarantee network problems and other issues won't lead to duplicate refunds.</para>
+            <para>Set this property to a value that is unique for this *refund* but the same for each call to <see cref="M:Yort.LatitudePay.InStore.ILatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)"/> for that refund.
+            Any repeat requests using the same idempotency key value will return the original response without creating a second refund. If the original request never got processed 
+            (due to power failure, network outage etc) then the next request will be treated as the first one. This guarantees one and only one refund is created.</para>
+            </remarks>
+        </member>
         <member name="P:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken">
             <summary>
             Gets or sets the token of the payment plan to refund against.
@@ -833,7 +855,7 @@
             </summary>
             <value>
             The reason.
-            </value>		[JsonProperty("reason")]
+            </value>		
         </member>
         <member name="P:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Amount">
             <summary>

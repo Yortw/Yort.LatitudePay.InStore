@@ -91,7 +91,6 @@ namespace Yort.LatitudePay.InStore.Tests
 
 			using (var generator = new LatitudePayHMACSHA256SignatureGenerator("1y02Nwqzj1FbznAw"))
       {
- 
         Assert.AreEqual("81ddf72b57031a0b956cc368edac0fcd51d6669a4a0b82cd7aeb3b17e2712389", generator.GenerateSignature(jsonPayload));
       }
 		}

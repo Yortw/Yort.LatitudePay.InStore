@@ -7,6 +7,7 @@ items:
   children:
   - Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.BillingAddress
   - Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Customer
+  - Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.IdempotencyKey
   - Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Products
   - Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Reference
   - Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ReturnUrls
@@ -59,6 +60,54 @@ items:
   modifiers.vb:
   - Public
   - Class
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.IdempotencyKey
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.IdempotencyKey
+  id: IdempotencyKey
+  parent: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+  langs:
+  - csharp
+  - vb
+  name: IdempotencyKey
+  nameWithType: LatitudePayCreatePosPurchaseRequest.IdempotencyKey
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.IdempotencyKey
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayCreatePosPurchaseRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: IdempotencyKey
+    path: LatitudePayCreatePosPurchaseRequest.cs
+    startLine: 24
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nA value unique to this payment, but common to all CreatePosPurchaseRequests sent for this payment, to ensure the payment is created only once.\n"
+  remarks: "\n<p>This value is optional but highly recommended as without using it you cannot guarantee network problems and other issues won&apos;t lead to customers making payments the system doesn&apos;t know about.</p>\n<p>Set this property to a value that is unique for this *payment* but the same for each call to <xref href=\"Yort.LatitudePay.InStore.ILatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)\" data-throw-if-not-resolved=\"false\"></xref> for that payment.\nAny repeat requests using the same idempotency key value will return the original response without creating a second payment or sending the customer another message. If the original request never got processed \n(due to power failure, network outage etc) then the next request will be treated as the first one. This guarantees the customer gets one and only one request to make payment.</p>\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public string IdempotencyKey { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonIgnore>
+
+      Public Property IdempotencyKey As String
+  overload: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.IdempotencyKey*
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
 - uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Customer
   commentId: P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Customer
   id: Customer
@@ -77,7 +126,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: Customer
     path: LatitudePayCreatePosPurchaseRequest.cs
-    startLine: 24
+    startLine: 36
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -135,7 +184,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: ShippingAddress
     path: LatitudePayCreatePosPurchaseRequest.cs
-    startLine: 34
+    startLine: 46
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -188,7 +237,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: BillingAddress
     path: LatitudePayCreatePosPurchaseRequest.cs
-    startLine: 43
+    startLine: 55
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -241,7 +290,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: Products
     path: LatitudePayCreatePosPurchaseRequest.cs
-    startLine: 52
+    startLine: 64
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -294,7 +343,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: ShippingLines
     path: LatitudePayCreatePosPurchaseRequest.cs
-    startLine: 61
+    startLine: 73
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -347,7 +396,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: TaxAmount
     path: LatitudePayCreatePosPurchaseRequest.cs
-    startLine: 71
+    startLine: 83
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -402,7 +451,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: Reference
     path: LatitudePayCreatePosPurchaseRequest.cs
-    startLine: 80
+    startLine: 92
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -459,7 +508,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: TotalAmount
     path: LatitudePayCreatePosPurchaseRequest.cs
-    startLine: 95
+    startLine: 107
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -522,7 +571,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: ReturnUrls
     path: LatitudePayCreatePosPurchaseRequest.cs
-    startLine: 105
+    startLine: 117
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -860,6 +909,60 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: Yort.LatitudePay.InStore.ILatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+  commentId: M:Yort.LatitudePay.InStore.ILatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+  parent: Yort.LatitudePay.InStore.ILatitudePayClient
+  name: CreatePosPurchaseAsync(LatitudePayCreatePosPurchaseRequest)
+  nameWithType: ILatitudePayClient.CreatePosPurchaseAsync(LatitudePayCreatePosPurchaseRequest)
+  fullName: Yort.LatitudePay.InStore.ILatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+  spec.csharp:
+  - uid: Yort.LatitudePay.InStore.ILatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+    name: CreatePosPurchaseAsync
+    nameWithType: ILatitudePayClient.CreatePosPurchaseAsync
+    fullName: Yort.LatitudePay.InStore.ILatitudePayClient.CreatePosPurchaseAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+    name: LatitudePayCreatePosPurchaseRequest
+    nameWithType: LatitudePayCreatePosPurchaseRequest
+    fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.LatitudePay.InStore.ILatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)
+    name: CreatePosPurchaseAsync
+    nameWithType: ILatitudePayClient.CreatePosPurchaseAsync
+    fullName: Yort.LatitudePay.InStore.ILatitudePayClient.CreatePosPurchaseAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+    name: LatitudePayCreatePosPurchaseRequest
+    nameWithType: LatitudePayCreatePosPurchaseRequest
+    fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.IdempotencyKey*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.IdempotencyKey
+  name: IdempotencyKey
+  nameWithType: LatitudePayCreatePosPurchaseRequest.IdempotencyKey
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.IdempotencyKey
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Yort.LatitudePay.InStore.ILatitudePayClient
+  commentId: T:Yort.LatitudePay.InStore.ILatitudePayClient
+  parent: Yort.LatitudePay.InStore
+  name: ILatitudePayClient
+  nameWithType: ILatitudePayClient
+  fullName: Yort.LatitudePay.InStore.ILatitudePayClient
 - uid: Yort.LatitudePay.InStore.LatitudePayCustomer
   commentId: T:Yort.LatitudePay.InStore.LatitudePayCustomer
   parent: Yort.LatitudePay.InStore
@@ -1058,13 +1161,6 @@ references:
   name: Reference
   nameWithType: LatitudePayCreatePosPurchaseRequest.Reference
   fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Reference
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
 - uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Products
   commentId: P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Products
   isExternal: true

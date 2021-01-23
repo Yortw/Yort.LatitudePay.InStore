@@ -848,6 +848,19 @@ references:
   isSpec: "True"
   fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Customer
   nameWithType: LatitudePayCreatePosPurchaseRequest.Customer
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.IdempotencyKey
+  name: IdempotencyKey
+  href: api/Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.html#Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_IdempotencyKey
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.IdempotencyKey
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.IdempotencyKey
+  nameWithType: LatitudePayCreatePosPurchaseRequest.IdempotencyKey
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.IdempotencyKey*
+  name: IdempotencyKey
+  href: api/Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.html#Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_IdempotencyKey_
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.IdempotencyKey
+  isSpec: "True"
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.IdempotencyKey
+  nameWithType: LatitudePayCreatePosPurchaseRequest.IdempotencyKey
 - uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Products
   name: Products
   href: api/Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.html#Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_Products
@@ -1016,6 +1029,19 @@ references:
   isSpec: "True"
   fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Amount
   nameWithType: LatitudePayCreateRefundRequest.Amount
+- uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.IdempotencyKey
+  name: IdempotencyKey
+  href: api/Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.html#Yort_LatitudePay_InStore_LatitudePayCreateRefundRequest_IdempotencyKey
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.IdempotencyKey
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.IdempotencyKey
+  nameWithType: LatitudePayCreateRefundRequest.IdempotencyKey
+- uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.IdempotencyKey*
+  name: IdempotencyKey
+  href: api/Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.html#Yort_LatitudePay_InStore_LatitudePayCreateRefundRequest_IdempotencyKey_
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.IdempotencyKey
+  isSpec: "True"
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.IdempotencyKey
+  nameWithType: LatitudePayCreateRefundRequest.IdempotencyKey
 - uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken
   name: PaymentPlanToken
   href: api/Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.html#Yort_LatitudePay_InStore_LatitudePayCreateRefundRequest_PaymentPlanToken

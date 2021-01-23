@@ -117,9 +117,15 @@ namespace Yort.LatitudePay.InStore
 			var requestUri = new Uri($"sale/pos?signature={signature}", UriKind.Relative);
 			using (var requestContent = new StringContent(jsonBody, System.Text.UTF8Encoding.UTF8, LatitudePayConstants.LatitudePayV3ContentType))
 			{
-				using (var response = await _HttpClient.PostAsync(requestUri, requestContent).ConfigureAwait(false))
+				using (var requestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 				{
-					return await DeserialiseResponse<LatitudePayCreatePosPurchaseResponse>(response).ConfigureAwait(false);
+					AddIdempotencyKeyHeader(requestMessage, request.IdempotencyKey);
+					requestMessage.Content = requestContent;
+
+					using (var response = await _HttpClient.SendAsync(requestMessage).ConfigureAwait(false))
+					{
+						return await DeserialiseResponse<LatitudePayCreatePosPurchaseResponse>(response).ConfigureAwait(false);
+					}
 				}
 			}
 		}
@@ -208,9 +214,15 @@ namespace Yort.LatitudePay.InStore
 			var requestUri = new Uri($"sale/{request.PaymentPlanToken}/refund?signature={signature}", UriKind.Relative);
 			using (var requestContent = new StringContent(jsonBody, System.Text.UTF8Encoding.UTF8, LatitudePayConstants.LatitudePayV3ContentType))
 			{
-				using (var response = await _HttpClient.PostAsync(requestUri, requestContent).ConfigureAwait(false))
+				using (var requestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 				{
-					return await DeserialiseResponse<LatitudePayCreateRefundResponse>(response).ConfigureAwait(false);
+					AddIdempotencyKeyHeader(requestMessage, request.IdempotencyKey);
+					requestMessage.Content = requestContent;
+
+					using (var response = await _HttpClient.SendAsync(requestMessage).ConfigureAwait(false))
+					{
+						return await DeserialiseResponse<LatitudePayCreateRefundResponse>(response).ConfigureAwait(false);
+					}
 				}
 			}
 		}
@@ -269,7 +281,7 @@ namespace Yort.LatitudePay.InStore
 			}
 		}
 
-		private async Task<T> DeserialiseResponse<T>(HttpResponseMessage response)
+		private static async Task<T> DeserialiseResponse<T>(HttpResponseMessage response)
 		{
 			response.EnsureSuccessStatusCode();
 
@@ -356,6 +368,13 @@ namespace Yort.LatitudePay.InStore
 				String.IsNullOrWhiteSpace(_Configuration.ProductName) ? assemblyName.Name : _Configuration.ProductName,
 				String.IsNullOrWhiteSpace(_Configuration.ProductVersion) ? assemblyName.Version.ToString() : _Configuration.ProductVersion
 			);
+		}
+
+		private static void AddIdempotencyKeyHeader(HttpRequestMessage requestMessage, string? idempotencyKey)
+		{
+			if (String.IsNullOrWhiteSpace(idempotencyKey)) return;
+
+			requestMessage.Headers.Add("X-Idempotency-Key", idempotencyKey);
 		}
 
 		#endregion

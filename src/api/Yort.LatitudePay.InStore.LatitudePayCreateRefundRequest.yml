@@ -6,6 +6,7 @@ items:
   parent: Yort.LatitudePay.InStore
   children:
   - Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Amount
+  - Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.IdempotencyKey
   - Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken
   - Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reason
   - Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reference
@@ -53,6 +54,54 @@ items:
   modifiers.vb:
   - Public
   - Class
+- uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.IdempotencyKey
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.IdempotencyKey
+  id: IdempotencyKey
+  parent: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest
+  langs:
+  - csharp
+  - vb
+  name: IdempotencyKey
+  nameWithType: LatitudePayCreateRefundRequest.IdempotencyKey
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.IdempotencyKey
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayCreateRefundRequest.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: IdempotencyKey
+    path: LatitudePayCreateRefundRequest.cs
+    startLine: 22
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nA value unique to this refund, but common to all CreateRefundRequest sent for this payment, to ensure the refund is created only once.\n"
+  remarks: "\n<p>This value is optional but highly recommended as without using it you cannot guarantee network problems and other issues won&apos;t lead to duplicate refunds.</p>\n<p>Set this property to a value that is unique for this *refund* but the same for each call to <xref href=\"Yort.LatitudePay.InStore.ILatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)\" data-throw-if-not-resolved=\"false\"></xref> for that refund.\nAny repeat requests using the same idempotency key value will return the original response without creating a second refund. If the original request never got processed \n(due to power failure, network outage etc) then the next request will be treated as the first one. This guarantees one and only one refund is created.</p>\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonIgnore]
+
+      public string IdempotencyKey { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonIgnore>
+
+      Public Property IdempotencyKey As String
+  overload: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.IdempotencyKey*
+  attributes:
+  - type: Newtonsoft.Json.JsonIgnoreAttribute
+    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
 - uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken
   commentId: P:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken
   id: PaymentPlanToken
@@ -71,7 +120,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: PaymentPlanToken
     path: LatitudePayCreateRefundRequest.cs
-    startLine: 18
+    startLine: 31
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -126,7 +175,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: Reference
     path: LatitudePayCreateRefundRequest.cs
-    startLine: 28
+    startLine: 41
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -176,20 +225,32 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: Reason
     path: LatitudePayCreateRefundRequest.cs
-    startLine: 37
+    startLine: 50
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
   summary: "\nGets or sets a descriptive reason for the refund.\n"
   example: []
   syntax:
-    content: public string Reason { get; set; }
+    content: >-
+      [JsonProperty("reason")]
+
+      public string Reason { get; set; }
     parameters: []
     return:
       type: System.String
       description: "\nThe reason.\n"
-    content.vb: Public Property Reason As String
+    content.vb: >-
+      <JsonProperty("reason")>
+
+      Public Property Reason As String
   overload: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reason*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: reason
   modifiers.csharp:
   - public
   - get
@@ -214,7 +275,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: Amount
     path: LatitudePayCreateRefundRequest.cs
-    startLine: 45
+    startLine: 59
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -559,11 +620,47 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken*
-  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken
-  name: PaymentPlanToken
-  nameWithType: LatitudePayCreateRefundRequest.PaymentPlanToken
-  fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken
+- uid: Yort.LatitudePay.InStore.ILatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+  commentId: M:Yort.LatitudePay.InStore.ILatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+  parent: Yort.LatitudePay.InStore.ILatitudePayClient
+  name: CreateRefundAsync(LatitudePayCreateRefundRequest)
+  nameWithType: ILatitudePayClient.CreateRefundAsync(LatitudePayCreateRefundRequest)
+  fullName: Yort.LatitudePay.InStore.ILatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+  spec.csharp:
+  - uid: Yort.LatitudePay.InStore.ILatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+    name: CreateRefundAsync
+    nameWithType: ILatitudePayClient.CreateRefundAsync
+    fullName: Yort.LatitudePay.InStore.ILatitudePayClient.CreateRefundAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest
+    name: LatitudePayCreateRefundRequest
+    nameWithType: LatitudePayCreateRefundRequest
+    fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Yort.LatitudePay.InStore.ILatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+    name: CreateRefundAsync
+    nameWithType: ILatitudePayClient.CreateRefundAsync
+    fullName: Yort.LatitudePay.InStore.ILatitudePayClient.CreateRefundAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest
+    name: LatitudePayCreateRefundRequest
+    nameWithType: LatitudePayCreateRefundRequest
+    fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.IdempotencyKey*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.IdempotencyKey
+  name: IdempotencyKey
+  nameWithType: LatitudePayCreateRefundRequest.IdempotencyKey
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.IdempotencyKey
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -571,6 +668,17 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
+- uid: Yort.LatitudePay.InStore.ILatitudePayClient
+  commentId: T:Yort.LatitudePay.InStore.ILatitudePayClient
+  parent: Yort.LatitudePay.InStore
+  name: ILatitudePayClient
+  nameWithType: ILatitudePayClient
+  fullName: Yort.LatitudePay.InStore.ILatitudePayClient
+- uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken
+  name: PaymentPlanToken
+  nameWithType: LatitudePayCreateRefundRequest.PaymentPlanToken
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken
 - uid: Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reference*
   commentId: Overload:Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reference
   name: Reference

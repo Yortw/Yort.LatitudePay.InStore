@@ -14,6 +14,18 @@ namespace Yort.LatitudePay.InStore
 	public class LatitudePayCreatePosPurchaseRequest
 	{
 		/// <summary>
+		/// A value unique to this payment, but common to all CreatePosPurchaseRequests sent for this payment, to ensure the payment is created only once.
+		/// </summary>
+		/// <remarks>
+		/// <para>This value is optional but highly recommended as without using it you cannot guarantee network problems and other issues won't lead to customers making payments the system doesn't know about.</para>
+		/// <para>Set this property to a value that is unique for this *payment* but the same for each call to <see cref="ILatitudePayClient.CreatePosPurchaseAsync(LatitudePayCreatePosPurchaseRequest)"/> for that payment.
+		/// Any repeat requests using the same idempotency key value will return the original response without creating a second payment or sending the customer another message. If the original request never got processed 
+		/// (due to power failure, network outage etc) then the next request will be treated as the first one. This guarantees the customer gets one and only one request to make payment.</para>
+		/// </remarks>
+		[JsonIgnore]
+		public string? IdempotencyKey { get; set; }
+
+		/// <summary>
 		/// Gets or sets details about the customer the payment plan is for.
 		/// </summary>
 		/// <remarks>

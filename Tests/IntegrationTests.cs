@@ -92,6 +92,7 @@ namespace Tests
 					CallbackUrl = new Uri("http://genoapay.com/fail-safe-callback")
 				}
 			};
+			request.IdempotencyKey = request.Reference;
 
 			var purchaseResponse = await client.CreatePosPurchaseAsync(request);
 			Assert.IsNotNull(purchaseResponse);

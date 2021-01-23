@@ -126,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayClient.html",
-          "hash": "pnZLLu97K/B5gK2F6jZVlw=="
+          "hash": "RH9l1N3ioKZuCuJB1OXOxQ=="
         }
       },
       "is_incremental": false,
@@ -186,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.html",
-          "hash": "GUJg7LWqPFzWfenFtuo3hA=="
+          "hash": "MJc53PWkw/LJSa9VXf9Lrg=="
         }
       },
       "is_incremental": false,
@@ -210,7 +210,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.html",
-          "hash": "ZFi8wxzhMaLnBqQBwJEYYg=="
+          "hash": "QY9wWD4y09dSCTm7BvzvBA=="
         }
       },
       "is_incremental": false,
@@ -395,6 +395,18 @@
         "full_build_reason_code": "ForceRebuild"
       },
       "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 29,
+          "skipped_file_count": 0
+        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -407,18 +419,6 @@
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
-          "skipped_file_count": 0
-        },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 1,
-          "skipped_file_count": 0
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 29,
           "skipped_file_count": 0
         }
       }

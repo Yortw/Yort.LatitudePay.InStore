@@ -17,10 +17,12 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
     <DocumentationFile>C:\Projects\GitHub\Yort.LatitudePay.InStore\src\Yort.LatitudePay.InStore.xml</DocumentationFile>
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
     <DocumentationFile>C:\Projects\GitHub\Yort.LatitudePay.InStore\src\Yort.LatitudePay.InStore.xml</DocumentationFile>
+		<EnableNETAnalyzers>true</EnableNETAnalyzers>
   </PropertyGroup>
 
   <ItemGroup>
@@ -43,14 +45,10 @@
 
 	<ItemGroup>
 		<PackageReference Include="Ladon.Net" Version="1.0.2" />
-		<PackageReference Include="Microsoft.CodeAnalysis" Version="3.4.0" />
-		<PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.8">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
+		<PackageReference Include="Microsoft.CodeAnalysis" Version="3.8.0" />
 		<PackageReference Include="Mozzarella" Version="2.0.1" />
 		<PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
-		<PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
+		<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">

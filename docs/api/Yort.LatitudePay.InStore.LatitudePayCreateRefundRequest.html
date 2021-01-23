@@ -230,7 +230,7 @@
     <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/new/master/apiSpec/new?filename=Yort_LatitudePay_InStore_LatitudePayCreateRefundRequest_Amount.md&amp;value=---%0Auid%3A%20Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Amount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreateRefundRequest.cs/#L46">View Source</a>
+    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreateRefundRequest.cs/#L60">View Source</a>
   </span>
   <a id="Yort_LatitudePay_InStore_LatitudePayCreateRefundRequest_Amount_" data-uid="Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Amount*"></a>
   <h4 id="Yort_LatitudePay_InStore_LatitudePayCreateRefundRequest_Amount" data-uid="Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Amount">Amount</h4>
@@ -261,10 +261,48 @@ public LatitudePayMoney Amount { get; set; }</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/new/master/apiSpec/new?filename=Yort_LatitudePay_InStore_LatitudePayCreateRefundRequest_IdempotencyKey.md&amp;value=---%0Auid%3A%20Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.IdempotencyKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreateRefundRequest.cs/#L23">View Source</a>
+  </span>
+  <a id="Yort_LatitudePay_InStore_LatitudePayCreateRefundRequest_IdempotencyKey_" data-uid="Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.IdempotencyKey*"></a>
+  <h4 id="Yort_LatitudePay_InStore_LatitudePayCreateRefundRequest_IdempotencyKey" data-uid="Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.IdempotencyKey">IdempotencyKey</h4>
+  <div class="markdown level1 summary"><p>A value unique to this refund, but common to all CreateRefundRequest sent for this payment, to ensure the refund is created only once.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonIgnore]
+public string IdempotencyKey { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Yort_LatitudePay_InStore_LatitudePayCreateRefundRequest_IdempotencyKey_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This value is optional but highly recommended as without using it you cannot guarantee network problems and other issues won&apos;t lead to duplicate refunds.</p>
+<p>Set this property to a value that is unique for this *refund* but the same for each call to <a class="xref" href="Yort.LatitudePay.InStore.ILatitudePayClient.html#Yort_LatitudePay_InStore_ILatitudePayClient_CreateRefundAsync_Yort_LatitudePay_InStore_LatitudePayCreateRefundRequest_">CreateRefundAsync(LatitudePayCreateRefundRequest)</a> for that refund.
+Any repeat requests using the same idempotency key value will return the original response without creating a second refund. If the original request never got processed 
+(due to power failure, network outage etc) then the next request will be treated as the first one. This guarantees one and only one refund is created.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/new/master/apiSpec/new?filename=Yort_LatitudePay_InStore_LatitudePayCreateRefundRequest_PaymentPlanToken.md&amp;value=---%0Auid%3A%20Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreateRefundRequest.cs/#L19">View Source</a>
+    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreateRefundRequest.cs/#L32">View Source</a>
   </span>
   <a id="Yort_LatitudePay_InStore_LatitudePayCreateRefundRequest_PaymentPlanToken_" data-uid="Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken*"></a>
   <h4 id="Yort_LatitudePay_InStore_LatitudePayCreateRefundRequest_PaymentPlanToken" data-uid="Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.PaymentPlanToken">PaymentPlanToken</h4>
@@ -298,7 +336,7 @@ public string PaymentPlanToken { get; set; }</code></pre>
     <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/new/master/apiSpec/new?filename=Yort_LatitudePay_InStore_LatitudePayCreateRefundRequest_Reason.md&amp;value=---%0Auid%3A%20Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reason%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreateRefundRequest.cs/#L38">View Source</a>
+    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreateRefundRequest.cs/#L51">View Source</a>
   </span>
   <a id="Yort_LatitudePay_InStore_LatitudePayCreateRefundRequest_Reason_" data-uid="Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reason*"></a>
   <h4 id="Yort_LatitudePay_InStore_LatitudePayCreateRefundRequest_Reason" data-uid="Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reason">Reason</h4>
@@ -307,7 +345,8 @@ public string PaymentPlanToken { get; set; }</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Reason { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">[JsonProperty(&quot;reason&quot;)]
+public string Reason { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -330,7 +369,7 @@ public string PaymentPlanToken { get; set; }</code></pre>
     <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/new/master/apiSpec/new?filename=Yort_LatitudePay_InStore_LatitudePayCreateRefundRequest_Reference.md&amp;value=---%0Auid%3A%20Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reference%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreateRefundRequest.cs/#L29">View Source</a>
+    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreateRefundRequest.cs/#L42">View Source</a>
   </span>
   <a id="Yort_LatitudePay_InStore_LatitudePayCreateRefundRequest_Reference_" data-uid="Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reference*"></a>
   <h4 id="Yort_LatitudePay_InStore_LatitudePayCreateRefundRequest_Reference" data-uid="Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.Reference">Reference</h4>

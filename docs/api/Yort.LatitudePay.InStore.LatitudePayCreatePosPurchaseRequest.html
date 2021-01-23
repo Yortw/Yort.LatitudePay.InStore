@@ -230,7 +230,7 @@
     <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/new/master/apiSpec/new?filename=Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_BillingAddress.md&amp;value=---%0Auid%3A%20Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.BillingAddress%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreatePosPurchaseRequest.cs/#L44">View Source</a>
+    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreatePosPurchaseRequest.cs/#L56">View Source</a>
   </span>
   <a id="Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_BillingAddress_" data-uid="Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.BillingAddress*"></a>
   <h4 id="Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_BillingAddress" data-uid="Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.BillingAddress">BillingAddress</h4>
@@ -267,7 +267,7 @@ public LatitudePayAddress BillingAddress { get; set; }</code></pre>
     <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/new/master/apiSpec/new?filename=Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_Customer.md&amp;value=---%0Auid%3A%20Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Customer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreatePosPurchaseRequest.cs/#L25">View Source</a>
+    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreatePosPurchaseRequest.cs/#L37">View Source</a>
   </span>
   <a id="Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_Customer_" data-uid="Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Customer*"></a>
   <h4 id="Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_Customer" data-uid="Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Customer">Customer</h4>
@@ -301,10 +301,48 @@ public LatitudePayCustomer Customer { get; set; }</code></pre>
 </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
+    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/new/master/apiSpec/new?filename=Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_IdempotencyKey.md&amp;value=---%0Auid%3A%20Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.IdempotencyKey%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreatePosPurchaseRequest.cs/#L25">View Source</a>
+  </span>
+  <a id="Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_IdempotencyKey_" data-uid="Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.IdempotencyKey*"></a>
+  <h4 id="Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_IdempotencyKey" data-uid="Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.IdempotencyKey">IdempotencyKey</h4>
+  <div class="markdown level1 summary"><p>A value unique to this payment, but common to all CreatePosPurchaseRequests sent for this payment, to ensure the payment is created only once.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[JsonIgnore]
+public string IdempotencyKey { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_IdempotencyKey_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This value is optional but highly recommended as without using it you cannot guarantee network problems and other issues won&apos;t lead to customers making payments the system doesn&apos;t know about.</p>
+<p>Set this property to a value that is unique for this *payment* but the same for each call to <a class="xref" href="Yort.LatitudePay.InStore.ILatitudePayClient.html#Yort_LatitudePay_InStore_ILatitudePayClient_CreatePosPurchaseAsync_Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_">CreatePosPurchaseAsync(LatitudePayCreatePosPurchaseRequest)</a> for that payment.
+Any repeat requests using the same idempotency key value will return the original response without creating a second payment or sending the customer another message. If the original request never got processed 
+(due to power failure, network outage etc) then the next request will be treated as the first one. This guarantees the customer gets one and only one request to make payment.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
     <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/new/master/apiSpec/new?filename=Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_Products.md&amp;value=---%0Auid%3A%20Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Products%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreatePosPurchaseRequest.cs/#L53">View Source</a>
+    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreatePosPurchaseRequest.cs/#L65">View Source</a>
   </span>
   <a id="Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_Products_" data-uid="Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Products*"></a>
   <h4 id="Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_Products" data-uid="Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Products">Products</h4>
@@ -341,7 +379,7 @@ public IEnumerable&lt;LatitudePayProduct&gt; Products { get; set; }</code></pre>
     <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/new/master/apiSpec/new?filename=Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_Reference.md&amp;value=---%0Auid%3A%20Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Reference%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreatePosPurchaseRequest.cs/#L81">View Source</a>
+    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreatePosPurchaseRequest.cs/#L93">View Source</a>
   </span>
   <a id="Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_Reference_" data-uid="Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Reference*"></a>
   <h4 id="Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_Reference" data-uid="Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Reference">Reference</h4>
@@ -375,7 +413,7 @@ public string Reference { get; set; }</code></pre>
     <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/new/master/apiSpec/new?filename=Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_ReturnUrls.md&amp;value=---%0Auid%3A%20Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ReturnUrls%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreatePosPurchaseRequest.cs/#L106">View Source</a>
+    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreatePosPurchaseRequest.cs/#L118">View Source</a>
   </span>
   <a id="Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_ReturnUrls_" data-uid="Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ReturnUrls*"></a>
   <h4 id="Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_ReturnUrls" data-uid="Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ReturnUrls">ReturnUrls</h4>
@@ -408,7 +446,7 @@ public LatitudePayReturnUrls ReturnUrls { get; set; }</code></pre>
     <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/new/master/apiSpec/new?filename=Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_ShippingAddress.md&amp;value=---%0Auid%3A%20Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingAddress%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreatePosPurchaseRequest.cs/#L35">View Source</a>
+    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreatePosPurchaseRequest.cs/#L47">View Source</a>
   </span>
   <a id="Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_ShippingAddress_" data-uid="Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingAddress*"></a>
   <h4 id="Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_ShippingAddress" data-uid="Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingAddress">ShippingAddress</h4>
@@ -445,7 +483,7 @@ public LatitudePayAddress ShippingAddress { get; set; }</code></pre>
     <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/new/master/apiSpec/new?filename=Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_ShippingLines.md&amp;value=---%0Auid%3A%20Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingLines%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreatePosPurchaseRequest.cs/#L62">View Source</a>
+    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreatePosPurchaseRequest.cs/#L74">View Source</a>
   </span>
   <a id="Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_ShippingLines_" data-uid="Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingLines*"></a>
   <h4 id="Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_ShippingLines" data-uid="Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.ShippingLines">ShippingLines</h4>
@@ -482,7 +520,7 @@ public IEnumerable&lt;LatitiudePayShippingLine&gt; ShippingLines { get; set; }</
     <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/new/master/apiSpec/new?filename=Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_TaxAmount.md&amp;value=---%0Auid%3A%20Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TaxAmount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreatePosPurchaseRequest.cs/#L72">View Source</a>
+    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreatePosPurchaseRequest.cs/#L84">View Source</a>
   </span>
   <a id="Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_TaxAmount_" data-uid="Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TaxAmount*"></a>
   <h4 id="Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_TaxAmount" data-uid="Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TaxAmount">TaxAmount</h4>
@@ -520,7 +558,7 @@ public LatitudePayMoney TaxAmount { get; set; }</code></pre>
     <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/new/master/apiSpec/new?filename=Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_TotalAmount.md&amp;value=---%0Auid%3A%20Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TotalAmount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreatePosPurchaseRequest.cs/#L96">View Source</a>
+    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayCreatePosPurchaseRequest.cs/#L108">View Source</a>
   </span>
   <a id="Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_TotalAmount_" data-uid="Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TotalAmount*"></a>
   <h4 id="Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_TotalAmount" data-uid="Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TotalAmount">TotalAmount</h4>
