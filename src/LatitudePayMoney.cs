@@ -32,7 +32,7 @@ namespace Yort.LatitudePay.InStore
 	{
 
 		private readonly decimal _Amount;
-		private readonly string? _Currency;
+		private string? _Currency;
 
 		/// <summary>
 		/// Constructs a new instance using the specified amount and currency.
@@ -42,7 +42,7 @@ namespace Yort.LatitudePay.InStore
 		/// If <see cref="LatitudePayClientConfiguration.DefaultCurrency"/> is null or empty string then <see cref="LatitudePayCurrencies.AustralianDollars"/> will be used.</para>
 		/// </remarks>
 		/// <param name="amount">A decimal value indicating the numeric value of this monetary value. This value should be rounded to the appropriate number of decimal places associated with the currency specified by <see cref="Currency"/>.</param>
-		public LatitudePayMoney(decimal amount) : this(amount, String.IsNullOrEmpty(LatitudePayClientConfiguration.DefaultCurrency) ? LatitudePayCurrencies.AustralianDollars : LatitudePayClientConfiguration.DefaultCurrency)
+		public LatitudePayMoney(decimal amount) : this(amount, null)
 		{
 		}
 
@@ -56,6 +56,13 @@ namespace Yort.LatitudePay.InStore
 		public LatitudePayMoney(decimal amount, string? currency)
 		{
 			_Amount = amount;
+			if (String.IsNullOrWhiteSpace(currency))
+			{
+				if (String.IsNullOrWhiteSpace(LatitudePayClientConfiguration.DefaultCurrency))
+					currency = LatitudePayCurrencies.AustralianDollars;
+				else
+					currency = LatitudePayClientConfiguration.DefaultCurrency;
+			}
 			_Currency = currency.GuardNullOrWhiteSpace(nameof(currency)).GuardLength(nameof(currency), 3, 3);
 		}
 
@@ -75,7 +82,27 @@ namespace Yort.LatitudePay.InStore
 		/// <seealso cref="Amount"/>
 		[Required]
 		[JsonProperty("currency")]
-		public string Currency { get { return _Currency ?? LatitudePayCurrencies.AustralianDollars; } }
+		public string Currency 
+		{ 
+			get 
+			{
+				if (String.IsNullOrWhiteSpace(_Currency))
+					EnsureCurrencySet();
+
+				return _Currency; 
+			} 
+		}
+
+		private void EnsureCurrencySet()
+		{
+			if (String.IsNullOrWhiteSpace(_Currency))
+			{
+				if (String.IsNullOrWhiteSpace(LatitudePayClientConfiguration.DefaultCurrency))
+					_Currency = LatitudePayCurrencies.AustralianDollars;
+				else
+					_Currency = LatitudePayClientConfiguration.DefaultCurrency;
+			}
+		}
 
 		/// <summary>
 		/// Returns the <see cref="Amount"/> property formatted as a currency using the current thread culture (which may or may not match the currency defined by <see cref="Currency"/>).
@@ -83,7 +110,7 @@ namespace Yort.LatitudePay.InStore
 		/// <returns>A string containing the formatted amount.</returns>
 		public override string ToString()
 		{
-			return _Amount.ToString("c", System.Globalization.CultureInfo.InvariantCulture);
+			return _Amount.ToString("c", System.Globalization.CultureInfo.CurrentCulture);
 		}
 
 		#region Equality Related Members & Overrides

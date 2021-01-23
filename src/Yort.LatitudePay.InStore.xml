@@ -473,7 +473,7 @@
             <summary>
             Sets or returns the LatitudePay API environment to be used.
             </summary>
-            <exception cref="T:System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
         </member>
         <member name="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.HttpClient">
             <summary>
@@ -483,7 +483,7 @@
             <para>The library reserves the right to modify the provided client, such as setting default headers. A client can be shared amongst configuration object, but should not be shared/use outside of other <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instaces.
             The primary purpose of this method is to allow a client with injected handlers to be used. If you do not need to inject custom handlers, then leave this blank.</para>
             </remarks>
-            <exception cref="T:System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
         </member>
         <member name="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductName">
             <summary>
@@ -492,7 +492,7 @@
             <remarks>
             <para>If null, empty string or only whitespace the name of the Yort.LatitudePay.Instore assembly being used will be substituted as a default.</para>
             </remarks>
-            <exception cref="T:System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
         </member>
         <member name="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductVersion">
             <summary>
@@ -501,7 +501,7 @@
             <remarks>
             <para>If null, empty string or only whitespace the version of the Yort.LatitudePay.Instore assembly being used will be substituted as a default.</para>
             </remarks>
-            <exception cref="T:System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
         </member>
         <member name="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductVendor">
             <summary>
@@ -510,19 +510,19 @@
             <remarks>
             <para>If null, empty string or only whitespace, "Yort" assembly being used will be substituted as a default.</para>
             </remarks>
-            <exception cref="T:System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
         </member>
         <member name="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiKey">
             <summary>
             Sets or returns the API key that identifies the merchant account to use with LatitudePay.
             </summary>
-            <exception cref="T:System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
         </member>
         <member name="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiSecret">
             <summary>
             Sets or returns the secret value used to access the LatitudePay API.
             </summary>
-            <exception cref="T:System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
         </member>
         <member name="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.MinimumRetries">
             <summary>
@@ -532,7 +532,7 @@
             <para>This property defaults to a value of 2. A value of zero or less is allowed, in which case only the initial attempt will be made - no retries will be performed within the library and any error handling logic will need to be entirely implemented by the application.</para>
             <para>The library may attempt more retries than specified if the total time since the initial call is less than the (full, LatitudePay) recommended timeout for the endpoint being called.</para>
             </remarks>
-            <exception cref="T:System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
         </member>
         <member name="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.RetryDelaySeconds">
             <summary>
@@ -544,7 +544,7 @@
             then the system will wait this many seconds before the next retry. See https://docs.LatitudePay.com.au/instore-api-v1.html#distributed-state-considerations and https://docs.LatitudePay.com.au/instore-api-v1.html#create-order for more details.</para>
             <para>The minimum value is 5 seconds. Any value less than 5 seconds will be ignored, and a 5 second delay will occur instead.</para>
             </remarks>
-            <exception cref="T:System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown if this property is modified after it has been passed to a <see cref="T:Yort.LatitudePay.InStore.LatitudePayClient"/> instance.</exception>
         </member>
         <member name="P:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.SystemClock">
             <summary>

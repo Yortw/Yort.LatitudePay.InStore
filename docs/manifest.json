@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayClientConfiguration.html",
-          "hash": "qQjKxUgkQNLzpQ7b1+kX0Q=="
+          "hash": "r00ZM+hdN5L925bbiL+fQQ=="
         }
       },
       "is_incremental": false,
@@ -282,7 +282,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayMoney.html",
-          "hash": "fYzkYJFDdBiK8PEJ2tQKXQ=="
+          "hash": "gTvuzIUCL0qF6rfSJX3zZQ=="
         }
       },
       "is_incremental": false,
@@ -400,11 +400,12 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
-          "total_file_count": 1,
-          "skipped_file_count": 1
+          "total_file_count": 0,
+          "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
@@ -412,12 +413,11 @@
           "total_file_count": 29,
           "skipped_file_count": 29
         },
-        "ResourceDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
+          "total_file_count": 1,
+          "skipped_file_count": 1
         }
       }
     },

@@ -123,8 +123,8 @@ items:
     content.vb: Public Property Environment As LatitudePayEnvironment
   overload: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.Environment*
   exceptions:
-  - type: System.InvalidProgramException
-    commentId: T:System.InvalidProgramException
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
     description: Thrown if this property is modified after it has been passed to a <xref href="Yort.LatitudePay.InStore.LatitudePayClient" data-throw-if-not-resolved="false"></xref> instance.
   modifiers.csharp:
   - public
@@ -165,8 +165,8 @@ items:
     content.vb: Public Property HttpClient As HttpClient
   overload: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.HttpClient*
   exceptions:
-  - type: System.InvalidProgramException
-    commentId: T:System.InvalidProgramException
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
     description: Thrown if this property is modified after it has been passed to a <xref href="Yort.LatitudePay.InStore.LatitudePayClient" data-throw-if-not-resolved="false"></xref> instance.
   modifiers.csharp:
   - public
@@ -207,8 +207,8 @@ items:
     content.vb: Public Property ProductName As String
   overload: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductName*
   exceptions:
-  - type: System.InvalidProgramException
-    commentId: T:System.InvalidProgramException
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
     description: Thrown if this property is modified after it has been passed to a <xref href="Yort.LatitudePay.InStore.LatitudePayClient" data-throw-if-not-resolved="false"></xref> instance.
   modifiers.csharp:
   - public
@@ -249,8 +249,8 @@ items:
     content.vb: Public Property ProductVersion As String
   overload: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductVersion*
   exceptions:
-  - type: System.InvalidProgramException
-    commentId: T:System.InvalidProgramException
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
     description: Thrown if this property is modified after it has been passed to a <xref href="Yort.LatitudePay.InStore.LatitudePayClient" data-throw-if-not-resolved="false"></xref> instance.
   modifiers.csharp:
   - public
@@ -291,8 +291,8 @@ items:
     content.vb: Public Property ProductVendor As String
   overload: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ProductVendor*
   exceptions:
-  - type: System.InvalidProgramException
-    commentId: T:System.InvalidProgramException
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
     description: Thrown if this property is modified after it has been passed to a <xref href="Yort.LatitudePay.InStore.LatitudePayClient" data-throw-if-not-resolved="false"></xref> instance.
   modifiers.csharp:
   - public
@@ -332,8 +332,8 @@ items:
     content.vb: Public Property ApiKey As String
   overload: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiKey*
   exceptions:
-  - type: System.InvalidProgramException
-    commentId: T:System.InvalidProgramException
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
     description: Thrown if this property is modified after it has been passed to a <xref href="Yort.LatitudePay.InStore.LatitudePayClient" data-throw-if-not-resolved="false"></xref> instance.
   modifiers.csharp:
   - public
@@ -373,8 +373,8 @@ items:
     content.vb: Public Property ApiSecret As String
   overload: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.ApiSecret*
   exceptions:
-  - type: System.InvalidProgramException
-    commentId: T:System.InvalidProgramException
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
     description: Thrown if this property is modified after it has been passed to a <xref href="Yort.LatitudePay.InStore.LatitudePayClient" data-throw-if-not-resolved="false"></xref> instance.
   modifiers.csharp:
   - public
@@ -415,8 +415,8 @@ items:
     content.vb: Public Property MinimumRetries As Integer
   overload: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.MinimumRetries*
   exceptions:
-  - type: System.InvalidProgramException
-    commentId: T:System.InvalidProgramException
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
     description: Thrown if this property is modified after it has been passed to a <xref href="Yort.LatitudePay.InStore.LatitudePayClient" data-throw-if-not-resolved="false"></xref> instance.
   modifiers.csharp:
   - public
@@ -457,8 +457,8 @@ items:
     content.vb: Public Property RetryDelaySeconds As Integer
   overload: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.RetryDelaySeconds*
   exceptions:
-  - type: System.InvalidProgramException
-    commentId: T:System.InvalidProgramException
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
     description: Thrown if this property is modified after it has been passed to a <xref href="Yort.LatitudePay.InStore.LatitudePayClient" data-throw-if-not-resolved="false"></xref> instance.
   modifiers.csharp:
   - public
@@ -863,9 +863,6 @@ references:
   name: LatitudePayClientConfiguration
   nameWithType: LatitudePayClientConfiguration.LatitudePayClientConfiguration
   fullName: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.LatitudePayClientConfiguration
-- uid: System.InvalidProgramException
-  commentId: T:System.InvalidProgramException
-  isExternal: true
 - uid: Yort.LatitudePay.InStore.LatitudePayClientConfiguration.Environment*
   commentId: Overload:Yort.LatitudePay.InStore.LatitudePayClientConfiguration.Environment
   name: Environment

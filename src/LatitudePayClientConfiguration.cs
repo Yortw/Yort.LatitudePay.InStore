@@ -41,7 +41,7 @@ namespace Yort.LatitudePay.InStore
 		/// <summary>
 		/// Sets or returns the LatitudePay API environment to be used.
 		/// </summary>
-		/// <exception cref="System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="LatitudePayClient"/> instance.</exception>
+		/// <exception cref="System.InvalidOperationException">Thrown if this property is modified after it has been passed to a <see cref="LatitudePayClient"/> instance.</exception>
 		public LatitudePayEnvironment Environment
 		{
 			get { return _Environment; }
@@ -60,7 +60,7 @@ namespace Yort.LatitudePay.InStore
 		/// <para>The library reserves the right to modify the provided client, such as setting default headers. A client can be shared amongst configuration object, but should not be shared/use outside of other <see cref="LatitudePayClient"/> instaces.
 		/// The primary purpose of this method is to allow a client with injected handlers to be used. If you do not need to inject custom handlers, then leave this blank.</para>
 		/// </remarks>
-		/// <exception cref="System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="LatitudePayClient"/> instance.</exception>
+		/// <exception cref="System.InvalidOperationException">Thrown if this property is modified after it has been passed to a <see cref="LatitudePayClient"/> instance.</exception>
 		public HttpClient? HttpClient
 		{
 			get { return _HttpClient; }
@@ -78,7 +78,7 @@ namespace Yort.LatitudePay.InStore
 		/// <remarks>
 		/// <para>If null, empty string or only whitespace the name of the Yort.LatitudePay.Instore assembly being used will be substituted as a default.</para>
 		/// </remarks>
-		/// <exception cref="System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="LatitudePayClient"/> instance.</exception>
+		/// <exception cref="System.InvalidOperationException">Thrown if this property is modified after it has been passed to a <see cref="LatitudePayClient"/> instance.</exception>
 		public string? ProductName
 		{
 			get { return _ProductName; }
@@ -96,7 +96,7 @@ namespace Yort.LatitudePay.InStore
 		/// <remarks>
 		/// <para>If null, empty string or only whitespace the version of the Yort.LatitudePay.Instore assembly being used will be substituted as a default.</para>
 		/// </remarks>
-		/// <exception cref="System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="LatitudePayClient"/> instance.</exception>
+		/// <exception cref="System.InvalidOperationException">Thrown if this property is modified after it has been passed to a <see cref="LatitudePayClient"/> instance.</exception>
 		public string? ProductVersion
 		{
 			get { return _ProductVersion; }
@@ -114,7 +114,7 @@ namespace Yort.LatitudePay.InStore
 		/// <remarks>
 		/// <para>If null, empty string or only whitespace, "Yort" assembly being used will be substituted as a default.</para>
 		/// </remarks>
-		/// <exception cref="System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="LatitudePayClient"/> instance.</exception>
+		/// <exception cref="System.InvalidOperationException">Thrown if this property is modified after it has been passed to a <see cref="LatitudePayClient"/> instance.</exception>
 		public string? ProductVendor
 		{
 			get { return _ProductVendor; }
@@ -129,7 +129,7 @@ namespace Yort.LatitudePay.InStore
 		/// <summary>
 		/// Sets or returns the API key that identifies the merchant account to use with LatitudePay.
 		/// </summary>
-		/// <exception cref="System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="LatitudePayClient"/> instance.</exception>
+		/// <exception cref="System.InvalidOperationException">Thrown if this property is modified after it has been passed to a <see cref="LatitudePayClient"/> instance.</exception>
 		public string? ApiKey
 		{
 			get { return _ApiKey; }
@@ -144,7 +144,7 @@ namespace Yort.LatitudePay.InStore
 		/// <summary>
 		/// Sets or returns the secret value used to access the LatitudePay API.
 		/// </summary>
-		/// <exception cref="System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="LatitudePayClient"/> instance.</exception>
+		/// <exception cref="System.InvalidOperationException">Thrown if this property is modified after it has been passed to a <see cref="LatitudePayClient"/> instance.</exception>
 		public string? ApiSecret
 		{
 			get { return _ApiSecret; }
@@ -163,7 +163,7 @@ namespace Yort.LatitudePay.InStore
 		/// <para>This property defaults to a value of 2. A value of zero or less is allowed, in which case only the initial attempt will be made - no retries will be performed within the library and any error handling logic will need to be entirely implemented by the application.</para>
 		/// <para>The library may attempt more retries than specified if the total time since the initial call is less than the (full, LatitudePay) recommended timeout for the endpoint being called.</para>
 		/// </remarks>
-		/// <exception cref="System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="LatitudePayClient"/> instance.</exception>
+		/// <exception cref="System.InvalidOperationException">Thrown if this property is modified after it has been passed to a <see cref="LatitudePayClient"/> instance.</exception>
 		public int MinimumRetries
 		{
 			get { return _MinimumRetries; }
@@ -184,7 +184,7 @@ namespace Yort.LatitudePay.InStore
 		/// then the system will wait this many seconds before the next retry. See https://docs.LatitudePay.com.au/instore-api-v1.html#distributed-state-considerations and https://docs.LatitudePay.com.au/instore-api-v1.html#create-order for more details.</para>
 		/// <para>The minimum value is 5 seconds. Any value less than 5 seconds will be ignored, and a 5 second delay will occur instead.</para>
 		/// </remarks>
-		/// <exception cref="System.InvalidProgramException">Thrown if this property is modified after it has been passed to a <see cref="LatitudePayClient"/> instance.</exception>
+		/// <exception cref="System.InvalidOperationException">Thrown if this property is modified after it has been passed to a <see cref="LatitudePayClient"/> instance.</exception>
 		public int RetryDelaySeconds
 		{
 			get { return _RetryDelay; }
