@@ -1040,6 +1040,19 @@ references:
   isSpec: "True"
   fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.ExpiryDate
   nameWithType: LatitudePayCreatePosPurchaseResponse.ExpiryDate
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.Reference
+  name: Reference
+  href: api/Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.html#Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseResponse_Reference
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.Reference
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.Reference
+  nameWithType: LatitudePayCreatePosPurchaseResponse.Reference
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.Reference*
+  name: Reference
+  href: api/Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.html#Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseResponse_Reference_
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.Reference
+  isSpec: "True"
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.Reference
+  nameWithType: LatitudePayCreatePosPurchaseResponse.Reference
 - uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.StatusUrl
   name: StatusUrl
   href: api/Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.html#Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseResponse_StatusUrl

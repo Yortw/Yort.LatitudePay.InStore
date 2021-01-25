@@ -94,6 +94,7 @@
   "Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse": "Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.yml",
   "Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.CommissionAmount": "Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.yml",
   "Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.ExpiryDate": "Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.yml",
+  "Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.Reference": "Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.yml",
   "Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.StatusUrl": "Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.yml",
   "Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.Token": "Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.yml",
   "Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest": "Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.yml",

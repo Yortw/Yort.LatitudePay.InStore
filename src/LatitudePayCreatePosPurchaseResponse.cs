@@ -23,6 +23,14 @@ namespace Yort.LatitudePay.InStore
 		[JsonProperty("token")]
 		public string? Token { get; set; }
 		/// <summary>
+		/// Gets or sets the LatitudePay reference for this payment plan.
+		/// </summary>
+		/// <value>
+		/// The LatitudePay reference.
+		/// </value>
+		[JsonProperty("reference")]
+		public string? Reference { get; set; }
+		/// <summary>
 		/// Gets or sets a URL that can be called to check the payment status.
 		/// </summary>
 		/// <value>

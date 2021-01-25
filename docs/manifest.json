@@ -210,7 +210,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.html",
-          "hash": "KMv4bZd3FJ75/a3VDJ5kdg=="
+          "hash": "RflTJnjgT+E/72v5myyMSw=="
         }
       },
       "is_incremental": false,
@@ -419,17 +419,17 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 30,
-          "skipped_file_count": 28
-        },
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 1,
           "skipped_file_count": 1
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 30,
+          "skipped_file_count": 30
         }
       }
     },

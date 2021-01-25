@@ -7,6 +7,7 @@ items:
   children:
   - Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.CommissionAmount
   - Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.ExpiryDate
+  - Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.Reference
   - Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.StatusUrl
   - Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.Token
   langs:
@@ -110,6 +111,56 @@ items:
   - set
   modifiers.vb:
   - Public
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.Reference
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.Reference
+  id: Reference
+  parent: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse
+  langs:
+  - csharp
+  - vb
+  name: Reference
+  nameWithType: LatitudePayCreatePosPurchaseResponse.Reference
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.Reference
+  type: Property
+  source:
+    remote:
+      path: src/LatitudePayCreatePosPurchaseResponse.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: Reference
+    path: LatitudePayCreatePosPurchaseResponse.cs
+    startLine: 30
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nGets or sets the LatitudePay reference for this payment plan.\n"
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("reference")]
+
+      public string Reference { get; set; }
+    parameters: []
+    return:
+      type: System.String
+      description: "\nThe LatitudePay reference.\n"
+    content.vb: >-
+      <JsonProperty("reference")>
+
+      Public Property Reference As String
+  overload: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.Reference*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: reference
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
 - uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.StatusUrl
   commentId: P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.StatusUrl
   id: StatusUrl
@@ -128,7 +179,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: StatusUrl
     path: LatitudePayCreatePosPurchaseResponse.cs
-    startLine: 33
+    startLine: 41
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -179,7 +230,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: ExpiryDate
     path: LatitudePayCreatePosPurchaseResponse.cs
-    startLine: 41
+    startLine: 49
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -229,7 +280,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: CommissionAmount
     path: LatitudePayCreatePosPurchaseResponse.cs
-    startLine: 49
+    startLine: 57
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -585,6 +636,11 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
+- uid: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.Reference*
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.Reference
+  name: Reference
+  nameWithType: LatitudePayCreatePosPurchaseResponse.Reference
+  fullName: Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.Reference
 - uid: Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)
   commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)
   isExternal: true

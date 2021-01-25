@@ -830,6 +830,14 @@
             The payment token.
             </value>
         </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.Reference">
+            <summary>
+            Gets or sets the LatitudePay reference for this payment plan.
+            </summary>
+            <value>
+            The LatitudePay reference.
+            </value>
+        </member>
         <member name="P:Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseResponse.StatusUrl">
             <summary>
             Gets or sets a URL that can be called to check the payment status.
