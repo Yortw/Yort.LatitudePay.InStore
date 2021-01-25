@@ -89,7 +89,7 @@ namespace Yort.LatitudePay.InStore
 				if (String.IsNullOrWhiteSpace(_Currency))
 					EnsureCurrencySet();
 
-				return _Currency; 
+				return _Currency ?? LatitudePayClientConfiguration.DefaultCurrency; 
 			} 
 		}
 

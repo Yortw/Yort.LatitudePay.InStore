@@ -12,6 +12,8 @@
     name: LatitiudePayShippingLine
   - uid: Yort.LatitudePay.InStore.LatitudePayAddress
     name: LatitudePayAddress
+  - uid: Yort.LatitudePay.InStore.LatitudePayApiException
+    name: LatitudePayApiException
   - uid: Yort.LatitudePay.InStore.LatitudePayAuthToken
     name: LatitudePayAuthToken
   - uid: Yort.LatitudePay.InStore.LatitudePayAvailability

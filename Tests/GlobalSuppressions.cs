@@ -11,3 +11,7 @@ using System.Diagnostics.CodeAnalysis;
 [assembly: SuppressMessage("Style", "IDE0063:Use simple 'using' statement", Justification = "<Pending>", Scope = "member", Target = "~M:Yort.LatitudePay.InStore.Tests.SignatureGeneratorTests.Disposes_Ok")]
 [assembly: SuppressMessage("Style", "IDE0063:Use simple 'using' statement", Justification = "<Pending>", Scope = "member", Target = "~M:Yort.LatitudePay.InStore.Tests.SignatureGeneratorTests.Generates_Expected_Signature")]
 [assembly: SuppressMessage("Style", "IDE0063:Use simple 'using' statement", Justification = "<Pending>", Scope = "member", Target = "~M:Yort.LatitudePay.InStore.Tests.SignatureGeneratorTests.GenerateSignature_Throws_If_Disposed")]
+[assembly: SuppressMessage("Style", "IDE0063:Use simple 'using' statement", Justification = "<Pending>", Scope = "member", Target = "~M:Tests.IntegrationTests.Cancel~System.Threading.Tasks.Task")]
+[assembly: SuppressMessage("Style", "IDE0063:Use simple 'using' statement", Justification = "<Pending>", Scope = "member", Target = "~M:Tests.IntegrationTests.Purchase~System.Threading.Tasks.Task")]
+[assembly: SuppressMessage("Style", "IDE0063:Use simple 'using' statement", Justification = "<Pending>", Scope = "member", Target = "~M:Tests.IntegrationTests.Refund~System.Threading.Tasks.Task")]
+[assembly: SuppressMessage("Style", "IDE0063:Use simple 'using' statement", Justification = "<Pending>", Scope = "member", Target = "~M:Tests.IntegrationTests.ThrowsUnauthorisedException_ForAuthorisationFailure~System.Threading.Tasks.Task")]

@@ -9,6 +9,7 @@ items:
   - Yort.LatitudePay.InStore.ILatitudePaySystemClock
   - Yort.LatitudePay.InStore.LatitiudePayShippingLine
   - Yort.LatitudePay.InStore.LatitudePayAddress
+  - Yort.LatitudePay.InStore.LatitudePayApiException
   - Yort.LatitudePay.InStore.LatitudePayAuthToken
   - Yort.LatitudePay.InStore.LatitudePayAvailability
   - Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest
@@ -77,6 +78,11 @@ references:
   name: LatitudePayAddress
   nameWithType: LatitudePayAddress
   fullName: Yort.LatitudePay.InStore.LatitudePayAddress
+- uid: Yort.LatitudePay.InStore.LatitudePayApiException
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayApiException
+  name: LatitudePayApiException
+  nameWithType: LatitudePayApiException
+  fullName: Yort.LatitudePay.InStore.LatitudePayApiException
 - uid: Yort.LatitudePay.InStore.LatitudePayAuthToken
   commentId: T:Yort.LatitudePay.InStore.LatitudePayAuthToken
   name: LatitudePayAuthToken

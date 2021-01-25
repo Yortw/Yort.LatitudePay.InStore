@@ -283,7 +283,11 @@ namespace Yort.LatitudePay.InStore
 
 		private static async Task<T> DeserialiseResponse<T>(HttpResponseMessage response)
 		{
-			response.EnsureSuccessStatusCode();
+			if (!response.IsSuccessStatusCode)
+			{
+				var errorDetails = Newtonsoft.Json.JsonConvert.DeserializeObject<LatitudePayErrorResponse>(await response.Content.ReadAsStringAsync().ConfigureAwait(false));
+				throw new LatitudePayApiException(String.IsNullOrWhiteSpace(errorDetails.ErrorMessage) ? response.StatusCode.ToString() : errorDetails.ErrorMessage, Convert.ToInt32(response.StatusCode));
+			}
 
 			return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync().ConfigureAwait(false));
 		}
@@ -311,7 +315,7 @@ namespace Yort.LatitudePay.InStore
 				var tls12 = (System.Net.SecurityProtocolType)3072;
 				if ((System.Net.ServicePointManager.SecurityProtocol & tls12) != tls12)
 				{
-					System.Net.ServicePointManager.SecurityProtocol = (System.Net.ServicePointManager.SecurityProtocol | tls12);
+					System.Net.ServicePointManager.SecurityProtocol |= tls12;
 				}
 			}
 			//Ignore any exceptions that might be thrown from poorly/partially implemented Net Standard 2.0.

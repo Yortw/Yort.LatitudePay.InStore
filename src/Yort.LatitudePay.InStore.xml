@@ -229,6 +229,48 @@
             The country code.
             </value>
         </member>
+        <member name="T:Yort.LatitudePay.InStore.LatitudePayApiException">
+            <summary>
+            Thrown when an (HTTP) error response is received from the LatitudePay API.
+            </summary>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayApiException.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayApiException.#ctor(System.String)">
+            <summary>
+            Partial constructor.
+            </summary>
+            <param name="message">The error message to associated with this exception.</param>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayApiException.#ctor(System.String,System.Exception)">
+            <summary>
+            Partial constructor.
+            </summary>
+            <param name="message">The error message to associated with this exception.</param>
+            <param name="inner">The exception wrapped by this exception.</param>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayApiException.#ctor(System.String,System.Int32)">
+            <summary>
+            Recommended constructor.
+            </summary>
+            <param name="message">The error message returned by the LatitudePay API.</param>
+            <param name="statusCode">The HTTP status code returned by the LatitudePay API.</param>
+        </member>
+        <member name="M:Yort.LatitudePay.InStore.LatitudePayApiException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Deserialisation constructor.
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="P:Yort.LatitudePay.InStore.LatitudePayApiException.StatusCode">
+            <summary>
+            Returns the HTTP status code associated with this exception, if any, otherwise -1.
+            </summary>
+        </member>
         <member name="T:Yort.LatitudePay.InStore.LatitudePayAuthToken">
             <summary>
             Represents a token returned from the LatitudePay Authorization endpoint.

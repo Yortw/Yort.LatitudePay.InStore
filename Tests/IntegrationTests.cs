@@ -407,6 +407,77 @@ namespace Tests
 			}
 		}
 
+		[TestCategory("Integration")]
+		[TestMethod]
+		public async Task ThrowsLatitudePayApiExceptionForBadRequest()
+		{
+			using (var client = GetSandboxClient())
+			{
+				var request = new LatitudePayCreatePosPurchaseRequest()
+				{
+					Reference = System.Guid.NewGuid().ToString(),
+					BillingAddress = new LatitudePayAddress()
+					{
+						AddressLine1 = "124 Fifth Avenue",
+						Suburb = "Auckland",
+						CityTown = "Auckland",
+						State = "Auckland",
+						Postcode = "1010",
+						CountryCode = "NZ"
+					},
+					ShippingAddress = new LatitudePayAddress()
+					{
+						AddressLine1 = "124 Fifth Avenue",
+						Suburb = "Auckland",
+						CityTown = "Auckland",
+						State = "Auckland",
+						Postcode = "1010",
+						CountryCode = "NZ"
+					},
+					Customer = null,
+					Products = new List<LatitudePayProduct>()
+				{
+					new LatitudePayProduct()
+					{
+						Name = "Tennis Ball Multipack",
+						Price = new LatitudePayMoney(30, "NZD"),
+						Sku = "abc123",
+						Quantity = 1,
+						TaxIncluded = true
+					}
+				},
+					ShippingLines = new List<LatitiudePayShippingLine>()
+				{
+					new LatitiudePayShippingLine()
+					{
+						Carrier = "NZ Post",
+						Price = new LatitudePayMoney(5.5M, "NZD")
+					}
+				},
+					TaxAmount = new LatitudePayMoney(5.325M, "NZD"),
+					TotalAmount = new LatitudePayMoney(35.5M, "NZD"),
+					ReturnUrls = new LatitudePayReturnUrls()
+					{
+						SuccessUrl = new Uri("http://genoapay.com/success"),
+						FailUrl = new Uri("http://genoapay.com/fail"),
+						CallbackUrl = new Uri("http://genoapay.com/fail-safe-callback")
+					}
+				};
+				request.IdempotencyKey = request.Reference;
+
+				try
+				{
+					var purchaseResponse = await client.CreatePosPurchaseAsync(request);
+					Assert.Fail("No exception thrown, expected LatitudePayApiException");
+				}
+				catch (LatitudePayApiException ex)
+				{
+					Assert.AreEqual(400, ex.StatusCode);
+					Assert.AreEqual("Customer is required\n", ex.Message);
+				}
+			}
+		}
+
 		private ILatitudePayClient GetSandboxClient()
 		{
 			var config = new LatitudePayClientConfiguration()

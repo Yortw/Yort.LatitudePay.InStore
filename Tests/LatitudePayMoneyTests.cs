@@ -103,7 +103,9 @@ namespace Yort.LatitudePay.InStore.Tests
 			var value = new LatitudePayMoney(15M, LatitudePayCurrencies.AustralianDollars);
 			Assert.IsTrue(value.Equals(value));
 			Assert.AreEqual(value, value);
+#pragma warning disable CS1718 // Comparison made to same variable
 			Assert.IsTrue(value == value);
+#pragma warning restore CS1718 // Comparison made to same variable
 		}
 
 		[TestMethod]

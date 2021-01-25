@@ -258,6 +258,62 @@ references:
   isSpec: "True"
   fullName: Yort.LatitudePay.InStore.LatitudePayAddress.Suburb
   nameWithType: LatitudePayAddress.Suburb
+- uid: Yort.LatitudePay.InStore.LatitudePayApiException
+  name: LatitudePayApiException
+  href: api/Yort.LatitudePay.InStore.LatitudePayApiException.html
+  commentId: T:Yort.LatitudePay.InStore.LatitudePayApiException
+  fullName: Yort.LatitudePay.InStore.LatitudePayApiException
+  nameWithType: LatitudePayApiException
+- uid: Yort.LatitudePay.InStore.LatitudePayApiException.#ctor
+  name: LatitudePayApiException()
+  href: api/Yort.LatitudePay.InStore.LatitudePayApiException.html#Yort_LatitudePay_InStore_LatitudePayApiException__ctor
+  commentId: M:Yort.LatitudePay.InStore.LatitudePayApiException.#ctor
+  fullName: Yort.LatitudePay.InStore.LatitudePayApiException.LatitudePayApiException()
+  nameWithType: LatitudePayApiException.LatitudePayApiException()
+- uid: Yort.LatitudePay.InStore.LatitudePayApiException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  name: LatitudePayApiException(SerializationInfo, StreamingContext)
+  href: api/Yort.LatitudePay.InStore.LatitudePayApiException.html#Yort_LatitudePay_InStore_LatitudePayApiException__ctor_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
+  commentId: M:Yort.LatitudePay.InStore.LatitudePayApiException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  fullName: Yort.LatitudePay.InStore.LatitudePayApiException.LatitudePayApiException(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  nameWithType: LatitudePayApiException.LatitudePayApiException(SerializationInfo, StreamingContext)
+- uid: Yort.LatitudePay.InStore.LatitudePayApiException.#ctor(System.String)
+  name: LatitudePayApiException(String)
+  href: api/Yort.LatitudePay.InStore.LatitudePayApiException.html#Yort_LatitudePay_InStore_LatitudePayApiException__ctor_System_String_
+  commentId: M:Yort.LatitudePay.InStore.LatitudePayApiException.#ctor(System.String)
+  fullName: Yort.LatitudePay.InStore.LatitudePayApiException.LatitudePayApiException(System.String)
+  nameWithType: LatitudePayApiException.LatitudePayApiException(String)
+- uid: Yort.LatitudePay.InStore.LatitudePayApiException.#ctor(System.String,System.Exception)
+  name: LatitudePayApiException(String, Exception)
+  href: api/Yort.LatitudePay.InStore.LatitudePayApiException.html#Yort_LatitudePay_InStore_LatitudePayApiException__ctor_System_String_System_Exception_
+  commentId: M:Yort.LatitudePay.InStore.LatitudePayApiException.#ctor(System.String,System.Exception)
+  fullName: Yort.LatitudePay.InStore.LatitudePayApiException.LatitudePayApiException(System.String, System.Exception)
+  nameWithType: LatitudePayApiException.LatitudePayApiException(String, Exception)
+- uid: Yort.LatitudePay.InStore.LatitudePayApiException.#ctor(System.String,System.Int32)
+  name: LatitudePayApiException(String, Int32)
+  href: api/Yort.LatitudePay.InStore.LatitudePayApiException.html#Yort_LatitudePay_InStore_LatitudePayApiException__ctor_System_String_System_Int32_
+  commentId: M:Yort.LatitudePay.InStore.LatitudePayApiException.#ctor(System.String,System.Int32)
+  fullName: Yort.LatitudePay.InStore.LatitudePayApiException.LatitudePayApiException(System.String, System.Int32)
+  nameWithType: LatitudePayApiException.LatitudePayApiException(String, Int32)
+- uid: Yort.LatitudePay.InStore.LatitudePayApiException.#ctor*
+  name: LatitudePayApiException
+  href: api/Yort.LatitudePay.InStore.LatitudePayApiException.html#Yort_LatitudePay_InStore_LatitudePayApiException__ctor_
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayApiException.#ctor
+  isSpec: "True"
+  fullName: Yort.LatitudePay.InStore.LatitudePayApiException.LatitudePayApiException
+  nameWithType: LatitudePayApiException.LatitudePayApiException
+- uid: Yort.LatitudePay.InStore.LatitudePayApiException.StatusCode
+  name: StatusCode
+  href: api/Yort.LatitudePay.InStore.LatitudePayApiException.html#Yort_LatitudePay_InStore_LatitudePayApiException_StatusCode
+  commentId: P:Yort.LatitudePay.InStore.LatitudePayApiException.StatusCode
+  fullName: Yort.LatitudePay.InStore.LatitudePayApiException.StatusCode
+  nameWithType: LatitudePayApiException.StatusCode
+- uid: Yort.LatitudePay.InStore.LatitudePayApiException.StatusCode*
+  name: StatusCode
+  href: api/Yort.LatitudePay.InStore.LatitudePayApiException.html#Yort_LatitudePay_InStore_LatitudePayApiException_StatusCode_
+  commentId: Overload:Yort.LatitudePay.InStore.LatitudePayApiException.StatusCode
+  isSpec: "True"
+  fullName: Yort.LatitudePay.InStore.LatitudePayApiException.StatusCode
+  nameWithType: LatitudePayApiException.StatusCode
 - uid: Yort.LatitudePay.InStore.LatitudePayAuthToken
   name: LatitudePayAuthToken
   href: api/Yort.LatitudePay.InStore.LatitudePayAuthToken.html
