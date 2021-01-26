@@ -20,7 +20,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: LatitudePayCancelPurchaseRequest
     path: LatitudePayCancelPurchaseRequest.cs
-    startLine: 5
+    startLine: 7
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -63,11 +63,11 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: PaymentPlanToken
     path: LatitudePayCancelPurchaseRequest.cs
-    startLine: 17
+    startLine: 19
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
-  summary: "\nGets or sets the payment token of the plan to be cancelled.\n"
+  summary: "\nGets or sets the payment token of the plan to be cancelled. Required.\n"
   example: []
   syntax:
     content: public string PaymentPlanToken { get; set; }

@@ -306,7 +306,7 @@ Dispose only when you&apos;re done with the instance completely, such as on shut
     <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/new/master/apiSpec/new?filename=Yort_LatitudePay_InStore_LatitudePayClient_CancelPurchaseAsync_Yort_LatitudePay_InStore_LatitudePayCancelPurchaseRequest_.md&amp;value=---%0Auid%3A%20Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayClient.cs/#L175">View Source</a>
+    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayClient.cs/#L183">View Source</a>
   </span>
   <a id="Yort_LatitudePay_InStore_LatitudePayClient_CancelPurchaseAsync_" data-uid="Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync*"></a>
   <h4 id="Yort_LatitudePay_InStore_LatitudePayClient_CancelPurchaseAsync_Yort_LatitudePay_InStore_LatitudePayCancelPurchaseRequest_" data-uid="Yort.LatitudePay.InStore.LatitudePayClient.CancelPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest)">CancelPurchaseAsync(LatitudePayCancelPurchaseRequest)</h4>
@@ -365,7 +365,17 @@ Dispose only when you&apos;re done with the instance completely, such as on shut
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
-        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.</p>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> or any of it's required sub-properties are null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
+        <td><p>Thrown if any sub-properties of <code data-dev-comment-type="paramref" class="paramref">request</code> are outside the allowed range, i.e negative price.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown if any sub-properties of <code data-dev-comment-type="paramref" class="paramref">request</code> are invalid for a reason other than being null or outside of a valid range.</p>
 </td>
       </tr>
       <tr>
@@ -395,7 +405,7 @@ Dispose only when you&apos;re done with the instance completely, such as on shut
     <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/new/master/apiSpec/new?filename=Yort_LatitudePay_InStore_LatitudePayClient_CreatePosPurchaseAsync_Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_.md&amp;value=---%0Auid%3A%20Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayClient.cs/#L109">View Source</a>
+    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayClient.cs/#L111">View Source</a>
   </span>
   <a id="Yort_LatitudePay_InStore_LatitudePayClient_CreatePosPurchaseAsync_" data-uid="Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync*"></a>
   <h4 id="Yort_LatitudePay_InStore_LatitudePayClient_CreatePosPurchaseAsync_Yort_LatitudePay_InStore_LatitudePayCreatePosPurchaseRequest_" data-uid="Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync(Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest)">CreatePosPurchaseAsync(LatitudePayCreatePosPurchaseRequest)</h4>
@@ -451,7 +461,17 @@ Dispose only when you&apos;re done with the instance completely, such as on shut
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
-        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.</p>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> or any of it's required sub-properties are null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
+        <td><p>Thrown if any sub-properties of <code data-dev-comment-type="paramref" class="paramref">request</code> are outside the allowed range, i.e negative price.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown if any sub-properties of <code data-dev-comment-type="paramref" class="paramref">request</code> are invalid for a reason other than being null or outside of a valid range.</p>
 </td>
       </tr>
       <tr>
@@ -482,7 +502,7 @@ Dispose only when you&apos;re done with the instance completely, such as on shut
     <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/new/master/apiSpec/new?filename=Yort_LatitudePay_InStore_LatitudePayClient_CreateRefundAsync_Yort_LatitudePay_InStore_LatitudePayCreateRefundRequest_.md&amp;value=---%0Auid%3A%20Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayClient.cs/#L206">View Source</a>
+    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayClient.cs/#L217">View Source</a>
   </span>
   <a id="Yort_LatitudePay_InStore_LatitudePayClient_CreateRefundAsync_" data-uid="Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync*"></a>
   <h4 id="Yort_LatitudePay_InStore_LatitudePayClient_CreateRefundAsync_Yort_LatitudePay_InStore_LatitudePayCreateRefundRequest_" data-uid="Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)">CreateRefundAsync(LatitudePayCreateRefundRequest)</h4>
@@ -542,7 +562,17 @@ Dispose only when you&apos;re done with the instance completely, such as on shut
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
-        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.</p>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> or any of it's required sub-properties are null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
+        <td><p>Thrown if any sub-properties of <code data-dev-comment-type="paramref" class="paramref">request</code> are outside the allowed range, i.e negative price.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown if any sub-properties of <code data-dev-comment-type="paramref" class="paramref">request</code> are invalid for a reason other than being null or outside of a valid range.</p>
 </td>
       </tr>
       <tr>
@@ -567,7 +597,7 @@ Dispose only when you&apos;re done with the instance completely, such as on shut
     <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/new/master/apiSpec/new?filename=Yort_LatitudePay_InStore_LatitudePayClient_Dispose.md&amp;value=---%0Auid%3A%20Yort.LatitudePay.InStore.LatitudePayClient.Dispose%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayClient.cs/#L237">View Source</a>
+    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayClient.cs/#L249">View Source</a>
   </span>
   <a id="Yort_LatitudePay_InStore_LatitudePayClient_Dispose_" data-uid="Yort.LatitudePay.InStore.LatitudePayClient.Dispose*"></a>
   <h4 id="Yort_LatitudePay_InStore_LatitudePayClient_Dispose" data-uid="Yort.LatitudePay.InStore.LatitudePayClient.Dispose">Dispose()</h4>
@@ -664,7 +694,7 @@ Dispose only when you&apos;re done with the instance completely, such as on shut
     <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/new/master/apiSpec/new?filename=Yort_LatitudePay_InStore_LatitudePayClient_GetPurchaseStatusAsync_Yort_LatitudePay_InStore_LatitudePayPurchaseStatusRequest_.md&amp;value=---%0Auid%3A%20Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayClient.cs/#L146">View Source</a>
+    <a href="https://github.com/Yortw/Yort.LatitudePay.InStore/blob/master/src/LatitudePayClient.cs/#L151">View Source</a>
   </span>
   <a id="Yort_LatitudePay_InStore_LatitudePayClient_GetPurchaseStatusAsync_" data-uid="Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync*"></a>
   <h4 id="Yort_LatitudePay_InStore_LatitudePayClient_GetPurchaseStatusAsync_Yort_LatitudePay_InStore_LatitudePayPurchaseStatusRequest_" data-uid="Yort.LatitudePay.InStore.LatitudePayClient.GetPurchaseStatusAsync(Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest)">GetPurchaseStatusAsync(LatitudePayPurchaseStatusRequest)</h4>
@@ -720,7 +750,17 @@ Dispose only when you&apos;re done with the instance completely, such as on shut
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
-        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.</p>
+        <td><p>Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> or any of it's required sub-properties are null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
+        <td><p>Thrown if any sub-properties of <code data-dev-comment-type="paramref" class="paramref">request</code> are outside the allowed range, i.e negative price.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
+        <td><p>Thrown if any sub-properties of <code data-dev-comment-type="paramref" class="paramref">request</code> are invalid for a reason other than being null or outside of a valid range.</p>
 </td>
       </tr>
       <tr>

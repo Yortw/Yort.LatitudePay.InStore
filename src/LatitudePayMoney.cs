@@ -89,7 +89,7 @@ namespace Yort.LatitudePay.InStore
 				if (String.IsNullOrWhiteSpace(_Currency))
 					EnsureCurrencySet();
 
-				return _Currency ?? LatitudePayClientConfiguration.DefaultCurrency; 
+				return _Currency ?? LatitudePayClientConfiguration.DefaultCurrency ?? LatitudePay.InStore.LatitudePayCurrencies.AustralianDollars; 
 			} 
 		}
 

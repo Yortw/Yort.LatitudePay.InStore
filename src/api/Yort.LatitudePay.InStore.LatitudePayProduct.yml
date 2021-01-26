@@ -78,7 +78,7 @@ items:
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
-  summary: "\nGets or sets the name/description of the product.\n"
+  summary: "\nGets or sets the name/description of the product. Required.\n"
   example: []
   syntax:
     content: >-
@@ -128,7 +128,7 @@ items:
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
-  summary: "\nGets or sets the unit price of the product.\n"
+  summary: "\nGets or sets the unit price of the product. Cannot be a negative value.\n"
   example: []
   syntax:
     content: >-
@@ -178,7 +178,7 @@ items:
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
-  summary: "\nGets or sets the SKU of the item.\n"
+  summary: "\nGets or sets the SKU of the item. Optional.\n"
   example: []
   syntax:
     content: >-
@@ -228,7 +228,7 @@ items:
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
-  summary: "\nGets or sets the quantity of this item purchased.\n"
+  summary: "\nGets or sets the quantity of this item purchased. Must be a positive value greater than zero.\n"
   example: []
   syntax:
     content: >-

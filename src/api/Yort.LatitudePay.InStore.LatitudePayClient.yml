@@ -182,7 +182,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: CreatePosPurchaseAsync
     path: LatitudePayClient.cs
-    startLine: 108
+    startLine: 110
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -202,7 +202,13 @@ items:
   exceptions:
   - type: System.ArgumentNullException
     commentId: T:System.ArgumentNullException
-    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> or any of it&apos;s required sub-properties are null.
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if any sub-properties of <code data-dev-comment-type="paramref" class="paramref">request</code> are outside the allowed range, i.e negative price.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if any sub-properties of <code data-dev-comment-type="paramref" class="paramref">request</code> are invalid for a reason other than being null or outside of a valid range.
   - type: System.ObjectDisposedException
     commentId: T:System.ObjectDisposedException
     description: Thrown if <xref href="Yort.LatitudePay.InStore.LatitudePayClient.Dispose" data-throw-if-not-resolved="false"></xref> has been called on this instance.
@@ -243,7 +249,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: GetPurchaseStatusAsync
     path: LatitudePayClient.cs
-    startLine: 145
+    startLine: 150
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -263,7 +269,13 @@ items:
   exceptions:
   - type: System.ArgumentNullException
     commentId: T:System.ArgumentNullException
-    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> or any of it&apos;s required sub-properties are null.
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if any sub-properties of <code data-dev-comment-type="paramref" class="paramref">request</code> are outside the allowed range, i.e negative price.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if any sub-properties of <code data-dev-comment-type="paramref" class="paramref">request</code> are invalid for a reason other than being null or outside of a valid range.
   - type: System.ObjectDisposedException
     commentId: T:System.ObjectDisposedException
     description: Thrown if <xref href="Yort.LatitudePay.InStore.LatitudePayClient.Dispose" data-throw-if-not-resolved="false"></xref> has been called on this instance.
@@ -302,7 +314,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: CancelPurchaseAsync
     path: LatitudePayClient.cs
-    startLine: 174
+    startLine: 182
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -323,7 +335,13 @@ items:
   exceptions:
   - type: System.ArgumentNullException
     commentId: T:System.ArgumentNullException
-    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> or any of it&apos;s required sub-properties are null.
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if any sub-properties of <code data-dev-comment-type="paramref" class="paramref">request</code> are outside the allowed range, i.e negative price.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if any sub-properties of <code data-dev-comment-type="paramref" class="paramref">request</code> are invalid for a reason other than being null or outside of a valid range.
   - type: System.ObjectDisposedException
     commentId: T:System.ObjectDisposedException
     description: Thrown if <xref href="Yort.LatitudePay.InStore.LatitudePayClient.Dispose" data-throw-if-not-resolved="false"></xref> has been called on this instance.
@@ -362,7 +380,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: CreateRefundAsync
     path: LatitudePayClient.cs
-    startLine: 205
+    startLine: 216
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -383,7 +401,13 @@ items:
   exceptions:
   - type: System.ArgumentNullException
     commentId: T:System.ArgumentNullException
-    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> is null.
+    description: Thrown if <code data-dev-comment-type="paramref" class="paramref">request</code> or any of it&apos;s required sub-properties are null.
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: Thrown if any sub-properties of <code data-dev-comment-type="paramref" class="paramref">request</code> are outside the allowed range, i.e negative price.
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: Thrown if any sub-properties of <code data-dev-comment-type="paramref" class="paramref">request</code> are invalid for a reason other than being null or outside of a valid range.
   - type: System.ObjectDisposedException
     commentId: T:System.ObjectDisposedException
     description: Thrown if <xref href="Yort.LatitudePay.InStore.LatitudePayClient.Dispose" data-throw-if-not-resolved="false"></xref> has been called on this instance.
@@ -417,7 +441,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: Dispose
     path: LatitudePayClient.cs
-    startLine: 236
+    startLine: 248
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -939,6 +963,9 @@ references:
   isExternal: true
 - uid: Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
   commentId: M:Yort.LatitudePay.InStore.LatitudePayClient.CreateRefundAsync(Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest)
+  isExternal: true
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
   isExternal: true
 - uid: Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync*
   commentId: Overload:Yort.LatitudePay.InStore.LatitudePayClient.CreatePosPurchaseAsync

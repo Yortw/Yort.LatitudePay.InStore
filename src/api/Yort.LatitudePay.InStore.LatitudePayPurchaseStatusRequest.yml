@@ -20,7 +20,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: LatitudePayPurchaseStatusRequest
     path: LatitudePayPurchaseStatusRequest.cs
-    startLine: 8
+    startLine: 9
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -63,11 +63,11 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: PaymentPlanToken
     path: LatitudePayPurchaseStatusRequest.cs
-    startLine: 16
+    startLine: 17
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
-  summary: "\nGets or sets the payment token for the plan.\n"
+  summary: "\nGets or sets the payment token for the plan. Required.\n"
   example: []
   syntax:
     content: >-

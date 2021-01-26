@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Ladon;
 using Newtonsoft.Json;
 
 namespace Yort.LatitudePay.InStore
@@ -24,7 +25,7 @@ namespace Yort.LatitudePay.InStore
 		public string? IdempotencyKey { get; set; }
 
 		/// <summary>
-		/// Gets or sets the token of the payment plan to refund against.
+		/// Gets or sets the token of the payment plan to refund against. Required.
 		/// </summary>
 		/// <value>
 		/// The payment plan token.
@@ -34,7 +35,7 @@ namespace Yort.LatitudePay.InStore
 		public string? PaymentPlanToken { get; set; }
 
 		/// <summary>
-		/// Gets or sets the merchants unique reference for this refund.
+		/// Gets or sets the merchants unique reference for this refund. Required.
 		/// </summary>
 		/// <value>
 		/// The reference.
@@ -52,7 +53,7 @@ namespace Yort.LatitudePay.InStore
 		public string? Reason { get; set; }
 
 		/// <summary>
-		/// Gets or sets the amount of this refund.
+		/// Gets or sets the amount of this refund. Must be a positive non-zero value.
 		/// </summary>
 		/// <value>
 		/// The amount.
@@ -60,5 +61,13 @@ namespace Yort.LatitudePay.InStore
 		[Required]
 		[JsonProperty("amount")]
 		public LatitudePayMoney Amount { get; set; }
+
+		internal void Validate(string rootParameterName)
+		{
+			Reference.GuardNullOrWhiteSpace(rootParameterName, nameof(Reference));
+			PaymentPlanToken.GuardNullOrWhiteSpace(rootParameterName, nameof(PaymentPlanToken));
+
+			Amount.Amount.GuardZeroOrNegative(rootParameterName, nameof(Amount));
+		}
 	}
 }

@@ -11,7 +11,7 @@ namespace Yort.LatitudePay.InStore
 	public class LatitudePayProduct
 	{
 		/// <summary>
-		/// Gets or sets the name/description of the product.
+		/// Gets or sets the name/description of the product. Required.
 		/// </summary>
 		/// <value>
 		/// The name.
@@ -19,7 +19,7 @@ namespace Yort.LatitudePay.InStore
 		[JsonProperty("name")]
 		public string? Name { get; set; }
 		/// <summary>
-		/// Gets or sets the unit price of the product.
+		/// Gets or sets the unit price of the product. Cannot be a negative value.
 		/// </summary>
 		/// <value>
 		/// The price.
@@ -27,7 +27,7 @@ namespace Yort.LatitudePay.InStore
 		[JsonProperty("price")]
 		public LatitudePayMoney Price { get; set; }
 		/// <summary>
-		/// Gets or sets the SKU of the item.
+		/// Gets or sets the SKU of the item. Optional.
 		/// </summary>
 		/// <value>
 		/// The sku.
@@ -35,7 +35,7 @@ namespace Yort.LatitudePay.InStore
 		[JsonProperty("sku")]
 		public string? Sku { get; set; }
 		/// <summary>
-		/// Gets or sets the quantity of this item purchased.
+		/// Gets or sets the quantity of this item purchased. Must be a positive value greater than zero.
 		/// </summary>
 		/// <value>
 		/// The quantity.

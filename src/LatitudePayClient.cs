@@ -51,7 +51,7 @@ namespace Yort.LatitudePay.InStore
 			(
 				configuration.ApiSecret.GuardNullOrWhiteSpace
 				(
-					nameof(configuration), 
+					nameof(configuration),
 					nameof(configuration.ApiSecret)
 				)
 			);
@@ -102,13 +102,16 @@ namespace Yort.LatitudePay.InStore
 		/// <seealso cref="GetPurchaseStatusAsync(LatitudePayPurchaseStatusRequest)" />
 		/// <seealso cref="CancelPurchaseAsync(LatitudePayCancelPurchaseRequest)" />
 		/// <seealso cref="CreateRefundAsync(LatitudePayCreateRefundRequest)" />
-		/// <exception cref="ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+		/// <exception cref="ArgumentNullException">Thrown if <paramref name="request"/> or any of it's required sub-properties are null.</exception>
+		/// <exception cref="ArgumentOutOfRangeException">Thrown if any sub-properties of <paramref name="request"/> are outside the allowed range, i.e negative price.</exception>
+		/// <exception cref="ArgumentException">Thrown if any sub-properties of <paramref name="request"/> are invalid for a reason other than being null or outside of a valid range.</exception>
 		/// <exception cref="ObjectDisposedException">Thrown if <see cref="Dispose"/> has been called on this instance.</exception>
 		/// <exception cref="UnauthorizedAccessException">Thrown if the system is unable to obtain an authorisation token from the API (see the inner exception for details).</exception>
 		/// <exception cref="System.Net.Http.HttpRequestException">Thrown if an error occurs making the request to the API.</exception>
 		public async Task<LatitudePayCreatePosPurchaseResponse> CreatePosPurchaseAsync(LatitudePayCreatePosPurchaseRequest request)
 		{
 			request.GuardNull(nameof(request));
+			request.Validate(nameof(request));
 
 			await EnsureAuthorisedAsync().ConfigureAwait(false);
 
@@ -139,13 +142,16 @@ namespace Yort.LatitudePay.InStore
 		/// </returns>
 		/// <seealso cref="CreatePosPurchaseAsync(LatitudePayCreatePosPurchaseRequest)" />
 		/// <seealso cref="CancelPurchaseAsync(LatitudePayCancelPurchaseRequest)" />
-		/// <exception cref="ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+		/// <exception cref="ArgumentNullException">Thrown if <paramref name="request"/> or any of it's required sub-properties are null.</exception>
+		/// <exception cref="ArgumentOutOfRangeException">Thrown if any sub-properties of <paramref name="request"/> are outside the allowed range, i.e negative price.</exception>
+		/// <exception cref="ArgumentException">Thrown if any sub-properties of <paramref name="request"/> are invalid for a reason other than being null or outside of a valid range.</exception>
 		/// <exception cref="ObjectDisposedException">Thrown if <see cref="Dispose"/> has been called on this instance.</exception>
 		/// <exception cref="UnauthorizedAccessException">Thrown if the system is unable to obtain an authorisation token from the API (see the inner exception for details).</exception>
 		/// <exception cref="System.Net.Http.HttpRequestException">Thrown if an error occurs making the request to the API.</exception>
 		public async Task<LatitudePayPurchaseStatusResponse> GetPurchaseStatusAsync(LatitudePayPurchaseStatusRequest request)
 		{
 			request.GuardNull(nameof(request));
+			request.Validate(nameof(request));
 
 			await EnsureAuthorisedAsync().ConfigureAwait(false);
 
@@ -168,13 +174,16 @@ namespace Yort.LatitudePay.InStore
 		/// </remarks>
 		/// <seealso cref="CreatePosPurchaseAsync(LatitudePayCreatePosPurchaseRequest)" />
 		/// <seealso cref="CreateRefundAsync(LatitudePayCreateRefundRequest)" />
-		/// <exception cref="ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+		/// <exception cref="ArgumentNullException">Thrown if <paramref name="request"/> or any of it's required sub-properties are null.</exception>
+		/// <exception cref="ArgumentOutOfRangeException">Thrown if any sub-properties of <paramref name="request"/> are outside the allowed range, i.e negative price.</exception>
+		/// <exception cref="ArgumentException">Thrown if any sub-properties of <paramref name="request"/> are invalid for a reason other than being null or outside of a valid range.</exception>
 		/// <exception cref="ObjectDisposedException">Thrown if <see cref="Dispose"/> has been called on this instance.</exception>
 		/// <exception cref="UnauthorizedAccessException">Thrown if the system is unable to obtain an authorisation token from the API (see the inner exception for details).</exception>
 		/// <exception cref="System.Net.Http.HttpRequestException">Thrown if an error occurs making the request to the API.</exception>
 		public async Task<LatitudePayCancelPurchaseResponse> CancelPurchaseAsync(LatitudePayCancelPurchaseRequest request)
 		{
 			request.GuardNull(nameof(request));
+			request.Validate(nameof(request));
 
 			await EnsureAuthorisedAsync().ConfigureAwait(false);
 
@@ -199,13 +208,16 @@ namespace Yort.LatitudePay.InStore
 		/// <para>You can only refund a previously accepted payment plan. Use <see cref="CancelPurchaseAsync(LatitudePayCancelPurchaseRequest)" /> to cancel a payment plan that is pending.</para>
 		/// <para>A refund can be full or partial, and multiple partial refunds can be made. You can only refund up to the total amount of the original payment plan, across all refunds.</para>
 		/// </remarks>
-		/// <exception cref="ArgumentNullException">Thrown if <paramref name="request"/> is null.</exception>
+		/// <exception cref="ArgumentNullException">Thrown if <paramref name="request"/> or any of it's required sub-properties are null.</exception>
+		/// <exception cref="ArgumentOutOfRangeException">Thrown if any sub-properties of <paramref name="request"/> are outside the allowed range, i.e negative price.</exception>
+		/// <exception cref="ArgumentException">Thrown if any sub-properties of <paramref name="request"/> are invalid for a reason other than being null or outside of a valid range.</exception>
 		/// <exception cref="ObjectDisposedException">Thrown if <see cref="Dispose"/> has been called on this instance.</exception>
 		/// <exception cref="UnauthorizedAccessException">Thrown if the system is unable to obtain an authorisation token from the API (see the inner exception for details).</exception>
 		/// <exception cref="System.Net.Http.HttpRequestException">Thrown if an error occurs making the request to the API.</exception>
 		public async Task<LatitudePayCreateRefundResponse> CreateRefundAsync(LatitudePayCreateRefundRequest request)
 		{
 			request.GuardNull(nameof(request));
+			request.Validate(nameof(request));
 
 			await EnsureAuthorisedAsync().ConfigureAwait(false);
 
@@ -286,7 +298,7 @@ namespace Yort.LatitudePay.InStore
 			if (!response.IsSuccessStatusCode)
 			{
 				var errorDetails = Newtonsoft.Json.JsonConvert.DeserializeObject<LatitudePayErrorResponse>(await response.Content.ReadAsStringAsync().ConfigureAwait(false));
-				throw new LatitudePayApiException(String.IsNullOrWhiteSpace(errorDetails.ErrorMessage) ? response.StatusCode.ToString() : errorDetails.ErrorMessage, Convert.ToInt32(response.StatusCode));
+				throw new LatitudePayApiException(String.IsNullOrWhiteSpace(errorDetails.ErrorMessage) ? response.StatusCode.ToString() : errorDetails.ErrorMessage ?? response.StatusCode.ToString(), Convert.ToInt32(response.StatusCode));
 			}
 
 			return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync().ConfigureAwait(false));

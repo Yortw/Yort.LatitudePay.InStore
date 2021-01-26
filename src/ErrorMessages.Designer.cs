@@ -61,6 +61,15 @@ namespace Yort.LatitudePay.InStore {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You must provide at least one &apos;product&apos; for LatitudePay..
+        /// </summary>
+        internal static string AtleastOneProductRequired {
+            get {
+                return ResourceManager.GetString("AtleastOneProductRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cannot change LatitudePayConfiguration properties once configuration in use..
         /// </summary>
         internal static string ConfigurationPropertiesLocked {

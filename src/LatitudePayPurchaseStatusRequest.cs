@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Ladon;
 using Newtonsoft.Json;
 
 namespace Yort.LatitudePay.InStore
@@ -9,7 +10,7 @@ namespace Yort.LatitudePay.InStore
 	public class LatitudePayPurchaseStatusRequest
 	{
 		/// <summary>
-		/// Gets or sets the payment token for the plan.
+		/// Gets or sets the payment token for the plan. Required.
 		/// </summary>
 		/// <value>
 		/// The payment plan token.
@@ -17,5 +18,11 @@ namespace Yort.LatitudePay.InStore
 		[Required]
 		[JsonProperty("paymentPlanToken")]
 		public string? PaymentPlanToken { get; set; }
+
+		internal void Validate(string rootParameterName)
+		{
+			PaymentPlanToken.GuardNullOrWhiteSpace(rootParameterName, nameof(PaymentPlanToken));
+		}
+
 	}
 }

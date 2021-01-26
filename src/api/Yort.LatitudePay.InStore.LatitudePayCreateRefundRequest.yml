@@ -24,7 +24,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: LatitudePayCreateRefundRequest
     path: LatitudePayCreateRefundRequest.cs
-    startLine: 10
+    startLine: 11
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -72,7 +72,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: IdempotencyKey
     path: LatitudePayCreateRefundRequest.cs
-    startLine: 22
+    startLine: 23
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -120,11 +120,11 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: PaymentPlanToken
     path: LatitudePayCreateRefundRequest.cs
-    startLine: 31
+    startLine: 32
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
-  summary: "\nGets or sets the token of the payment plan to refund against.\n"
+  summary: "\nGets or sets the token of the payment plan to refund against. Required.\n"
   example: []
   syntax:
     content: >-
@@ -175,11 +175,11 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: Reference
     path: LatitudePayCreateRefundRequest.cs
-    startLine: 41
+    startLine: 42
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
-  summary: "\nGets or sets the merchants unique reference for this refund.\n"
+  summary: "\nGets or sets the merchants unique reference for this refund. Required.\n"
   example: []
   syntax:
     content: >-
@@ -225,7 +225,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: Reason
     path: LatitudePayCreateRefundRequest.cs
-    startLine: 50
+    startLine: 51
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -275,11 +275,11 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: Amount
     path: LatitudePayCreateRefundRequest.cs
-    startLine: 59
+    startLine: 60
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
-  summary: "\nGets or sets the amount of this refund.\n"
+  summary: "\nGets or sets the amount of this refund. Must be a positive non-zero value.\n"
   example: []
   syntax:
     content: >-

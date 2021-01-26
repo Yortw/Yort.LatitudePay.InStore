@@ -29,7 +29,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: LatitudePayCreatePosPurchaseRequest
     path: LatitudePayCreatePosPurchaseRequest.cs
-    startLine: 13
+    startLine: 15
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -78,7 +78,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: IdempotencyKey
     path: LatitudePayCreatePosPurchaseRequest.cs
-    startLine: 24
+    startLine: 26
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -126,11 +126,11 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: Customer
     path: LatitudePayCreatePosPurchaseRequest.cs
-    startLine: 36
+    startLine: 38
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
-  summary: "\nGets or sets details about the customer the payment plan is for.\n"
+  summary: "\nGets or sets details about the customer the payment plan is for. Required (see remarks).\n"
   remarks: "\n<p>You must provide a <xref href=\"Yort.LatitudePay.InStore.LatitudePayCustomer\" data-throw-if-not-resolved=\"false\"></xref> instance with the <xref href=\"Yort.LatitudePay.InStore.LatitudePayCustomer.MobileNumber\" data-throw-if-not-resolved=\"false\"></xref> set, but providing additional details when known can speed the sign up process for new customers.</p>\n"
   example: []
   syntax:
@@ -184,11 +184,11 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: ShippingAddress
     path: LatitudePayCreatePosPurchaseRequest.cs
-    startLine: 46
+    startLine: 48
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
-  summary: "\nGets or sets the shipping address for products purchased with this payment plan.\n"
+  summary: "\nGets or sets the shipping address for products purchased with this payment plan. Optional.\n"
   example: []
   syntax:
     content: >-
@@ -237,11 +237,11 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: BillingAddress
     path: LatitudePayCreatePosPurchaseRequest.cs
-    startLine: 55
+    startLine: 57
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
-  summary: "\nGets or sets the billing address for this payment plan.\n"
+  summary: "\nGets or sets the billing address for this payment plan. Optional.\n"
   example: []
   syntax:
     content: >-
@@ -290,11 +290,12 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: Products
     path: LatitudePayCreatePosPurchaseRequest.cs
-    startLine: 64
+    startLine: 70
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
-  summary: "\nGets or sets details of the items purchased with this payment plan.\n"
+  summary: "\nGets or sets details of the items purchased with this payment plan. At least one valid <xref href=\"Yort.LatitudePay.InStore.LatitudePayProduct\" data-throw-if-not-resolved=\"false\"></xref> is required.\n"
+  remarks: "\n<p>Note products collection may be enumerated multiple times as part of the validation and send processes, so should be a stable enumerable set and not a LINQ or dynamic query that might be subject to change or iterable only once.</p>\n<p>The product information is informative only (displayed to customer and merchant when viewing transaction in LatitudePay portals), it is not required for the value of items to total to the payment amount etc.</p>\n"
   example: []
   syntax:
     content: >-
@@ -343,11 +344,12 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: ShippingLines
     path: LatitudePayCreatePosPurchaseRequest.cs
-    startLine: 73
+    startLine: 82
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
-  summary: "\nGets or sets a collection of details about shipments paid for with this payment plan, if any.\n"
+  summary: "\nGets or sets a collection of details about shipments paid for with this payment plan, if any. Optional.\n"
+  remarks: "\n<p>While you do not have to provide any shipping lines, this value cannot be null when sent to LatitudePay. If the value is left null, an empty array will be assigned for you when the request is sent.</p>\n"
   example: []
   syntax:
     content: >-
@@ -396,11 +398,11 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: TaxAmount
     path: LatitudePayCreatePosPurchaseRequest.cs
-    startLine: 83
+    startLine: 92
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
-  summary: "\nGets or sets the amount of tax included in <xref href=\"Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TotalAmount\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  summary: "\nGets or sets the amount of tax included in <xref href=\"Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.TotalAmount\" data-throw-if-not-resolved=\"false\"></xref>. Optional, can be set to zero for the currency of the payment.\n"
   example: []
   syntax:
     content: >-
@@ -451,11 +453,11 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: Reference
     path: LatitudePayCreatePosPurchaseRequest.cs
-    startLine: 92
+    startLine: 101
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
-  summary: "\nA unique reference for this payment plan.\n"
+  summary: "\nA unique reference for this payment plan. Required.\n"
   example: []
   syntax:
     content: >-
@@ -508,11 +510,11 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: TotalAmount
     path: LatitudePayCreatePosPurchaseRequest.cs
-    startLine: 107
+    startLine: 116
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
-  summary: "\nGets or sets the total amount.\n"
+  summary: "\nGets or sets the total amount. Must be a positive non-zero value.\n"
   remarks: "\n<p>The amount specified here is the full amount charged as part of the payment plan. It does not have to match the sum of values from <xref href=\"Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.Products\" data-throw-if-not-resolved=\"false\"></xref> in the case of split payments or complex POS transactions.</p>\n"
   example: []
   syntax:
@@ -571,11 +573,11 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: ReturnUrls
     path: LatitudePayCreatePosPurchaseRequest.cs
-    startLine: 117
+    startLine: 126
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
-  summary: "\nGets or sets url&apos;s that will be used for callbacks when the payment plan changes status.\n"
+  summary: "\nGets or sets url&apos;s that will be used for callbacks when the payment plan changes status. Optional, can be null.\n"
   example: []
   syntax:
     content: >-

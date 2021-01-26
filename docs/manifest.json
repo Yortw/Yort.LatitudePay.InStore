@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest.html",
-          "hash": "l1zoYUDypkK7zRamTICAlQ=="
+          "hash": "ohgvZ0cRBOZpf94N+L6isg=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayClient.html",
-          "hash": "1qQN7isShlQcXAfTjBMYTQ=="
+          "hash": "PG0ZbqQ6HBkkPr4dtDY3oA=="
         }
       },
       "is_incremental": false,
@@ -198,7 +198,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayCreatePosPurchaseRequest.html",
-          "hash": "097mTdOMeol2dsiWVnMNqQ=="
+          "hash": "E49BgoAFMDgqu+VIygQFww=="
         }
       },
       "is_incremental": false,
@@ -222,7 +222,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayCreateRefundRequest.html",
-          "hash": "TYxsWwnhSR7WMNJyQxxc+g=="
+          "hash": "l6FR6HtunQoCPEgDkqyOsw=="
         }
       },
       "is_incremental": false,
@@ -306,7 +306,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayProduct.html",
-          "hash": "WIefx2XWJdRUZttta0DpZA=="
+          "hash": "ONtnFkb6PU4XCW0c0bVWMA=="
         }
       },
       "is_incremental": false,
@@ -318,7 +318,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest.html",
-          "hash": "Ze76OgxwDS/3sm+2ajfisQ=="
+          "hash": "PmqX6GyMt20RPWPpPnTn2A=="
         }
       },
       "is_incremental": false,
@@ -419,17 +419,17 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 1,
-          "skipped_file_count": 1
-        },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 30,
           "skipped_file_count": 30
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 1
         }
       }
     },
