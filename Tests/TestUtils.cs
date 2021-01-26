@@ -17,6 +17,17 @@ namespace Yort.LatitudePay.InStore.Tests
 			return new LatitudePayClient(config);
 		}
 
+		internal static ILatitudePayClient GetMockClient()
+		{
+			var config = new LatitudePayClientConfiguration()
+			{
+				ApiKey = "MockKey",
+				ApiSecret = "MockSecret",
+				Environment = LatitudePayEnvironment.Uat,
+				HttpClient = new System.Net.Http.HttpClient(new MockLatitudePayHttpHandler())
+			};
+			return new LatitudePayClient(config);
+		}
 
 	}
 }

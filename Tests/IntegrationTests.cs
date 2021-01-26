@@ -24,6 +24,7 @@ namespace Tests
 		}
 
 		[TestCategory("Integration")]
+		[Ignore("Requires user interaction to approve the payment, disabled unless run manually.")]
 		[TestMethod]
 		public async Task Purchase()
 		{
@@ -119,6 +120,7 @@ namespace Tests
 		}
 
 		[TestCategory("Integration")]
+		[Ignore("Requires user interaction to approve the payment, disabled unless run manually.")]
 		[TestMethod]
 		public async Task PurchaseWithMinimalDetails()
 		{
