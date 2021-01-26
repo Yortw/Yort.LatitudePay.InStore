@@ -31,11 +31,11 @@ jobs:
     - name: Run Tests
       run: dotnet test src\Yort.LatitudePay.InStore.sln --verbosity normal --collect:"XPlat Code Coverage" /p:CoverletOutputFormat=cobertura /p:CoverletOutput="Tests/TestResults/"
     - name: Install Report Generator
-      run: dotnet tool install -g dotnet-reportgenerator-globaltool
+      run: dotnet tool install -g dotnet-reportgenerator-globaltool --version 4.6.7
     - name: Generate Code Coverage Report
       run: reportgenerator "-reports:Tests\TestResults\**\coverage.cobertura.xml" "-targetdir:Tests\TestResults\Reports" --reporttypes:"Cobertura;Xml;Html" 
     - name: Install Coveralls Upload
-      run: dotnet tool install -g coveralls.net --version 1.0.0
+      run: dotnet tool install -g coveralls.net --version 2.0.0
     - name: Upload coverage to Coveralls.IO
       run: csmacnz.Coveralls --reportgenerator -i "Tests\TestResults\Reports" --repoTokenVariable Coveralls_Token --commitId $Env:GITHUB_SHA --commitBranch $Env:GITHUB_REF --commitAuthor $Env:GITHUB_ACTOR --jobId $Env:GITHUB_RUN_ID
       
