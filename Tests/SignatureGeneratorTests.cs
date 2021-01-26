@@ -96,6 +96,28 @@ namespace Yort.LatitudePay.InStore.Tests
 		}
 
     [TestMethod]
+    public void Generates_Null_Signature_For_Null_Input()
+    {
+      string jsonPayload = null;
+
+      using (var generator = new LatitudePayHMACSHA256SignatureGenerator("1y02Nwqzj1FbznAw"))
+      {
+        Assert.IsNull(generator.GenerateSignature(jsonPayload));
+      }
+    }
+
+    [TestMethod]
+    public void Generates_Null_Signature_For_Empty_Input()
+    {
+      string jsonPayload = String.Empty;
+
+      using (var generator = new LatitudePayHMACSHA256SignatureGenerator("1y02Nwqzj1FbznAw"))
+      {
+        Assert.IsNull(generator.GenerateSignature(jsonPayload));
+      }
+    }
+
+    [TestMethod]
     public void Disposes_Ok()
     {
       using (var generator = new LatitudePayHMACSHA256SignatureGenerator("1y02Nwqzj1FbznAw"))

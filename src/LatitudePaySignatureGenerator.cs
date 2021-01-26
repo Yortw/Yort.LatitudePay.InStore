@@ -105,7 +105,7 @@ namespace Yort.LatitudePay.InStore
 			if (!_IsDisposed)
 			{
 				_IsDisposed = true;
-				_Hasher?.Dispose();
+				_Hasher.Dispose();
 			}
 		}
 	}

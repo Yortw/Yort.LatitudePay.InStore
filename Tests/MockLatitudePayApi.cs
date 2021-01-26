@@ -14,7 +14,8 @@ namespace Yort.LatitudePay.InStore.Tests
 	//exactly the same error messages or handling all possible error responses. It also doesn't really check auth tokens or request signatures.
 	internal static class MockLatitudePayApi
 	{
-		private static List<MockLatitudePayPayment> _Payments = new List<MockLatitudePayPayment>();
+		private readonly static List<MockLatitudePayPayment> _Payments = new List<MockLatitudePayPayment>();
+		private readonly static List<MockLatitudePayRefund> _Refunds = new List<MockLatitudePayRefund>();
 
 		internal static HttpResponseMessage CreatePurchase(LatitudePayCreatePosPurchaseRequest request)
 		{
@@ -90,6 +91,43 @@ namespace Yort.LatitudePay.InStore.Tests
 			return ToJsonHttpResponse(existingPayment.InitialResponseStatus, new LatitudePayCancelPurchaseResponse() { CancelledDate = existingPayment.CancelledDate.Date, Token = existingPayment.InitialResponse.Token });
 		}
 
+		internal static HttpResponseMessage CreateRefund(LatitudePayCreateRefundRequest request)
+		{
+			if (!String.IsNullOrWhiteSpace(request.IdempotencyKey))
+			{
+				var existingRequest = (from r in _Refunds where request.IdempotencyKey == r.InitialRequest.IdempotencyKey select r).FirstOrDefault();
+				if (existingRequest != null)
+					return ToJsonHttpResponse(existingRequest.InitialResponseStatus, existingRequest.InitialResponse);
+			}
+
+			var existingPayment = (from p in _Payments where request.IdempotencyKey == p.InitialRequest.IdempotencyKey select p).FirstOrDefault();
+			if (existingPayment == null)
+				return ToJsonHttpResponse(HttpStatusCode.NotFound, new { error = "Payment plan not found." });
+
+			if (request.Amount.Amount > existingPayment.InitialRequest.TotalAmount.Amount)
+				return ToJsonHttpResponse(HttpStatusCode.NotFound, new { error = "Refund is more than payment amount." });
+
+			var token = System.Guid.NewGuid().ToString();
+			var responseContent = new LatitudePayCreateRefundResponse()
+			{
+				CommissionAmount = 0M,
+				RefundDate = DateTimeOffset.Now.DateTime,
+				RefundId = System.Guid.NewGuid().ToString(),
+				Reference = request.Reference
+			};
+
+			var mockRefund = new MockLatitudePayRefund()
+			{
+				InitialResponseStatus = HttpStatusCode.OK,
+				InitialRequest = request,
+				InitiallyReceivedAt = DateTimeOffset.Now,
+				InitialResponse = responseContent,
+			};
+			_Refunds.Add(mockRefund);
+
+			return ToJsonHttpResponse(mockRefund.InitialResponseStatus, mockRefund.InitialResponse);
+		}
+
 		private static HttpResponseMessage ToJsonHttpResponse<T>(HttpStatusCode statusCode, T bodyContent)
 		{
 			return new HttpResponseMessage(statusCode)
@@ -110,6 +148,14 @@ namespace Yort.LatitudePay.InStore.Tests
 
 		public DateTimeOffset InitiallyReceivedAt { get; set; }
 		public string CurrentPaymentStatus { get; set; }
+	}
+
+	internal class MockLatitudePayRefund
+	{
+		public LatitudePayCreateRefundRequest InitialRequest { get; set; }
+		public LatitudePayCreateRefundResponse InitialResponse { get; set; }
+		public HttpStatusCode InitialResponseStatus { get; set; }
+		public DateTimeOffset InitiallyReceivedAt { get; set; }
 	}
 
 	internal class MockLatitudePayHttpHandler : DelegatingHandler
@@ -154,7 +200,11 @@ namespace Yort.LatitudePay.InStore.Tests
 				var token = request.RequestUri.Segments[3].Trim('/');
 				return MockLatitudePayApi.CancelPurchase(new LatitudePayCancelPurchaseRequest() { PaymentPlanToken = token });
 			}
-			//TODO: Refunds
+			else if (request.RequestUri.AbsolutePath.StartsWith("/v3/sale/") && request.RequestUri.AbsolutePath.EndsWith("/refund") && request.Method == HttpMethod.Post)
+			{
+				var rb = Newtonsoft.Json.JsonConvert.DeserializeObject<LatitudePayCreateRefundRequest>(contentString);
+				return MockLatitudePayApi.CreateRefund(rb);
+			}
 
 			return new HttpResponseMessage(HttpStatusCode.NotFound);
 		}

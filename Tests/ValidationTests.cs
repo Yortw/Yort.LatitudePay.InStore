@@ -15,7 +15,7 @@ namespace Yort.LatitudePay.InStore.Tests
 		[TestMethod]
 		public async Task CreatePosPurchaseRequest_RequiresReference()
 		{
-			using (var client = TestUtils.GetSandboxClient())
+			using (var client = TestUtils.GetMockClient())
 			{
 				var request = CreateMinimalPurchaseRequest();
 				request.Reference = null;
@@ -64,7 +64,7 @@ namespace Yort.LatitudePay.InStore.Tests
 		[TestMethod]
 		public async Task CreatePosPurchaseRequest_RequiresCustomer()
 		{
-			using (var client = TestUtils.GetSandboxClient())
+			using (var client = TestUtils.GetMockClient())
 			{
 				var request = CreateMinimalPurchaseRequest();
 				request.Customer = null;
@@ -86,7 +86,7 @@ namespace Yort.LatitudePay.InStore.Tests
 		[TestMethod]
 		public async Task CreatePosPurchaseRequest_RequiresCustomerMobileNumber()
 		{
-			using (var client = TestUtils.GetSandboxClient())
+			using (var client = TestUtils.GetMockClient())
 			{
 				var request = CreateMinimalPurchaseRequest();
 				request.Customer.MobileNumber = null;
@@ -135,7 +135,7 @@ namespace Yort.LatitudePay.InStore.Tests
 		[TestMethod]
 		public async Task CreatePosPurchaseRequest_RequiresPositiveAmount()
 		{
-			using (var client = TestUtils.GetSandboxClient())
+			using (var client = TestUtils.GetMockClient())
 			{
 				var request = CreateMinimalPurchaseRequest();
 				request.TotalAmount = new LatitudePayMoney(0M, LatitudePayCurrencies.NewZealandDollars);
@@ -170,7 +170,7 @@ namespace Yort.LatitudePay.InStore.Tests
 		[TestMethod]
 		public async Task CreatePosPurchaseRequest_RequiresZeroOrPositiveAmount()
 		{
-			using (var client = TestUtils.GetSandboxClient())
+			using (var client = TestUtils.GetMockClient())
 			{
 				var request = CreateMinimalPurchaseRequest();
 				request.TaxAmount = new LatitudePayMoney(-1M, LatitudePayCurrencies.NewZealandDollars);
@@ -199,7 +199,7 @@ namespace Yort.LatitudePay.InStore.Tests
 		[TestMethod]
 		public async Task CreatePosPurchaseRequest_RequiresProducts()
 		{
-			using (var client = TestUtils.GetSandboxClient())
+			using (var client = TestUtils.GetMockClient())
 			{
 				var request = CreateMinimalPurchaseRequest();
 
@@ -248,7 +248,7 @@ namespace Yort.LatitudePay.InStore.Tests
 		[TestMethod]
 		public async Task CreatePosPurchaseRequest_Products_RequiresName()
 		{
-			using (var client = TestUtils.GetSandboxClient())
+			using (var client = TestUtils.GetMockClient())
 			{
 				var request = CreateMinimalPurchaseRequest();
 
@@ -297,7 +297,7 @@ namespace Yort.LatitudePay.InStore.Tests
 		[TestMethod]
 		public async Task CreatePosPurchaseRequest_Products_RequiresNonNegativePrice()
 		{
-			using (var client = TestUtils.GetSandboxClient())
+			using (var client = TestUtils.GetMockClient())
 			{
 				var request = CreateMinimalPurchaseRequest();
 
@@ -326,7 +326,7 @@ namespace Yort.LatitudePay.InStore.Tests
 		[TestMethod]
 		public async Task CreatePosPurchaseRequest_Products_RequiresPositiveQuantity()
 		{
-			using (var client = TestUtils.GetSandboxClient())
+			using (var client = TestUtils.GetMockClient())
 			{
 				var request = CreateMinimalPurchaseRequest();
 
@@ -366,7 +366,7 @@ namespace Yort.LatitudePay.InStore.Tests
 		[TestMethod]
 		public async Task CreateRefundRequest_RequiresReference()
 		{
-			using (var client = TestUtils.GetSandboxClient())
+			using (var client = TestUtils.GetMockClient())
 			{
 				var refundRef = System.Guid.NewGuid().ToString();
 				var request = new LatitudePayCreateRefundRequest()
@@ -419,7 +419,7 @@ namespace Yort.LatitudePay.InStore.Tests
 		[TestMethod]
 		public async Task CreateRefundRequest_RequiresPaymentPlanToken()
 		{
-			using (var client = TestUtils.GetSandboxClient())
+			using (var client = TestUtils.GetMockClient())
 			{
 				var refundRef = System.Guid.NewGuid().ToString();
 				var request = new LatitudePayCreateRefundRequest()
@@ -472,7 +472,7 @@ namespace Yort.LatitudePay.InStore.Tests
 		[TestMethod]
 		public async Task CreateRefundRequest_RequiresPositiveAmount()
 		{
-			using (var client = TestUtils.GetSandboxClient())
+			using (var client = TestUtils.GetMockClient())
 			{
 				var refundRef = System.Guid.NewGuid().ToString();
 				var request = new LatitudePayCreateRefundRequest()
@@ -516,7 +516,7 @@ namespace Yort.LatitudePay.InStore.Tests
 		[TestMethod]
 		public async Task PurchaseStatusRequest_RequiresPaymentPlanToken()
 		{
-			using (var client = TestUtils.GetSandboxClient())
+			using (var client = TestUtils.GetMockClient())
 			{
 				var refundRef = System.Guid.NewGuid().ToString();
 				var request = new Yort.LatitudePay.InStore.LatitudePayPurchaseStatusRequest();
@@ -567,7 +567,7 @@ namespace Yort.LatitudePay.InStore.Tests
 		[TestMethod]
 		public async Task CancelPurchaseRequest_RequiresPaymentPlanToken()
 		{
-			using (var client = TestUtils.GetSandboxClient())
+			using (var client = TestUtils.GetMockClient())
 			{
 				var refundRef = System.Guid.NewGuid().ToString();
 				var request = new Yort.LatitudePay.InStore.LatitudePayCancelPurchaseRequest();

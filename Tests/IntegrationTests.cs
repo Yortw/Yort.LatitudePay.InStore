@@ -21,6 +21,9 @@ namespace Tests
 			Assert.IsNotNull(config);
 			Assert.IsTrue(config.Availability.Any());
 			Assert.IsFalse(String.IsNullOrEmpty(config.Description));
+			Assert.AreNotEqual(0, config.MinimumAmount);
+			Assert.AreNotEqual(0, config.MaximumAmount);
+			Assert.IsFalse(String.IsNullOrWhiteSpace(config.Name));
 		}
 
 		[TestCategory("Integration")]
@@ -135,7 +138,7 @@ namespace Tests
 					{
 						MobileNumber = Environment.GetEnvironmentVariable("LatitudePay_TestMobileNumber")
 					},
-					Products = new LatitudePayProduct[] { new LatitudePayProduct() { Name = "Test", Price = new LatitudePayMoney(1, "NZD"), Quantity = 1, Sku = "Test" } }, 
+					Products = new LatitudePayProduct[] { new LatitudePayProduct() { Name = "Test", Price = new LatitudePayMoney(1, "NZD"), Quantity = 1, Sku = "Test" } },
 					ShippingLines = null,
 					TaxAmount = new LatitudePayMoney(0M, "NZD"),
 					TotalAmount = new LatitudePayMoney(35.5M, "NZD"),
@@ -192,7 +195,7 @@ namespace Tests
 						},
 						FirstName = "John",
 						Surname = "Doe",
-						MobileNumber = Environment.GetEnvironmentVariable("LatitudePay_TestMobileNumber")
+						MobileNumber = "025555555" //UAT environment allows us to use any mobile number that starts 02x-xxx-xxx, and this number shouldn't actually be in use so shouldn't bother anyone from automated tests
 					},
 					Products = new List<LatitudePayProduct>()
 				{
@@ -245,6 +248,7 @@ namespace Tests
 		}
 
 		[TestCategory("Integration")]
+		[Ignore("Requires user interaction to approve the payment, disabled unless run manually.")]
 		[TestMethod]
 		public async Task Refund()
 		{
@@ -469,7 +473,7 @@ namespace Tests
 						Postcode = "1010",
 						CountryCode = "NZ"
 					},
-					Customer = null,
+					Customer = new LatitudePayCustomer() { MobileNumber = Environment.GetEnvironmentVariable("LatitudePay_TestMobileNumber") },
 					Products = new List<LatitudePayProduct>()
 				{
 					new LatitudePayProduct()
@@ -489,7 +493,7 @@ namespace Tests
 						Price = new LatitudePayMoney(5.5M, "NZD")
 					}
 				},
-					TaxAmount = new LatitudePayMoney(5.325M, "NZD"),
+					TaxAmount = new LatitudePayMoney(5.325M, "inv"),
 					TotalAmount = new LatitudePayMoney(35.5M, "NZD"),
 					ReturnUrls = new LatitudePayReturnUrls()
 					{
@@ -508,7 +512,7 @@ namespace Tests
 				catch (LatitudePayApiException ex)
 				{
 					Assert.AreEqual(400, ex.StatusCode);
-					Assert.AreEqual("Customer is required\n", ex.Message);
+					Assert.AreEqual("Invalid tax amount (or currency) specified, at least one cart item includes taxes\n", ex.Message);
 				}
 			}
 		}

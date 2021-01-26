@@ -252,8 +252,8 @@ namespace Yort.LatitudePay.InStore
 			{
 				_IsDisposed = true;
 
-				_SignatureGenerator?.Dispose();
-				_HttpClient?.Dispose();
+				_SignatureGenerator.Dispose();
+				_HttpClient.Dispose();
 				_Token = null;
 			}
 		}
@@ -297,8 +297,12 @@ namespace Yort.LatitudePay.InStore
 		{
 			if (!response.IsSuccessStatusCode)
 			{
-				var errorDetails = Newtonsoft.Json.JsonConvert.DeserializeObject<LatitudePayErrorResponse>(await response.Content.ReadAsStringAsync().ConfigureAwait(false));
-				throw new LatitudePayApiException(String.IsNullOrWhiteSpace(errorDetails.ErrorMessage) ? response.StatusCode.ToString() : errorDetails.ErrorMessage ?? response.StatusCode.ToString(), Convert.ToInt32(response.StatusCode));
+				if (response.Content != null)
+				{
+					var errorDetails = Newtonsoft.Json.JsonConvert.DeserializeObject<LatitudePayErrorResponse>(await response.Content.ReadAsStringAsync().ConfigureAwait(false));
+					throw new LatitudePayApiException(String.IsNullOrWhiteSpace(errorDetails.ErrorMessage) ? response.StatusCode.ToString() : errorDetails.ErrorMessage ?? response.StatusCode.ToString(), Convert.ToInt32(response.StatusCode));
+				}
+				throw new LatitudePayApiException(response.StatusCode.ToString(), Convert.ToInt32(response.StatusCode));
 			}
 
 			return Newtonsoft.Json.JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync().ConfigureAwait(false));

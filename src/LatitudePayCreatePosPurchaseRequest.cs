@@ -132,7 +132,9 @@ namespace Yort.LatitudePay.InStore
 			Reference.GuardNullOrWhiteSpace(rootParameterName, nameof(Reference));
 
 			Customer.GuardNull(rootParameterName, nameof(Customer));
-			Customer?.MobileNumber.GuardNullOrWhiteSpace(rootParameterName, nameof(Customer) + "." + nameof(Customer.MobileNumber));
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+			Customer.MobileNumber.GuardNullOrWhiteSpace(rootParameterName, nameof(Customer) + "." + nameof(Customer.MobileNumber));
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
 
 			TotalAmount.Amount.GuardZeroOrNegative(rootParameterName, nameof(TotalAmount));
 			TotalAmount.Currency.GuardNullOrWhiteSpace(rootParameterName, nameof(TotalAmount.Currency));
