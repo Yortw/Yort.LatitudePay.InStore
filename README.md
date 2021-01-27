@@ -24,6 +24,6 @@ It **does not**
 
 ## How do I use it?
 
-For getting started, samples and API reference [see the docs](https://yortw.github.io/Yort.LatitudePay.InStore/docs/index.html)
+For getting started, samples and API reference [see the docs](https://yortw.github.io/Yort.LatitudePay.InStore/docs/api/index.html)
 
 Also be sure to familiarize yourself with the [LatitudePay API documentation](https://www.genoapay.com/api-doc-v3/)
