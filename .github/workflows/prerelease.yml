@@ -4,7 +4,7 @@ on:
     - "v[0-9]+.[0-9]+.[0-9]+-preview[0-9][0-9][0-9]"
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     env:
       LatitudePay_ApiKey: ${{ secrets.LatitudePay_ApiKey }}    
       LatitudePay_ApiSecret: ${{ secrets.LatitudePay_ApiSecret }}
@@ -22,13 +22,21 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 2.1.x
-    - name: Set VERSION variable from tag
-      run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+    - name: Get tag
+      id: tag
+      uses: dawidd6/action-get-tag@v1
+    - name: Use tag
+      run: echo ${{steps.tag.outputs.tag}}
+    - name: Extract version from tag
+      uses: Amadevus/pwsh-script@v1
+      id: getVersion
+      with:
+        script: '("${{steps.tag.outputs.tag}}").Split("v")[1]'
     - name: Display Version
-      run: echo "${VERSION}"
+      run: echo "${{steps.getVersion.outputs.result}}"
     - name: Build
-      run: dotnet build src/Yort.LatitudePay.InStore.sln --configuration Release --nologo /p:Version=${VERSION} /p:NuGetVersion=${VERSION}
+      run: dotnet build src/Yort.LatitudePay.InStore.sln --configuration Release --nologo /p:Version=${{steps.getVersion.outputs.result}} /p:NuGetVersion=${{steps.getVersion.outputs.result}}
     - name: Test
       run: dotnet test src/Yort.LatitudePay.InStore.sln --verbosity normal --collect:"XPlat Code Coverage" /p:CoverletOutputFormat=cobertura /p:CoverletOutput="Tests/TestResults/"
     - name: Push
-      run: dotnet nuget push src/bin/Release/Yort.LatitudePay.InStore.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_TOKEN}
+      run: dotnet nuget push src/bin/Release/Yort.LatitudePay.InStore.${{steps.getVersion.outputs.result}}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_TOKEN}
