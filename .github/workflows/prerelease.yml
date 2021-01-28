@@ -11,6 +11,7 @@ jobs:
       LatitudePay_TestMobileNumber: ${{ secrets.LatitudePay_TestMobileNumber }}
       Coveralls_Token: ${{ secrets.Coveralls_Token }}   
       NUGET_TOKEN: ${{ secrets.Nuget_Token }}
+      VERSION: ""
     timeout-minutes: 15
     steps:
     - uses: actions/checkout@v2
@@ -24,8 +25,6 @@ jobs:
         dotnet-version: 2.1.x
     - name: Set VERSION variable from tag
       run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
-    - name: Show Version
-      run: echo $VERSION
     - name: Build
       run: dotnet build src\Yort.LatitudePay.InStore.sln --configuration Release --nologo /p:Version=${VERSION} /p:NuGetVersion=${VERSION}
     - name: Test
