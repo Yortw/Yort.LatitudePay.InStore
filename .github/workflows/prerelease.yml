@@ -11,7 +11,6 @@ jobs:
       LatitudePay_TestMobileNumber: ${{ secrets.LatitudePay_TestMobileNumber }}
       Coveralls_Token: ${{ secrets.Coveralls_Token }}   
       NUGET_TOKEN: ${{ secrets.Nuget_Token }}
-      VERSION: ""
     timeout-minutes: 15
     steps:
     - uses: actions/checkout@v2
