@@ -27,8 +27,8 @@ jobs:
     - name: Display Version
       run: echo "${VERSION}"
     - name: Build
-      run: dotnet build src\Yort.LatitudePay.InStore.sln --configuration Release --nologo /p:Version=${VERSION} /p:NuGetVersion=${VERSION}
+      run: dotnet build src/Yort.LatitudePay.InStore.sln --configuration Release --nologo /p:Version=${VERSION} /p:NuGetVersion=${VERSION}
     - name: Test
-      run: dotnet test src\Yort.LatitudePay.InStore.sln --verbosity normal --collect:"XPlat Code Coverage" /p:CoverletOutputFormat=cobertura /p:CoverletOutput="Tests/TestResults/"
+      run: dotnet test src/Yort.LatitudePay.InStore.sln --verbosity normal --collect:"XPlat Code Coverage" /p:CoverletOutputFormat=cobertura /p:CoverletOutput="Tests/TestResults/"
     - name: Push
-      run: dotnet nuget push src\bin\Release\Yort.LatitudePay.InStore.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_TOKEN}
+      run: dotnet nuget push src/bin/Release/Yort.LatitudePay.InStore.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_TOKEN}
