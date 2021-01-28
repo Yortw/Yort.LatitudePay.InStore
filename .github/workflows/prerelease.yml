@@ -39,4 +39,4 @@ jobs:
     - name: Test
       run: dotnet test src/Yort.LatitudePay.InStore.sln --verbosity normal --collect:"XPlat Code Coverage" /p:CoverletOutputFormat=cobertura /p:CoverletOutput="Tests/TestResults/"
     - name: Push
-      run: dotnet nuget push src/bin/Release/Yort.LatitudePay.InStore.${{steps.getVersion.outputs.result}}.nupkg --source https://api.nuget.org/v3/index.json --apikey ${NUGET_TOKEN}
+      run: dotnet nuget push src/bin/Release/Yort.LatitudePay.InStore.${{steps.getVersion.outputs.result}}.nupkg --source https://api.nuget.org/v3/index.json -k ${NUGET_TOKEN}
