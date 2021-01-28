@@ -25,6 +25,8 @@ jobs:
         dotnet-version: 2.1.x
     - name: Set VERSION variable from tag
       run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+    - name: Display Version
+      run: echo "${VERSION}"
     - name: Build
       run: dotnet build src\Yort.LatitudePay.InStore.sln --configuration Release --nologo /p:Version=${VERSION} /p:NuGetVersion=${VERSION}
     - name: Test
