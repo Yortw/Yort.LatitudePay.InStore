@@ -401,7 +401,7 @@ namespace Yort.LatitudePay.InStore
 		}
 
 
-		private string? GetApiContentTypeFromEnvironment()
+		private string GetApiContentTypeFromEnvironment()
 		{
 			switch (_Configuration.Environment)
 			{
@@ -412,10 +412,9 @@ namespace Yort.LatitudePay.InStore
 				case LatitudePayEnvironment.GenoapayProduction:
 				case LatitudePayEnvironment.GenoapayUat:
 					return LatitudePayConstants.GenoapayV3ContentType;
-
-				default:
-					throw new ArgumentException(ErrorMessages.UnknownClientEnvironment);
 			}
+
+			throw new ArgumentException(ErrorMessages.UnknownClientEnvironment);
 		}
 
 		private string GetEnvironmentBaseAddress()
