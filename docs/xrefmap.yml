@@ -836,6 +836,24 @@ references:
   commentId: T:Yort.LatitudePay.InStore.LatitudePayConstants
   fullName: Yort.LatitudePay.InStore.LatitudePayConstants
   nameWithType: LatitudePayConstants
+- uid: Yort.LatitudePay.InStore.LatitudePayConstants.GenoapayV3ContentType
+  name: GenoapayV3ContentType
+  href: api/Yort.LatitudePay.InStore.LatitudePayConstants.html#Yort_LatitudePay_InStore_LatitudePayConstants_GenoapayV3ContentType
+  commentId: F:Yort.LatitudePay.InStore.LatitudePayConstants.GenoapayV3ContentType
+  fullName: Yort.LatitudePay.InStore.LatitudePayConstants.GenoapayV3ContentType
+  nameWithType: LatitudePayConstants.GenoapayV3ContentType
+- uid: Yort.LatitudePay.InStore.LatitudePayConstants.GenoaProductionRootUrl
+  name: GenoaProductionRootUrl
+  href: api/Yort.LatitudePay.InStore.LatitudePayConstants.html#Yort_LatitudePay_InStore_LatitudePayConstants_GenoaProductionRootUrl
+  commentId: F:Yort.LatitudePay.InStore.LatitudePayConstants.GenoaProductionRootUrl
+  fullName: Yort.LatitudePay.InStore.LatitudePayConstants.GenoaProductionRootUrl
+  nameWithType: LatitudePayConstants.GenoaProductionRootUrl
+- uid: Yort.LatitudePay.InStore.LatitudePayConstants.GenoaUatRootUrl
+  name: GenoaUatRootUrl
+  href: api/Yort.LatitudePay.InStore.LatitudePayConstants.html#Yort_LatitudePay_InStore_LatitudePayConstants_GenoaUatRootUrl
+  commentId: F:Yort.LatitudePay.InStore.LatitudePayConstants.GenoaUatRootUrl
+  fullName: Yort.LatitudePay.InStore.LatitudePayConstants.GenoaUatRootUrl
+  nameWithType: LatitudePayConstants.GenoaUatRootUrl
 - uid: Yort.LatitudePay.InStore.LatitudePayConstants.LatitudePayV3ContentType
   name: LatitudePayV3ContentType
   href: api/Yort.LatitudePay.InStore.LatitudePayConstants.html#Yort_LatitudePay_InStore_LatitudePayConstants_LatitudePayV3ContentType
@@ -1316,6 +1334,18 @@ references:
   commentId: T:Yort.LatitudePay.InStore.LatitudePayEnvironment
   fullName: Yort.LatitudePay.InStore.LatitudePayEnvironment
   nameWithType: LatitudePayEnvironment
+- uid: Yort.LatitudePay.InStore.LatitudePayEnvironment.GenoapayProduction
+  name: GenoapayProduction
+  href: api/Yort.LatitudePay.InStore.LatitudePayEnvironment.html#Yort_LatitudePay_InStore_LatitudePayEnvironment_GenoapayProduction
+  commentId: F:Yort.LatitudePay.InStore.LatitudePayEnvironment.GenoapayProduction
+  fullName: Yort.LatitudePay.InStore.LatitudePayEnvironment.GenoapayProduction
+  nameWithType: LatitudePayEnvironment.GenoapayProduction
+- uid: Yort.LatitudePay.InStore.LatitudePayEnvironment.GenoapayUat
+  name: GenoapayUat
+  href: api/Yort.LatitudePay.InStore.LatitudePayEnvironment.html#Yort_LatitudePay_InStore_LatitudePayEnvironment_GenoapayUat
+  commentId: F:Yort.LatitudePay.InStore.LatitudePayEnvironment.GenoapayUat
+  fullName: Yort.LatitudePay.InStore.LatitudePayEnvironment.GenoapayUat
+  nameWithType: LatitudePayEnvironment.GenoapayUat
 - uid: Yort.LatitudePay.InStore.LatitudePayEnvironment.Production
   name: Production
   href: api/Yort.LatitudePay.InStore.LatitudePayEnvironment.html#Yort_LatitudePay_InStore_LatitudePayEnvironment_Production

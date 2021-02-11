@@ -60,6 +60,11 @@
               Looks up a localized string similar to Unable to obtain token from LatitudePay..
             </summary>
         </member>
+        <member name="P:Yort.LatitudePay.InStore.ErrorMessages.UnknownClientEnvironment">
+            <summary>
+              Looks up a localized string similar to Unknown environment specified for LatitudePay client..
+            </summary>
+        </member>
         <member name="T:Yort.LatitudePay.InStore.ILatitudePayClient">
             <summary>
             Interface for the <see cref="T:Yort.LatitudePay.InStore.ILatitudePayClient"/>, provided to make testing via mocks/stubs etc. easier.
@@ -704,9 +709,24 @@
             Returns a string containing the root url for the UAT/sandbox/test LatitudePay API.
             </summary>
         </member>
+        <member name="F:Yort.LatitudePay.InStore.LatitudePayConstants.GenoaProductionRootUrl">
+            <summary>
+            Returns a string containing the root url for the live/production LatitudePay API.
+            </summary>
+        </member>
+        <member name="F:Yort.LatitudePay.InStore.LatitudePayConstants.GenoaUatRootUrl">
+            <summary>
+            Returns a string containing the root url for the UAT/sandbox/test LatitudePay API.
+            </summary>
+        </member>
         <member name="F:Yort.LatitudePay.InStore.LatitudePayConstants.LatitudePayV3ContentType">
             <summary>
             Returns the content-type to use for HTTP requests to the LatitudePay API for version 3 content entities.
+            </summary>
+        </member>
+        <member name="F:Yort.LatitudePay.InStore.LatitudePayConstants.GenoapayV3ContentType">
+            <summary>
+            Returns the content-type to use for HTTP requests to the Genoapay API for version 3 content entities.
             </summary>
         </member>
         <member name="F:Yort.LatitudePay.InStore.LatitudePayConstants.StatusApproved">
@@ -1052,12 +1072,22 @@
         </member>
         <member name="F:Yort.LatitudePay.InStore.LatitudePayEnvironment.Uat">
             <summary>
-            The test/sandbox API.
+            The test/sandbox API for LatitudePay (use in Australia).
             </summary>
         </member>
         <member name="F:Yort.LatitudePay.InStore.LatitudePayEnvironment.Production">
             <summary>
-            The live/production API.
+            The live/production API for LatitudePay (use in Australia).
+            </summary>
+        </member>
+        <member name="F:Yort.LatitudePay.InStore.LatitudePayEnvironment.GenoapayUat">
+            <summary>
+            The test/sandbox API for Genoapay (use in New Zealand).
+            </summary>
+        </member>
+        <member name="F:Yort.LatitudePay.InStore.LatitudePayEnvironment.GenoapayProduction">
+            <summary>
+            The live/production API for Genoapay (use in New Zealand).
             </summary>
         </member>
         <member name="T:Yort.LatitudePay.InStore.LatitudePayMoney">

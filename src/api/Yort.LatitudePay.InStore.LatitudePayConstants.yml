@@ -5,6 +5,9 @@ items:
   id: LatitudePayConstants
   parent: Yort.LatitudePay.InStore
   children:
+  - Yort.LatitudePay.InStore.LatitudePayConstants.GenoapayV3ContentType
+  - Yort.LatitudePay.InStore.LatitudePayConstants.GenoaProductionRootUrl
+  - Yort.LatitudePay.InStore.LatitudePayConstants.GenoaUatRootUrl
   - Yort.LatitudePay.InStore.LatitudePayConstants.LatitudePayV3ContentType
   - Yort.LatitudePay.InStore.LatitudePayConstants.ProductionRootUrl
   - Yort.LatitudePay.InStore.LatitudePayConstants.StatusApproved
@@ -121,6 +124,76 @@ items:
   modifiers.vb:
   - Public
   - Const
+- uid: Yort.LatitudePay.InStore.LatitudePayConstants.GenoaProductionRootUrl
+  commentId: F:Yort.LatitudePay.InStore.LatitudePayConstants.GenoaProductionRootUrl
+  id: GenoaProductionRootUrl
+  parent: Yort.LatitudePay.InStore.LatitudePayConstants
+  langs:
+  - csharp
+  - vb
+  name: GenoaProductionRootUrl
+  nameWithType: LatitudePayConstants.GenoaProductionRootUrl
+  fullName: Yort.LatitudePay.InStore.LatitudePayConstants.GenoaProductionRootUrl
+  type: Field
+  source:
+    remote:
+      path: src/LatitudePayConstants.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: GenoaProductionRootUrl
+    path: LatitudePayConstants.cs
+    startLine: 19
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nReturns a string containing the root url for the live/production LatitudePay API.\n"
+  example: []
+  syntax:
+    content: public const string GenoaProductionRootUrl = "https://api.genoapay.com"
+    return:
+      type: System.String
+    content.vb: Public Const GenoaProductionRootUrl As String = "https://api.genoapay.com"
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Yort.LatitudePay.InStore.LatitudePayConstants.GenoaUatRootUrl
+  commentId: F:Yort.LatitudePay.InStore.LatitudePayConstants.GenoaUatRootUrl
+  id: GenoaUatRootUrl
+  parent: Yort.LatitudePay.InStore.LatitudePayConstants
+  langs:
+  - csharp
+  - vb
+  name: GenoaUatRootUrl
+  nameWithType: LatitudePayConstants.GenoaUatRootUrl
+  fullName: Yort.LatitudePay.InStore.LatitudePayConstants.GenoaUatRootUrl
+  type: Field
+  source:
+    remote:
+      path: src/LatitudePayConstants.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: GenoaUatRootUrl
+    path: LatitudePayConstants.cs
+    startLine: 23
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nReturns a string containing the root url for the UAT/sandbox/test LatitudePay API.\n"
+  example: []
+  syntax:
+    content: public const string GenoaUatRootUrl = "https://api.uat.genoapay.com"
+    return:
+      type: System.String
+    content.vb: Public Const GenoaUatRootUrl As String = "https://api.uat.genoapay.com"
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
 - uid: Yort.LatitudePay.InStore.LatitudePayConstants.LatitudePayV3ContentType
   commentId: F:Yort.LatitudePay.InStore.LatitudePayConstants.LatitudePayV3ContentType
   id: LatitudePayV3ContentType
@@ -139,7 +212,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: LatitudePayV3ContentType
     path: LatitudePayConstants.cs
-    startLine: 19
+    startLine: 28
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -150,6 +223,41 @@ items:
     return:
       type: System.String
     content.vb: Public Const LatitudePayV3ContentType As String = "application/com.latitudepay.ecom-v3.0+json"
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Yort.LatitudePay.InStore.LatitudePayConstants.GenoapayV3ContentType
+  commentId: F:Yort.LatitudePay.InStore.LatitudePayConstants.GenoapayV3ContentType
+  id: GenoapayV3ContentType
+  parent: Yort.LatitudePay.InStore.LatitudePayConstants
+  langs:
+  - csharp
+  - vb
+  name: GenoapayV3ContentType
+  nameWithType: LatitudePayConstants.GenoapayV3ContentType
+  fullName: Yort.LatitudePay.InStore.LatitudePayConstants.GenoapayV3ContentType
+  type: Field
+  source:
+    remote:
+      path: src/LatitudePayConstants.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: GenoapayV3ContentType
+    path: LatitudePayConstants.cs
+    startLine: 33
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nReturns the content-type to use for HTTP requests to the Genoapay API for version 3 content entities.\n"
+  example: []
+  syntax:
+    content: public const string GenoapayV3ContentType = "application/com.genoapay.ecom-v3.1+json"
+    return:
+      type: System.String
+    content.vb: Public Const GenoapayV3ContentType As String = "application/com.genoapay.ecom-v3.1+json"
   modifiers.csharp:
   - public
   - const
@@ -174,7 +282,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: StatusApproved
     path: LatitudePayConstants.cs
-    startLine: 24
+    startLine: 38
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -209,7 +317,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: StatusDeclined
     path: LatitudePayConstants.cs
-    startLine: 29
+    startLine: 43
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -244,7 +352,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: StatusPending
     path: LatitudePayConstants.cs
-    startLine: 34
+    startLine: 48
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore

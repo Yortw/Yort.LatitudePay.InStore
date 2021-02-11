@@ -5,6 +5,8 @@ items:
   id: LatitudePayEnvironment
   parent: Yort.LatitudePay.InStore
   children:
+  - Yort.LatitudePay.InStore.LatitudePayEnvironment.GenoapayProduction
+  - Yort.LatitudePay.InStore.LatitudePayEnvironment.GenoapayUat
   - Yort.LatitudePay.InStore.LatitudePayEnvironment.Production
   - Yort.LatitudePay.InStore.LatitudePayEnvironment.Uat
   langs:
@@ -58,7 +60,7 @@ items:
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
-  summary: "\nThe test/sandbox API.\n"
+  summary: "\nThe test/sandbox API for LatitudePay (use in Australia).\n"
   example: []
   syntax:
     content: Uat = 0
@@ -92,10 +94,78 @@ items:
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
-  summary: "\nThe live/production API.\n"
+  summary: "\nThe live/production API for LatitudePay (use in Australia).\n"
   example: []
   syntax:
     content: Production = 1
+    return:
+      type: Yort.LatitudePay.InStore.LatitudePayEnvironment
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Yort.LatitudePay.InStore.LatitudePayEnvironment.GenoapayUat
+  commentId: F:Yort.LatitudePay.InStore.LatitudePayEnvironment.GenoapayUat
+  id: GenoapayUat
+  parent: Yort.LatitudePay.InStore.LatitudePayEnvironment
+  langs:
+  - csharp
+  - vb
+  name: GenoapayUat
+  nameWithType: LatitudePayEnvironment.GenoapayUat
+  fullName: Yort.LatitudePay.InStore.LatitudePayEnvironment.GenoapayUat
+  type: Field
+  source:
+    remote:
+      path: src/LatitudePayEnvironment.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: GenoapayUat
+    path: LatitudePayEnvironment.cs
+    startLine: 18
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nThe test/sandbox API for Genoapay (use in New Zealand).\n"
+  example: []
+  syntax:
+    content: GenoapayUat = 2
+    return:
+      type: Yort.LatitudePay.InStore.LatitudePayEnvironment
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Yort.LatitudePay.InStore.LatitudePayEnvironment.GenoapayProduction
+  commentId: F:Yort.LatitudePay.InStore.LatitudePayEnvironment.GenoapayProduction
+  id: GenoapayProduction
+  parent: Yort.LatitudePay.InStore.LatitudePayEnvironment
+  langs:
+  - csharp
+  - vb
+  name: GenoapayProduction
+  nameWithType: LatitudePayEnvironment.GenoapayProduction
+  fullName: Yort.LatitudePay.InStore.LatitudePayEnvironment.GenoapayProduction
+  type: Field
+  source:
+    remote:
+      path: src/LatitudePayEnvironment.cs
+      branch: master
+      repo: https://github.com/Yortw/Yort.LatitudePay.InStore
+    id: GenoapayProduction
+    path: LatitudePayEnvironment.cs
+    startLine: 22
+  assemblies:
+  - Yort.LatitudePay.InStore
+  namespace: Yort.LatitudePay.InStore
+  summary: "\nThe live/production API for Genoapay (use in New Zealand).\n"
+  example: []
+  syntax:
+    content: GenoapayProduction = 3
     return:
       type: Yort.LatitudePay.InStore.LatitudePayEnvironment
   modifiers.csharp:

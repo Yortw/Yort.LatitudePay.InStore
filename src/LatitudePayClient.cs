@@ -27,6 +27,7 @@ namespace Yort.LatitudePay.InStore
 		private readonly Uri _BaseUrl;
 		private readonly ILatitudePaySignatureGenerator _SignatureGenerator;
 		private LatitudePayAuthToken? _Token;
+		private readonly string _ApiContentType;
 
 		private bool _IsDisposed;
 
@@ -57,7 +58,8 @@ namespace Yort.LatitudePay.InStore
 			);
 
 			//Not set on HttpClient as the client might be shared between environments (it shouldn't be, but trust no one).
-			_BaseUrl = new Uri((_Configuration.Environment == LatitudePayEnvironment.Production ? LatitudePayConstants.ProductionRootUrl : LatitudePayConstants.UatRootUrl) + "/v3/");
+			_BaseUrl = new Uri(GetEnvironmentBaseAddress() + "/v3/");
+			_ApiContentType = GetApiContentTypeFromEnvironment();
 
 			ConfigureServicePoint();
 
@@ -118,7 +120,7 @@ namespace Yort.LatitudePay.InStore
 			var jsonBody = Newtonsoft.Json.JsonConvert.SerializeObject(request);
 			var signature = _SignatureGenerator.GenerateSignature(jsonBody);
 			var requestUri = new Uri($"sale/pos?signature={signature}", UriKind.Relative);
-			using (var requestContent = new StringContent(jsonBody, System.Text.UTF8Encoding.UTF8, LatitudePayConstants.LatitudePayV3ContentType))
+			using (var requestContent = new StringContent(jsonBody, System.Text.UTF8Encoding.UTF8, _ApiContentType))
 			{
 				using (var requestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 				{
@@ -188,7 +190,7 @@ namespace Yort.LatitudePay.InStore
 			await EnsureAuthorisedAsync().ConfigureAwait(false);
 
 			var requestUri = new Uri($"sale/{request.PaymentPlanToken}/cancel", UriKind.Relative);
-			using (var requestContent = new StringContent(String.Empty, System.Text.UTF8Encoding.UTF8, LatitudePayConstants.LatitudePayV3ContentType))
+			using (var requestContent = new StringContent(String.Empty, System.Text.UTF8Encoding.UTF8, _ApiContentType))
 			{
 				using (var response = await _HttpClient.PutAsync(requestUri, requestContent).ConfigureAwait(false))
 				{
@@ -224,7 +226,7 @@ namespace Yort.LatitudePay.InStore
 			var jsonBody = Newtonsoft.Json.JsonConvert.SerializeObject(request);
 			var signature = _SignatureGenerator.GenerateSignature(jsonBody);
 			var requestUri = new Uri($"sale/{request.PaymentPlanToken}/refund?signature={signature}", UriKind.Relative);
-			using (var requestContent = new StringContent(jsonBody, System.Text.UTF8Encoding.UTF8, LatitudePayConstants.LatitudePayV3ContentType))
+			using (var requestContent = new StringContent(jsonBody, System.Text.UTF8Encoding.UTF8, _ApiContentType))
 			{
 				using (var requestMessage = new HttpRequestMessage(HttpMethod.Post, requestUri))
 				{
@@ -272,7 +274,7 @@ namespace Yort.LatitudePay.InStore
 
 				using (var request = new HttpRequestMessage(HttpMethod.Post, new Uri(_HttpClient.BaseAddress, "token"))
 				{
-					Content = new StringContent(String.Empty, System.Text.UTF8Encoding.UTF8, LatitudePayConstants.LatitudePayV3ContentType)
+					Content = new StringContent(String.Empty, System.Text.UTF8Encoding.UTF8, _ApiContentType)
 				})
 				{
 					var creds = _Configuration.ApiKey + ":" + _Configuration.ApiSecret;
@@ -369,7 +371,7 @@ namespace Yort.LatitudePay.InStore
 
 		private HttpClient ConfigureHttpClient(HttpClient client)
 		{
-			client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue(LatitudePayConstants.LatitudePayV3ContentType));
+			client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue(_ApiContentType));
 			client.DefaultRequestHeaders.UserAgent.Clear();
 			client.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", GetUserAgent());
 			client.BaseAddress = _BaseUrl;
@@ -378,6 +380,7 @@ namespace Yort.LatitudePay.InStore
 
 			return client;
 		}
+
 
 		private string GetUserAgent()
 		{
@@ -395,6 +398,45 @@ namespace Yort.LatitudePay.InStore
 			if (String.IsNullOrWhiteSpace(idempotencyKey)) return;
 
 			requestMessage.Headers.Add("X-Idempotency-Key", idempotencyKey);
+		}
+
+
+		private string? GetApiContentTypeFromEnvironment()
+		{
+			switch (_Configuration.Environment)
+			{
+				case LatitudePayEnvironment.Production:
+				case LatitudePayEnvironment.Uat:
+					return LatitudePayConstants.LatitudePayV3ContentType;
+
+				case LatitudePayEnvironment.GenoapayProduction:
+				case LatitudePayEnvironment.GenoapayUat:
+					return LatitudePayConstants.GenoapayV3ContentType;
+
+				default:
+					throw new ArgumentException(ErrorMessages.UnknownClientEnvironment);
+			}
+		}
+
+		private string GetEnvironmentBaseAddress()
+		{
+			switch (_Configuration.Environment)
+			{
+				case LatitudePayEnvironment.Production:
+					return LatitudePayConstants.ProductionRootUrl;
+
+				case LatitudePayEnvironment.GenoapayProduction:
+					return LatitudePayConstants.GenoaProductionRootUrl;
+
+				case LatitudePayEnvironment.Uat:
+					return LatitudePayConstants.UatRootUrl;
+
+				case LatitudePayEnvironment.GenoapayUat:
+					return LatitudePayConstants.GenoaUatRootUrl;
+
+				default:
+					throw new ArgumentException(ErrorMessages.UnknownClientEnvironment);
+			}
 		}
 
 		#endregion

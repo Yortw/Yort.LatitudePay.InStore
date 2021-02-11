@@ -402,5 +402,21 @@ namespace Tests
 			var purchaseResponse = await client.CreatePosPurchaseAsync(request);
 		}
 
+		[ExpectedException(typeof(ArgumentException))]
+		[TestMethod]
+		public void ThrowsWhenGivenInvalidEnvironment()
+		{
+			var config = new LatitudePayClientConfiguration()
+			{
+				ApiKey = "MockKey",
+				ApiSecret = "MockSecret",
+				Environment = (LatitudePayEnvironment)100,
+				HttpClient = new System.Net.Http.HttpClient(new MockLatitudePayHttpHandler())
+			};
+			using (var x = new LatitudePayClient(config))
+			{
+			};
+		}
+
 	}
 }

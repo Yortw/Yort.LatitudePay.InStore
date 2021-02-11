@@ -126,4 +126,7 @@
   <data name="UnableToObtainToken" xml:space="preserve">
     <value>Unable to obtain token from LatitudePay.</value>
   </data>
+  <data name="UnknownClientEnvironment" xml:space="preserve">
+    <value>Unknown environment specified for LatitudePay client.</value>
+  </data>
 </root>

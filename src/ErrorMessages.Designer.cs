@@ -86,5 +86,14 @@ namespace Yort.LatitudePay.InStore {
                 return ResourceManager.GetString("UnableToObtainToken", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unknown environment specified for LatitudePay client..
+        /// </summary>
+        internal static string UnknownClientEnvironment {
+            get {
+                return ResourceManager.GetString("UnknownClientEnvironment", resourceCulture);
+            }
+        }
     }
 }

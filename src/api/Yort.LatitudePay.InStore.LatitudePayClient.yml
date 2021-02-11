@@ -80,7 +80,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: .ctor
     path: LatitudePayClient.cs
-    startLine: 44
+    startLine: 45
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -128,7 +128,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: GetConfigurationAsync
     path: LatitudePayClient.cs
-    startLine: 82
+    startLine: 84
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -182,7 +182,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: CreatePosPurchaseAsync
     path: LatitudePayClient.cs
-    startLine: 110
+    startLine: 112
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -249,7 +249,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: GetPurchaseStatusAsync
     path: LatitudePayClient.cs
-    startLine: 150
+    startLine: 152
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -314,7 +314,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: CancelPurchaseAsync
     path: LatitudePayClient.cs
-    startLine: 182
+    startLine: 184
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -380,7 +380,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: CreateRefundAsync
     path: LatitudePayClient.cs
-    startLine: 216
+    startLine: 218
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
@@ -441,7 +441,7 @@ items:
       repo: https://github.com/Yortw/Yort.LatitudePay.InStore
     id: Dispose
     path: LatitudePayClient.cs
-    startLine: 248
+    startLine: 250
   assemblies:
   - Yort.LatitudePay.InStore
   namespace: Yort.LatitudePay.InStore
