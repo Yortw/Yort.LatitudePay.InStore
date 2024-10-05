@@ -1,3 +1,6 @@
+# Archived
+LatitudePay have closed this service and the API is no longer available (at least in NZ). The package is no longer maintained.
+
 # Yort.LatitudePay.InStore
 An **unofficial**, light-weight wrapper for .Net, around the LatitudePay (formerly Genoapay) In-Store API (https://www.genoapay.com/api-doc-v3/).
 
